@@ -1,0 +1,12 @@
+/* Theme EndeavourOS i3
+https://raw.githubusercontent.com/endeavouros-team/i3-EndeavourOS/master/.config/rofi/config.rasi
+Maintainer: joekamprad [joekamprad@endeavouros.com]
+Visual Designer: Florent Valetti [@FLVAL EndeavourOS]
+https://endeavouros.com
+*/
+configuration {
+   	color-normal: "argb:e6001b33, #ffffff, argb:0008052B, argb:4d101010, #ff7f7f";
+	color-urgent: "argb:e6001b33, #ffffff, argb:0008052B, argb:0008052B, #24ffef";
+	color-active: "argb:e6001b33, #ffffff, argb:0008052B, argb:0008052B, #24ffef";
+	color-window: "argb:e6001b33, argb:0008052B, argb:bf5556ff";
+}

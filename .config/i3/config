@@ -1,0 +1,341 @@
+
+# This file a modified version based by default i3-config-wizard config
+# source is available here:
+# https://raw.githubusercontent.com/endeavouros-team/i3-EndeavourOS/master/.config/i3/config
+# Maintainer: joekamprad [joekamprad@endeavouros.com]
+# Visual Designer: Florent Valetti @FLVAL EndeavourOS 
+# https://endeavouros.com
+#
+# --> to update this run the following command:
+# wget --backups=1 https://raw.githubusercontent.com/endeavouros-team/i3-EndeavourOS/master/.config/i3/config -P ~/.config/i3/
+
+# Endeavouros-i3 config file
+# Source for complete framework of our i3 config and theming here: https://github.com/endeavouros-team/i3-EndeavourOS
+# EndeavourOS wiki holds some Information also: https://endeavouros.com/docs/window-tiling-managers/i3-wm/
+# Please see http://i3wm.org/docs/userguide.html for the official i3 reference!
+
+#######################
+# config starts here: #
+#######################
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+font pango:Noto Sans Regular 11, FontAwesome 11
+
+# set the mod key to the winkey:
+set $mod Mod4
+
+#####################
+# workspace layout: #
+#####################
+
+# default i3 tiling mode:
+workspace_layout default
+
+# i3 stacking layout:
+# Each window will be fullscreen and tabbed top to bottom.
+#workspace_layout stacking
+
+# i3 tabbed layout:
+# Each new window will open fullscreen as a tab (left to right)
+#workspace_layout tabbed
+
+##############################
+# extra options for windows: #
+##############################
+
+#do not show titlebar on windows: 
+new_window none
+
+# thin borders
+hide_edge_borders both
+
+# Set inner/outer gaps
+gaps inner 2
+gaps outer 0
+
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# switch to workspace
+bindsym $mod+1    workspace  $ws1
+bindsym $mod+2    workspace  $ws2
+bindsym $mod+3    workspace  $ws3
+bindsym $mod+4    workspace  $ws4
+bindsym $mod+5    workspace  $ws5
+bindsym $mod+6    workspace  $ws6
+
+# move focused container to workspace
+bindsym $mod+Shift+1    move container to workspace  $ws1
+bindsym $mod+Shift+2    move container to workspace  $ws2
+bindsym $mod+Shift+3    move container to workspace  $ws3
+bindsym $mod+Shift+4    move container to workspace  $ws4
+bindsym $mod+Shift+5    move container to workspace  $ws5
+bindsym $mod+Shift+6    move container to workspace  $ws6
+
+######################################
+# keybindings for different actions: #
+######################################
+
+# start a terminal
+bindsym $mod+Return exec xfce4-terminal
+
+# kill focused window
+bindsym $mod+c kill
+
+# exit-menu
+bindsym $mod+Shift+e exec ~/.config/i3/scripts/shutdown_menu -p rofi -c
+
+# Lock the system
+# lock with a picture:
+#bindsym $mod+l exec i3lock -i  ~/.config/i3/i3-lock-screen.png -p default|win -t
+# lock by blurring the screen:
+bindsym $mod+l exec ~/.config/i3/scripts/blur-lock.sh
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# keybinding list in editor:
+bindsym $mod+F1 exec xed ~/.config/i3/keybindings
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+b focus up
+bindsym $mod+o focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+b move up
+bindsym $mod+Shift+o move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+g layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+## Multimedia Keys
+
+# volume
+bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks
+
+# gradular volume control
+bindsym $mod+XF86AudioRaiseVolume exec amixer -D pulse sset Master 1%+ && pkill -RTMIN+1 i3blocks
+bindsym $mod+XF86AudioLowerVolume exec amixer -D pulse sset Master 1%- && pkill -RTMIN+1 i3blocks
+
+# mute
+bindsym XF86AudioMute exec amixer sset Master toggle && killall -USR1 i3blocks
+
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# Redirect sound to headphones
+bindsym $mod+p exec /usr/local/bin/switch-audio-port
+
+## App shortcuts
+bindsym $mod+w exec /usr/bin/firefox
+bindsym $mod+n exec /usr/bin/thunar
+bindsym Print exec "scrot ~/%Y-%m-%d-%T-screenshot.png"
+
+##########################################
+# configuration for workspace behaviour: #
+##########################################
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 ""
+set $ws2 ""
+set $ws3 ""
+set $ws4 ""
+set $ws5 ""
+
+# bind program to workspace and focus to them on startup:
+assign [class="Xfce4-terminal"] $ws1
+assign [class="(?i)firefox"] $ws2
+assign [class="Thunar"] $ws3
+assign [class="Thunderbird"] $ws4
+assign [class="TelegramDesktop"] $ws5
+
+
+# automatic set focus new window if it opens on another workspace then the current:
+for_window [class=Xfce4-terminal] focus
+#for_window [class=(?i)firefox] focus
+#for_window [class=Thunar] focus
+#for_window [class=Thunderbird] focus
+#for_window [class=TelegramDesktop] focus
+
+############################################
+#autostart applications/services on login: #
+############################################
+
+#get auth work with polkit-gnome
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+# dex execute .desktop files
+exec --no-startup-id dex -a -s /etc/xdg/autostart/:~/.config/autostart/
+
+# num lock activated
+#exec --no-startup-id numlockx on
+
+# start conky: 
+#exec_always --no-startup-id conky
+
+# start a script to setup displays
+# uncomment the next line, use arandr to setup displays and save the file as monitor:
+#exec --no-startup-id ~/.screenlayout/monitor.sh
+
+# start blueberry app for managing bluetooth devices from tray:
+exec --no-startup-id blueberry-tray
+
+#transparency 
+#exec --no-startup-id xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
+exec --no-startup-id picom -CGb
+
+#networkmanager-applet
+exec --no-startup-id nm-applet
+
+# set wallpaper
+#exec --no-startup-id nitrogen --restore
+exec --no-startup-id feh --bg-fill ~/.config/i3/eos-i3_4096x2304_001.png
+
+#set powersavings for display:
+exec --no-startup-id xset s 480 dpms 600 600 600
+
+# Desktop notifications
+exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
+
+# Autostart apps as you like
+#exec --no-startup-id sleep 2 && xfce4-terminal
+#exec --no-startup-id firefox
+#exec --no-startup-id sleep 3 && thunar
+
+# set floating (nontiling)for apps needing it
+for_window [class="Yad" instance="yad"] floating enable
+for_window [class="Galculator" instance="galculator"] floating enable
+for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
+
+#set floating (nontiling) for special apps
+for_window [class="Xsane" instance="xsane"] floating enable
+for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
+for_window [class="qt5ct" instance="qt5ct"] floating enable
+for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
+for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
+for_window [class="Pamac-manager"] floating enable
+
+######################################
+# color settings for bar and windows #
+######################################
+ 
+# Define colors variables: 
+set $darkbluetrans	#08052be6
+set $darkblue		#08052b
+set $lightblue		#5556ff
+set $urgentred		#e53935
+set $white		#ffffff
+set $black		#000000
+set $purple		#e345ff
+set $darkgrey		#333333
+set $grey		#999999
+set $mediumgrey		#8b8b8b
+set $yellowbrown	#e1b700
+
+# define colors for windows:
+#class			border		bground		text		indicator	child_border
+client.focused		$lightblue	$darkblue	$white		$purple		$mediumgrey
+client.unfocused	$darkblue	$darkblue	$grey		$purple		$darkgrey
+client.focused_inactive	$darkblue	$darkblue	$grey		$purple		$black
+client.urgent		$urgentred	$urgentred	$white		$purple		$yellowbrown
+
+
+############################################
+# bar settings (imput comes from i3blocks) #
+############################################
+
+# Start i3bar to display a workspace bar 
+# (plus the system information i3status finds out, if available)
+bar {
+		font pango:Noto Sans Regular 11
+		status_command i3blocks -c ~/.config/i3/i3blocks.conf
+	    	position bottom 
+#	    	i3bar_command i3bar --transparency
+		    tray_output primary
+		    tray_padding 0
+		    colors {
+		    separator          $purple
+		    background         $darkbluetrans
+		    statusline         $white
+#                            		border          bg	        txt	        indicator
+           	focused_workspace	$grey		$grey		$darkblue	$purple
+		active_workspace	$mediumgrey	$mediumgrey	$darkblue	$purple
+		inactive_workspace	$darkblue	$darkblue	$grey		$purple
+		urgent_workspace	$urgentred	$urgentred	$white		$purple 
+}
+}
+
+#####################################
+# Application menu handled by rofi: #
+#####################################
+
+## rofi bindings fancy application menu (two bindings F9/$mod+i)
+
+bindsym $mod+i exec rofi -modi drun -show drun -display-drun "Apps : " -line-padding 4 \
+                -columns 2 -padding 50 -hide-scrollbar \
+                -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 11"
+                
+bindsym F9 exec rofi -modi drun -show drun -display-drun "Apps : " -line-padding 4 \
+                -columns 2 -padding 30 -hide-scrollbar \
+                -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 11"
+
+## rofi bindings for window menu (two bindings F10/$mod+t)
+
+bindsym $mod+t exec rofi -show window -display-window "Window : " -line-padding 4 \
+                -lines 10 -padding 50 -hide-scrollbar \
+                -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 11"
+
+bindsym F10 exec rofi -show window -display-window "Window : " -line-padding 4 \
+                -lines 10 -padding 50 -hide-scrollbar \
+                -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 11"
+
