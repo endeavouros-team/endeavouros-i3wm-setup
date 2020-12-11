@@ -239,7 +239,7 @@ exec --no-startup-id nm-applet
 
 # set wallpaper
 #exec --no-startup-id nitrogen --restore
-exec --no-startup-id feh --bg-fill ~/.config/i3/eos-i3_4096x2304_001.png
+exec --no-startup-id feh --bg-fill /usr/share/endeavouros/backgrounds/endeavouros_i3.png
 
 #set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
