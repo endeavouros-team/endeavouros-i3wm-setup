@@ -55,6 +55,9 @@ get your api key here: https://openweathermap.org/appid and City code: https://o
 ![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/dunst-i3-enOS.png "dunst-notification")
 * CONFIG FILE = ~/.config/dunst/dunstrc
 
+# autostart application like they would do on a full DE with dex
+https://github.com/jceb/dex
+
 ![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/i3-desktop.png "i3-running")
 
 login to i3.
@@ -80,8 +83,6 @@ https://endeavouros.com/docs/window-tiling-managers/i3-wm/
 `cp -R .config/* ~/.config/`
 
 `chmod -R +x ~/.config/i3/scripts` (make scripts executable)
-
-`cp .Xresources ~/` (needed colorcheme for menu)
 
 # install needed apps and programms for i3wm:
 
