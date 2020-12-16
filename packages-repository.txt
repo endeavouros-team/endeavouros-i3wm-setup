@@ -21,7 +21,6 @@ lightdm-gtk-greeter
 lightdm-gtk-greeter-settings
 acpi
 sysstat
-nitrogen
 bluez-utils
 rofi
 xcursor-neutral
@@ -42,5 +41,4 @@ arc-gtk-theme
 capitaine-cursors
 galculator
 gtk-engine-murrine
-system-config-printer
 seahorse
