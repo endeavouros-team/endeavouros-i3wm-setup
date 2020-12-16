@@ -22,7 +22,7 @@
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Noto Sans Regular 11, FontAwesome 11
+font pango:Noto Sans Regular 11
 
 # set the mod key to the winkey:
 set $mod Mod4
@@ -297,7 +297,7 @@ client.urgent		$urgentred	$urgentred	$white		$purple		$yellowbrown
 # Start i3bar to display a workspace bar 
 # (plus the system information i3status finds out, if available)
 bar {
-		font pango:Noto Sans Regular 11
+		font pango:Noto Sans Regular 11, FontAwesome 11
 		status_command i3blocks -c ~/.config/i3/i3blocks.conf
 	    	position bottom 
 #	    	i3bar_command i3bar --transparency
