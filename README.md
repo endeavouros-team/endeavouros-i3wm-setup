@@ -1,5 +1,5 @@
-# i3-EndeavourOS
-## joekamprad: setup for i3 under [EndeavourOS](https://endeavouros.com)
+# i3-killajoe
+## joekamprad: setup for i3-killajoe under [EndeavourOS](https://endeavouros.com)
 
 
 ----
