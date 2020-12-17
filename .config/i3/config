@@ -291,7 +291,7 @@ client.urgent		$urgentred	$urgentred	$white		$purple		$yellowbrown
 
 
 ############################################
-# bar settings (imput comes from i3blocks) #
+# bar settings (input comes from i3blocks) #
 ############################################
 
 # Start i3bar to display a workspace bar 
