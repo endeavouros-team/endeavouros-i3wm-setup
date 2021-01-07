@@ -46,11 +46,11 @@ workspace_layout default
 # extra options for windows: #
 ##############################
 
-#do not show titlebar on windows: 
-new_window none
+#border indicator on windows: 
+new_window pixel 2
 
 # thin borders
-hide_edge_borders both
+# hide_edge_borders both
 
 # Set inner/outer gaps
 gaps inner 2
