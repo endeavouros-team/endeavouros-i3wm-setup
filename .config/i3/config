@@ -159,9 +159,6 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-# focus the child container
-#bindsym $mod+d focus child
-
 ## Multimedia Keys
 
 # volume
@@ -173,7 +170,9 @@ bindsym $mod+XF86AudioRaiseVolume exec amixer -D pulse sset Master 1%+ && pkill 
 bindsym $mod+XF86AudioLowerVolume exec amixer -D pulse sset Master 1%- && pkill -RTMIN+1 i3blocks
 
 # mute
-bindsym XF86AudioMute exec amixer sset Master toggle && killall -USR1 i3blocks
+#bindsym XF86AudioMute exec amixer sset Master toggle && killall -USR1 i3blocks
+#mute
+bindsym XF86AudioMute exec pamixer -t && notify-send "mute: $(pamixer --get-mute)"
 
 bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
