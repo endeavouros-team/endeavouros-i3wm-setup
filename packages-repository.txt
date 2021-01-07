@@ -28,6 +28,7 @@ xbindkeys
 pulseaudio
 paprefs
 pavucontrol
+playerctl
 scrot
 xorg-xdpyinfo
 dex
