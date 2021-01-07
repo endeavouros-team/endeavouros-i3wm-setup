@@ -343,7 +343,7 @@ bar {
 # Application menu handled by rofi: #
 #####################################
 
-## rofi bindings fancy application menu (two bindings F9/$mod+i)
+## rofi bindings fancy application menu (two bindings F9/$mod+d)
 
 bindsym $mod+d exec rofi -modi drun -show drun -display-drun "Apps : " -line-padding 4 \
                 -columns 2 -padding 50 -hide-scrollbar \
