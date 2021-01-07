@@ -21,6 +21,10 @@
 `chmod -R +x ~/.config/i3/scripts` (make scripts executable)
 `dbus-launch dconf load / < xed.dconf` (setup xed-editor)
 
+If you have the old EndeavourOS default i3-setup installed you nee dto remove .Xresources file
+(old color profile ot used anymore for rofi menus):
+`rm ~.Xresources`
+
 # install needed apps and programms for i3wm:
 
 `sudo pacman -S --needed - < packages-repository.txt`
