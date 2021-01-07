@@ -14,7 +14,7 @@
 
 `git clone https://github.com/killajoe/i3-freshup-killajoe.git`
 
-`cd i3-EndeavourOS`
+`cd i3-freshup-killajoe`
 
 `cp -R .config/* ~/.config/`
 
