@@ -22,7 +22,7 @@
 
 `dbus-launch dconf load / < xed.dconf` (setup xed-editor)
 
-If you have the old EndeavourOS default i3-setup installed you nee dto remove .Xresources file
+If you have the old EndeavourOS default i3-setup installed you need to remove .Xresources file
 (old color profile ot used anymore for rofi menus):
 `rm ~.Xresources`
 
