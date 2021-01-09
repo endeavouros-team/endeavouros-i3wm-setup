@@ -29,32 +29,31 @@
 # Use a custom lock script
 #LOCKSCRIPT="i3lock-extra -m pixelize"
 
-# Colors to define  FG (foreground) BG (background) HL (highlighted)
-FG_COLOR="${FG_COLOR:-#ffffff}"
-BG_COLOR="${BG_COLOR:-#e608052b}"
-HLFG_COLOR="${HLFG_COLOR:-#19ba00}"
-HLBG_COLOR="${HLBG_COLOR:-#ffffffff}"
-BORDER_COLOR="${BORDER_COLOR:-#00ffffff}"
-SEPARATOR_COLOR="${SEPARATOR_COLOR:-#a65556ff}"
+# Colors: FG (foreground), BG (background), HL (highlighted)
+FG_COLOR="#bbbbbb"
+BG_COLOR="#111111"
+HLFG_COLOR="#111111"
+HLBG_COLOR="#bbbbbb"
+BORDER_COLOR="#222222"
 
 # Options not related to colors
-ROFI_TEXT=": "
-ROFI_OPTIONS=(${ROFI_OPTIONS:--width 17 -location 5 -hide-scrollbar -bw 30 -padding 15 -color-window "${BG_COLOR},${BORDER_COLOR},${SEPARATOR_COLOR}"})
-
+ROFI_TEXT=":"
+#ROFI_OPTIONS=(-width -11 -location 0 -hide-scrollbar -bw 30 -color-window "#dd310027,#dd0310027,#dd310027" -padding 5)
+ROFI_OPTIONS=(-width -18 -location 4 -hide-scrollbar -color-window "#cc310027,#00a0009a,#cc310027" -padding 5 -font "Sourcecode Pro Regular 10, FontAwesome 9")
 # Zenity options
-ZENITY_TITLE="${ZENITY_TITLE:-:}"
-ZENITY_TEXT="${ZENITY_TEXT:-Action:}"
-ZENITY_OPTIONS=(${ZENITY_OPTIONS:---column= --hide-header})
+ZENITY_TITLE="Power Menu"
+ZENITY_TEXT="Action:"
+ZENITY_OPTIONS=(--column= --hide-header)
 
 #######################################################################
 #                             END CONFIG                              #
 #######################################################################
 
 # Whether to ask for user's confirmation
-enable_confirmation=${ENABLE_CONFIRMATIONS:-false}
+enable_confirmation=false
 
 # Preferred launcher if both are available
-preferred_launcher="${LAUNCHER:-rofi}"
+preferred_launcher="rofi"
 
 usage="$(basename "$0") [-h] [-c] [-p name] -- display a menu for shutdown, reboot, lock etc.
 
@@ -98,7 +97,6 @@ while getopts "hcp:" option; do
        ;;
   esac
 done
-check_launcher "${preferred_launcher}"
 
 # Check whether a command exists
 function command_exists() {
@@ -114,16 +112,16 @@ fi
 typeset -A menu
 
 # Menu with keys/commands
+
 menu=(
-  [Shutdown]="systemctl poweroff"
-  [Reboot]="systemctl reboot"
-  [Hibernate]="systemctl hibernate"
-  [Suspend]="systemctl suspend"
-  [Halt]="systemctl halt"
-  [Lock]="${LOCKSCRIPT:-i3lock --color=${BG_COLOR#"#"}}"
-  [Logout]="i3-msg exit"
-  [Cancel]=""
+  [  Shutdown]="systemctl poweroff"
+  [ Reboot]="systemctl reboot"
+  [ Suspend]="systemctl suspend"
+  [ Lock]="~/.config/i3/scripts/blur-lock.sh"
+  [ Logout]="i3-msg exit"
+  [ Cancel]=""
 )
+
 menu_nrows=${#menu[@]}
 
 # Menu entries that may trigger a confirmation message
@@ -139,7 +137,7 @@ function prepare_launcher() {
         -hlfg "${HLFG_COLOR}" -hlbg "${HLBG_COLOR}")
     launcher_exe="rofi"
     launcher_options=(-dmenu -i -lines "${menu_nrows}" -p "${ROFI_TEXT}" \
-        "${rofi_colors[@]}" "${ROFI_OPTIONS[@]}")
+        "${rofi_colors}" "${ROFI_OPTIONS[@]}")
   elif [[ "$1" == "zenity" ]]; then
     launcher_exe="zenity"
     launcher_options=(--list --title="${ZENITY_TITLE}" --text="${ZENITY_TEXT}" \
@@ -165,7 +163,7 @@ selection="$(printf '%s\n' "${!menu[@]}" | sort | "${launcher[@]}")"
 function ask_confirmation() {
   if [ "${launcher_exe}" == "rofi" ]; then
     confirmed=$(echo -e "Yes\nNo" | rofi -dmenu -i -lines 2 -p "${selection}?" \
-      "${rofi_colors[@]}" "${ROFI_OPTIONS[@]}")
+      "${rofi_colors}" "${ROFI_OPTIONS[@]}")
     [ "${confirmed}" == "Yes" ] && confirmed=0
   elif [ "${launcher_exe}" == "zenity" ]; then
     zenity --question --text "Are you sure you want to ${selection,,}?"
