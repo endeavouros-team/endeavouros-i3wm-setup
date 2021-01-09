@@ -39,9 +39,9 @@ $percent = $2;
 $full_text = "$percent%";
 
 if ($status eq 'Discharging') {
-	$full_text .= ' DIS';
+	$full_text .= ' ';
 } elsif ($status eq 'Charging') {
-	$full_text .= ' CHR';
+	$full_text .= ' ';
 } elsif ($status eq 'Unknown') {
 	open (AC_ADAPTER, "acpi -a |") or die;
 	$ac_adapt = <AC_ADAPTER>;
