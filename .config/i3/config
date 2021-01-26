@@ -2,8 +2,7 @@
 # This file a modified version based by default i3-config-wizard config
 # source is available here:
 # https://raw.githubusercontent.com/endeavouros-team/i3-EndeavourOS/master/.config/i3/config
-# Maintainer: joekamprad [joekamprad@endeavouros.com]
-# Visual Designer: Florent Valetti @FLVAL EndeavourOS 
+# Maintainer: joekamprad [joekamprad@endeavouros.com] 
 # https://endeavouros.com
 #
 # --> to update this run the following command:
@@ -22,7 +21,7 @@
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Noto Sans Regular 11
+font pango:Noto Sans Regular 10
 
 # set the mod key to the winkey:
 set $mod Mod4
@@ -249,7 +248,7 @@ exec --no-startup-id dex -a -s /etc/xdg/autostart/:~/.config/autostart/
 
 # start a script to setup displays
 # uncomment the next line, use arandr to setup displays and save the file as monitor:
-#exec --no-startup-id ~/.screenlayout/monitor.sh
+exec --no-startup-id ~/.screenlayout/monitor.sh
 
 # start blueberry app for managing bluetooth devices from tray:
 exec --no-startup-id blueberry-tray
@@ -262,8 +261,8 @@ exec --no-startup-id picom -CGb
 exec --no-startup-id nm-applet
 
 # set wallpaper
-#exec --no-startup-id nitrogen --restore
-exec --no-startup-id feh --bg-fill /usr/share/endeavouros/backgrounds/endeavouros_i3.png
+exec --no-startup-id nitrogen --restore
+#exec --no-startup-id feh --bg-fill /usr/share/endeavouros/backgrounds/endeavouros_i3.png
 
 #set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
@@ -321,7 +320,7 @@ client.urgent		$urgentred	$urgentred	$white		$purple		$yellowbrown
 # Start i3bar to display a workspace bar 
 # (plus the system information i3status finds out, if available)
 bar {
-		font pango:Noto Sans Regular 11, FontAwesome 11
+		font pango:Noto Sans Regular 10, FontAwesome 10
 		status_command i3blocks -c ~/.config/i3/i3blocks.conf
 	    	position bottom 
 #	    	i3bar_command i3bar --transparency
@@ -347,19 +346,18 @@ bar {
 
 bindsym $mod+d exec rofi -modi drun -show drun -display-drun "Apps : " -line-padding 4 \
                 -columns 2 -padding 50 -hide-scrollbar \
-                -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 11"
+                -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 10"
                 
 bindsym F9 exec rofi -modi drun -show drun -display-drun "Apps : " -line-padding 4 \
                 -columns 2 -padding 30 -hide-scrollbar \
-                -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 11"
+                -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 10"
 
 ## rofi bindings for window menu (two bindings F10/$mod+t)
 
 bindsym $mod+t exec rofi -show window -display-window "Window : " -line-padding 4 \
                 -lines 10 -padding 50 -hide-scrollbar \
-                -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 11"
+                -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 10"
 
 bindsym F10 exec rofi -show window -display-window "Window : " -line-padding 4 \
                 -lines 10 -padding 50 -hide-scrollbar \
-                -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 11"
-
+                -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 10"
