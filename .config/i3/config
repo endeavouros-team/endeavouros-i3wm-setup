@@ -52,8 +52,9 @@ new_window pixel 1
 # hide_edge_borders both
 
 # Set inner/outer gaps
-gaps inner 2
-gaps outer 0
+gaps inner 8
+gaps outer 4
+
 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
