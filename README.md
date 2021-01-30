@@ -1,8 +1,8 @@
 # endeavouros-i3wm-setup
-## joekamprad: setup for i3-wm under [EndeavourOS](https://endeavouros.com) new config 01-2021
+## maintainer: joekamprad --->  setup for i3-wm under [EndeavourOS](https://endeavouros.com) new config 01-2021 <---
 
 
-----
+
 
 # Tutorial to install EndeavourOS-i3 setup from scratch 
 **for later installs, if you have installed another DE on initial install from the ISO**
