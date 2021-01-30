@@ -296,22 +296,22 @@ for_window [class="Pamac-manager"] floating enable
 # Define colors variables: 
 set $darkbluetrans	#08052be6
 set $darkblue		#08052b
-set $lightblue		#5556ff
+set $lightblue		#5294e2
 set $urgentred		#e53935
 set $white		#ffffff
 set $black		#000000
 set $purple		#e345ff
-set $darkgrey		#333333
-set $grey		#999999
+set $darkgrey		#383c4a
+set $grey		#b0b5bd
 set $mediumgrey		#8b8b8b
 set $yellowbrown	#e1b700
 
 # define colors for windows:
-#class			border		bground		text		indicator	child_border
-client.focused		$lightblue	$darkblue	$white		$purple		$mediumgrey
-client.unfocused	$darkblue	$darkblue	$grey		$purple		$darkgrey
+#class		        	border		bground		text		indicator	child_border
+client.focused		    $lightblue	$darkblue	$white		$purple		$mediumgrey
+client.unfocused	    $darkblue	$darkblue	$grey		$purple		$darkgrey
 client.focused_inactive	$darkblue	$darkblue	$grey		$purple		$black
-client.urgent		$urgentred	$urgentred	$white		$purple		$yellowbrown
+client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown
 
 
 ############################################
@@ -329,12 +329,12 @@ bar {
 		    tray_padding 0
 		    colors {
 		    separator          $purple
-		    background         $darkbluetrans
+		    background         $darkgrey
 		    statusline         $white
-#                            		border          bg	        txt	        indicator
-           	focused_workspace	$grey		$grey		$darkblue	$purple
-		active_workspace	$mediumgrey	$mediumgrey	$darkblue	$purple
-		inactive_workspace	$darkblue	$darkblue	$grey		$purple
+#                          	border      bg   	    txt 	    indicator
+        focused_workspace	$grey		$grey		$darkgrey	$purple
+		active_workspace	$mediumgrey	$mediumgrey	$darkgrey	$purple
+		inactive_workspace	$darkgrey	$lightblue	$darkgrey	$purple
 		urgent_workspace	$urgentred	$urgentred	$white		$purple 
 }
 }
@@ -347,18 +347,18 @@ bar {
 
 bindsym $mod+d exec rofi -modi drun -show drun -display-drun "Apps : " -line-padding 4 \
                 -columns 2 -padding 50 -hide-scrollbar \
-                -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 10"
+                -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 11"
                 
 bindsym F9 exec rofi -modi drun -show drun -display-drun "Apps : " -line-padding 4 \
                 -columns 2 -padding 30 -hide-scrollbar \
-                -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 10"
+                -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 11"
 
 ## rofi bindings for window menu (two bindings F10/$mod+t)
 
 bindsym $mod+t exec rofi -show window -display-window "Window : " -line-padding 4 \
                 -lines 10 -padding 50 -hide-scrollbar \
-                -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 10"
+                -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 11"
 
 bindsym F10 exec rofi -show window -display-window "Window : " -line-padding 4 \
                 -lines 10 -padding 50 -hide-scrollbar \
-                -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 10"
+                -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 11"
