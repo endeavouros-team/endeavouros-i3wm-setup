@@ -1,5 +1,5 @@
-# i3-killajoe
-## joekamprad: setup for i3-killajoe under [EndeavourOS](https://endeavouros.com)
+# endeavouros-i3wm-setup
+## joekamprad: setup for i3-wm under [EndeavourOS](https://endeavouros.com) new config 01-2021
 
 
 ----
@@ -12,9 +12,9 @@
 3. copy scripts inside ~/.config/i3/scripts must be executable ! [chmod +x] them please ;)
 4. install needed packages
 
-`git clone https://github.com/killajoe/i3-freshup-killajoe.git`
+`git clone https://github.com/endeavouros-team/endeavouros-i3wm-setup.git`
 
-`cd i3-freshup-killajoe`
+`cd endeavouros-i3wm-setup`
 
 `cp -R .config/* ~/.config/`
 
@@ -29,4 +29,6 @@ If you have the old EndeavourOS default i3-setup installed you need to remove .X
 # install needed apps and programms for i3wm:
 
 `sudo pacman -S --needed - < packages-repository.txt`
+
+![i3-fresh-screenshot](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/eos-i3-fresh.png)
 
