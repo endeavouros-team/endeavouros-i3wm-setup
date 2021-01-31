@@ -1,15 +1,15 @@
 
 # This file a modified version based by default i3-config-wizard config
 # source is available here:
-# https://raw.githubusercontent.com/endeavouros-team/i3-EndeavourOS/master/.config/i3/config
+# https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/master/.config/i3/config
 # Maintainer: joekamprad [joekamprad@endeavouros.com] 
 # https://endeavouros.com
 #
 # --> to update this run the following command:
-# wget --backups=1 https://raw.githubusercontent.com/endeavouros-team/i3-EndeavourOS/master/.config/i3/config -P ~/.config/i3/
+# wget --backups=1 https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/master/.config/i3/config -P ~/.config/i3/
 
 # Endeavouros-i3 config file
-# Source for complete framework of our i3 config and theming here: https://github.com/endeavouros-team/i3-EndeavourOS
+# Source for complete framework of our i3 config and theming here: https://github.com/endeavouros-team/endeavouros-i3wm-setup
 # EndeavourOS wiki holds some Information also: https://endeavouros.com/docs/window-tiling-managers/i3-wm/
 # Please see http://i3wm.org/docs/userguide.html for the official i3 reference!
 
