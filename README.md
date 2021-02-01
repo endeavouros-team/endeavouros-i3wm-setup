@@ -31,4 +31,5 @@ If you have the old EndeavourOS default i3-setup installed you need to remove .X
 `sudo pacman -S --needed - < packages-repository.txt`
 
 ![i3-fresh-screenshot](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/eos-i3-fresh.png)
+![i3-fresh-screenshot-menu](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/eos-rofi-menu.png)
 
