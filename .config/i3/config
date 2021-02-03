@@ -216,6 +216,15 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+# use workspaces on different displays:
+# where you have to replace VGA-0/HDMI-0 with the names for your displays 
+# you can get from xrandr command
+#workspace $ws1 output VGA-0
+#workspace $ws2 output VGA-0
+#workspace $ws3 output HDMI-0
+#workspace $ws4 output HDMI-0
+#workspace $ws5 output HDMI-0
+
 # bind program to workspace and focus to them on startup:
 assign [class="Xfce4-terminal"] $ws1
 assign [class="(?i)firefox"] $ws2
@@ -231,9 +240,9 @@ for_window [class=Xfce4-terminal] focus
 #for_window [class=Thunderbird] focus
 #for_window [class=TelegramDesktop] focus
 
-############################################
-#autostart applications/services on login: #
-############################################
+#############################################
+# autostart applications/services on login: #
+#############################################
 
 #get auth work with polkit-gnome
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -337,6 +346,29 @@ bar {
 		inactive_workspace	$darkgrey   		$darkgrey	$grey		$purple
 		urgent_workspace	$urgentred	    	$urgentred	$white		$purple 
 }
+
+# you can add different bars for multidisplay setups on each display:
+# set output HDMI-0 to the display you want the bar, --transparency can be set.
+# Transparency needs rgba color codes to be used where the last two letters are the transparency factor see here:
+# https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4
+# #08052be6 --> e6=90%
+
+# bar {	
+#	font pango:Noto Sans Regular 9, FontAwesome 9
+#	status_command i3blocks -c ~/.config/i3/i3blocks.conf
+#	i3bar_command i3bar --transparency
+#	output HDMI-0
+#	position bottom
+#	colors {
+#		separator          $purple
+#		background         $darkbluetrans
+#        	statusline         $white
+#					border		bg		txt		indicator
+#		focused_workspace	$lighterblue	$lighterblue	$darkblue	$purple
+#		active_workspace	$lightdblue	$lightdblue	$darkblu	$purple
+#		inactive_workspace	$darkblue	$darkblue	$lightdblue	$purple
+#		urgent_workspace	$urgentred	$urgentred	$white		$purple 
+# }
 
 #####################################
 # Application menu handled by rofi: #
