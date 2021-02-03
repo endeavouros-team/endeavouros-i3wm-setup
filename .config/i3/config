@@ -331,12 +331,11 @@ bar {
 		    separator          $purple
 		    background         $darkgrey
 		    statusline         $white
-#                          	border      bg   	    txt 	    indicator
-        focused_workspace	$grey		$grey		$darkgrey	$purple
-		active_workspace	$mediumgrey	$mediumgrey	$darkgrey	$purple
-		inactive_workspace	$darkgrey	$lightblue	$darkgrey	$purple
-		urgent_workspace	$urgentred	$urgentred	$white		$purple 
-}
+#                          		border 		        bg		txt		indicator
+		focused_workspace	$mediumgrey	   	$grey		$darkgrey	$purple
+		active_workspace	$lightblue      	$mediumgrey	$darkgrey	$purple
+		inactive_workspace	$darkgrey   		$darkgrey	$grey		$purple
+		urgent_workspace	$urgentred	    	$urgentred	$white		$purple 
 }
 
 #####################################
