@@ -89,6 +89,9 @@ F10 or +t
 # focus the child container
 #+d focus child
 
+# resize floating window
++right mouse button
+
 ## Multimedia Keys
 
 # Redirect sound to headphones
