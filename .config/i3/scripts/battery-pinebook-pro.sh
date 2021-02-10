@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #simple Shellscript for i3blocks on Pinebook pro
 #05012020 geri123@gmx.net Gerhard S.
 #battery-symbols: on Manjaro you need the awesome-terminal-fonts package installed!
