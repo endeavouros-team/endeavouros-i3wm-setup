@@ -395,7 +395,7 @@ bar {
 #        	statusline         $white
 #					border		bg		txt		indicator
 #		focused_workspace	$lighterblue	$lighterblue	$darkblue	$purple
-#		active_workspace	$lightdblue	$lightdblue	$darkblu	$purple
+#		active_workspace	$lightdblue	$lightdblue	$darkblue	$purple
 #		inactive_workspace	$darkblue	$darkblue	$lightdblue	$purple
 #		urgent_workspace	$urgentred	$urgentred	$white		$purple 
 #	}
