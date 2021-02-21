@@ -150,6 +150,10 @@ bindsym $mod+Shift+r restart
 # keybinding list in editor:
 bindsym $mod+F1 exec xed ~/.config/i3/keybindings
 
+# Backlight control
+bindsym XF86MonBrightnessUp exec xbacklight +10
+bindsym XF86MonBrightnessDown exec xbacklight -10
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -202,6 +206,16 @@ bindsym $mod+a focus parent
 # volume
 bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks
 bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks
+
+
+# Pulse Audio controls
+
+#volume up
+#bindsym XF86AudioRaiseVolume exec pamixer -i 5 --allow-boost && dunstify -h string:x-dunst-stack-tag:volume volume: $(pamixer --get-volume)%
+#volume down
+#bindsym XF86AudioLowerVolume exec pamixer -d 5 --allow-boost && dunstify -h string:x-dunst-stack-tag:volume volume: $(pamixer --get-volume)%
+#mute
+#bindsym XF86AudioMute exec pamixer -t && dunstify -h string:x-dunst-stack-tag:mute mute: $(pamixer --get-mute)!
 
 # gradular volume control
 bindsym $mod+XF86AudioRaiseVolume exec amixer -D pulse sset Master 1%+ && pkill -RTMIN+1 i3blocks
