@@ -115,7 +115,7 @@ typeset -A menu
 # Menu with keys/commands
 
 menu=(
-  [  Shutdown]="systemctl poweroff"
+  [ Shutdown]="systemctl poweroff"
   [ Reboot]="systemctl reboot"
   [ Suspend]="systemctl suspend"
   [ Lock]="~/.config/i3/scripts/blur-lock.sh"
