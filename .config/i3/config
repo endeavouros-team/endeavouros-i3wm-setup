@@ -402,7 +402,7 @@ bar {
 
 # bar {	
 #	font pango:Noto Sans Regular 9, FontAwesome 9
-#	status_command i3blocks -c ~/.config/i3/i3blocks.conf
+#	status_command i3blocks -c ~/.config/i3/i3blocks-2.conf
 #	i3bar_command i3bar --transparency
 #	output HDMI-0
 #	position bottom
