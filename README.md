@@ -16,12 +16,7 @@
 
 ![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/linkey.png "modkey")
 
-* [mod]+**enter** = open terminal (xfce4-terminal)
-* [mod]+**w** =  open Browser (firefox)
-* [mod]+**n** =  open Filebrowser (thunar)
-* **F9** =  app menu (rofi)
-* **$mod+c** =  close focused app [kill]
-* **Print**-key = screenshot (scrot)
+![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/eos-i3-main-shortcuts.png "main-shortcuts")
 
 # default i3-wm keycodes: 
 https://i3wm.org/docs/userguide.html#_default_keybindings
