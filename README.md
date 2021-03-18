@@ -9,7 +9,7 @@
 * default Terminal-Emulator = [xfce4-terminal](https://docs.xfce.org/apps/terminal/start)
 * Text-Editor = [xed](https://github.com/linuxmint/xed)
 * dex : autostarting apps from /etc/xdg/autostart/ https://github.com/jceb/dex
-* Notifications are done with dunst: CONFIG FILE = ~/.config/dunst/dunstrc
+* Notifications are done with [dunst](https://dunst-project.org): CONFIG FILE = ~/.config/dunst/dunstrc
 
 # Main shortcuts:
 [mod] key is set to the winkey (or should i call it linkey?)
