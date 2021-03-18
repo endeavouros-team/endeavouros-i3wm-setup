@@ -382,6 +382,13 @@ bar {
 #	    	i3bar_command i3bar --transparency
 		    tray_output primary
 		    tray_padding 0
+
+# When strip_workspace_numbers is set to yes, 
+# any workspace that has a name of the form 
+# “[n][:][NAME]” will display only the name.
+strip_workspace_numbers yes
+##strip_workspace_name no
+
 		    colors {
 		    separator          $purple
 		    background         $darkgrey
@@ -406,6 +413,13 @@ bar {
 #	i3bar_command i3bar --transparency
 #	output HDMI-0
 #	position bottom
+#
+# When strip_workspace_numbers is set to yes, 
+# any workspace that has a name of the form 
+# “[n][:][NAME]” will display only the name.
+#strip_workspace_numbers yes
+##strip_workspace_name no
+#
 #	colors {
 #		separator          $purple
 #		background         $darkbluetrans
