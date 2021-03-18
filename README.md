@@ -8,7 +8,7 @@
 * Filebrowser = [Thunar](https://docs.xfce.org/xfce/thunar/start)
 * default Terminal-Emulator = [xfce4-terminal](https://docs.xfce.org/apps/terminal/start)
 * Text-Editor = [xed](https://github.com/linuxmint/xed)
-* dex : autostarting apps from /etc/xdg/autostart/ https://github.com/jceb/dex
+* [dex](https://github.com/jceb/dex) : autostarting apps from /etc/xdg/autostart/
 * Notifications are done with [dunst](https://dunst-project.org): CONFIG FILE = ~/.config/dunst/dunstrc
 
 # Main shortcuts:
