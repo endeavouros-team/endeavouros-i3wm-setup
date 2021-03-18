@@ -8,6 +8,8 @@
 * Filebrowser = [Thunar](https://docs.xfce.org/xfce/thunar/start)
 * default Terminal-Emulator = [xfce4-terminal](https://docs.xfce.org/apps/terminal/start)
 * Text-Editor = [xed](https://github.com/linuxmint/xed)
+* dex : autostarting apps from /etc/xdg/autostart/ https://github.com/jceb/dex
+* Notifications are done with dunst: CONFIG FILE = ~/.config/dunst/dunstrc
 
 # Main shortcuts:
 [mod] key is set to the winkey (or should i call it linkey?)
@@ -64,13 +66,9 @@ get your api key here: https://openweathermap.org/appid and City code: https://o
 * CONFIG FILE = ~/.config/i3/i3blocks.conf
 # application menu (rofi):
 ![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/menu.png "application-menu")
-* color scheme = ~/.Xresources
+* rofi color-scheme: ~/.config/rofi/config.rasi
 
-# Notifications are done with dunst:
-![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/dunst-i3-enOS.png "dunst-notification")
-* CONFIG FILE = ~/.config/dunst/dunstrc
-# dex : autostarting apps from /etc/xdg/autostart/ 
-https://github.com/jceb/dex
+
 
 
 # Tutorial to install EndeavourOS-i3 setup from scratch 
