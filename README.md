@@ -46,7 +46,6 @@ so each new window will open fullscreen as a tab, you can change between window-
 [mod]+**Right** focus right (right arrow key)
 
 # i3blocks:
-![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/i3-block.png "i3blocks")
 * pulseaudio (mousewheel volume level, rightclick open pulseaudio control)
 * weather (openweather you need to get city code and apikey first [adding it to ~/.config/i3/scripts/openweather.sh])
 get your api key here: https://openweathermap.org/appid and City code: https://openweathermap.org/find?q= (search your city     and take the city code from the url in your browser [7 numbers at the end of the url])
@@ -54,13 +53,13 @@ get your api key here: https://openweathermap.org/appid and City code: https://o
 * logout button (poweroff, logout, suspending, hibernate e.t.c.)
 
 # panel bar (i3-blocks):
-![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/i3-block-bar-tutorial-tp.png "bar legende")
+![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/blocks-bar-i3.png "bar legende")
 * CONFIG FILE = ~/.config/i3/i3blocks.conf
 # Logout Menu:
-![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/logoutmenu.png "logout-menu")
-* CONFIG FILE = ~/.config/i3/i3blocks.conf
+![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/power-menu-i3.png "logout-menu")
+* CONFIG FILE = ~/.config/i3/scripts/shutdown_menu
 # application menu (rofi):
-![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/menu.png "application-menu")
+![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/rofi-desktop-menu.png "application-menu")
 * rofi color-scheme: ~/.config/rofi/config.rasi
 
 
