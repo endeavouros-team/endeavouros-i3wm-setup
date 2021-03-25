@@ -1,5 +1,5 @@
 # endeavouros-i3wm-setup
-## maintainer: joekamprad --->  setup for i3-wm under [EndeavourOS](https://endeavouros.com) new config 01-2021 <---
+**maintainer: joekamprad --->  setup for i3-wm under [EndeavourOS](https://endeavouros.com) new config 01-2021 <---**
 
 
 # Tutorial for i3-wm settings:
