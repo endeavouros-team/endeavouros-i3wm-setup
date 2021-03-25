@@ -11,7 +11,8 @@
 * [dex](https://github.com/jceb/dex) : autostarting apps from /etc/xdg/autostart/ (*)
 * Notifications are done with [dunst](https://dunst-project.org): CONFIG FILE = ~/.config/dunst/dunstrc
 
-(*) ** if you install EndeavourOS-i3 aside with a full DE (XFCE4, GNOME, Plasma e.t.c.) you need to comment dex starter from ~/.config/i3/config file !!! **
+(*) 
+**if you install EndeavourOS-i3 aside with a full DE (XFCE4, GNOME, Plasma e.t.c.) you need to comment dex starter from ~/.config/i3/config file !!!**
 
 # Main shortcuts:
 [mod] key is set to the winkey (or should i call it linkey?)
