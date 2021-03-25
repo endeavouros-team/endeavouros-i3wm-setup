@@ -1,7 +1,7 @@
 # endeavouros-i3wm-setup
 **maintainer: joekamprad --->  setup for i3-wm under [EndeavourOS](https://endeavouros.com) new config 01-2021 <---**
 
-!! To disable autostarting firefox with this readme edit `~/.config/i3/config` and comment this line:
+!! To disable autostarting firefox with this readme edit `~/.config/i3/config` and comment out this line:
 
 `#exec --no-startup-id firefox https://github.com/endeavouros-team/endeavouros-i3wm-setup/blob/main/README.md`
 
@@ -19,7 +19,7 @@
 **Warning:**
 **if you install EndeavourOS-i3 aside with a full DE (XFCE4, GNOME, Plasma e.t.c.)** 
 
-**you need to comment dex starter from `~/.config/i3/config` file !!!**
+**you need to comment out dex starter from `~/.config/i3/config` file !!!**
 
 `#exec --no-startup-id dex -a -s /etc/xdg/autostart/:~/.config/autostart/`
 
