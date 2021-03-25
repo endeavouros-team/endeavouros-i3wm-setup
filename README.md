@@ -5,6 +5,8 @@
 
 `#exec --no-startup-id firefox https://github.com/endeavouros-team/endeavouros-i3wm-setup/blob/main/README.md`
 
+`~/.config/i3/config` is the main configuration file for i3, get into this file and configure i3 as you ike, all settings have comments to give you information about the following setting.
+
 # Tutorial for i3-wm settings:
 * background handled by [nitrogen](https://wiki.archlinux.org/index.php/nitrogen)
 * gtk3 theme handled by [lxappearance-gtk3](https://wiki.lxde.org/de/LXAppearance)
