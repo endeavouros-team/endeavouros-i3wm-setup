@@ -1,3 +1,5 @@
+![alt text](https://raw.githubusercontent.com/endeavouros-team/artwork-images-logo/master/endeavouros-i3-icon.png "eos-i3")
+
 # endeavouros-i3wm-setup
 **maintainer: joekamprad --->  setup for i3-wm under [EndeavourOS](https://endeavouros.com) new config 01-2021 <---**
 
