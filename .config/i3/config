@@ -5,7 +5,7 @@
 # Maintainer: joekamprad [joekamprad@endeavouros.com] 
 # https://endeavouros.com
 #
-# --> to update this run the following command:
+# --> to update this run the following command (will backup existing setup file)
 # wget --backups=1 https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/main/.config/i3/config -P ~/.config/i3/
 
 # Endeavouros-i3 config file
