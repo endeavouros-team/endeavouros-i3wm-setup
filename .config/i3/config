@@ -1,11 +1,11 @@
 
-# This file a modified version based by default i3-config-wizard config
+# This file is a modified version based on default i3-config-wizard config
 # source is available here:
 # https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/master/.config/i3/config
 # Maintainer: joekamprad [joekamprad@endeavouros.com] 
 # https://endeavouros.com
 #
-# --> to update this run the following command:
+# --> to update this run the following command (will backup existing setup file)
 # wget --backups=1 https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/main/.config/i3/config -P ~/.config/i3/
 
 # Endeavouros-i3 config file
@@ -278,7 +278,7 @@ assign [class="TelegramDesktop"] $ws5
 
 # automatic set focus new window if it opens on another workspace then the current:
 for_window [class=Xfce4-terminal] focus
-#for_window [class=(?i)firefox] focus
+for_window [class=(?i)firefox] focus
 #for_window [class=Thunar] focus
 #for_window [class=Thunderbird] focus
 #for_window [class=TelegramDesktop] focus
@@ -328,7 +328,7 @@ exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
 
 # Autostart apps as you like
 #exec --no-startup-id sleep 2 && xfce4-terminal
-#exec --no-startup-id firefox
+exec --no-startup-id firefox https://github.com/endeavouros-team/endeavouros-i3wm-setup/blob/main/README.md
 #exec --no-startup-id sleep 3 && thunar
 
 # set floating (nontiling)for apps needing it
@@ -380,8 +380,17 @@ bar {
 		status_command i3blocks -c ~/.config/i3/i3blocks.conf
 	    	position bottom 
 #	    	i3bar_command i3bar --transparency
+# it could be that you have no primary display set: set one (xrandr --output <output> --primary)
+# reference: https://i3wm.org/docs/userguide.html#_tray_output
 		    tray_output primary
 		    tray_padding 0
+
+# When strip_workspace_numbers is set to yes, 
+# any workspace that has a name of the form 
+# “[n][:][NAME]” will display only the name.
+strip_workspace_numbers yes
+##strip_workspace_name no
+
 		    colors {
 		    separator          $purple
 		    background         $darkgrey
@@ -402,10 +411,17 @@ bar {
 
 # bar {	
 #	font pango:Noto Sans Regular 9, FontAwesome 9
-#	status_command i3blocks -c ~/.config/i3/i3blocks.conf
+#	status_command i3blocks -c ~/.config/i3/i3blocks-2.conf
 #	i3bar_command i3bar --transparency
 #	output HDMI-0
 #	position bottom
+#
+# When strip_workspace_numbers is set to yes, 
+# any workspace that has a name of the form 
+# “[n][:][NAME]” will display only the name.
+#strip_workspace_numbers yes
+##strip_workspace_name no
+#
 #	colors {
 #		separator          $purple
 #		background         $darkbluetrans
