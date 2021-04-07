@@ -111,7 +111,7 @@
     - lsb-release
     - s-tui
     - tlp
-    - yad
+    - yad-eos
     - reflector
     - endeavouros-theming
     - reflector-simple
