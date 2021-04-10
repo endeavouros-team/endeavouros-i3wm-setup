@@ -96,7 +96,6 @@
     - gst-plugins-bad
     - gst-plugins-ugly
     - gst-plugin-pipewire
-    - mplayer
     - libdvdcss
     - efibootmgr
     - dosfstools
