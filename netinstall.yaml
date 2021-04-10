@@ -184,6 +184,7 @@
     - galculator
     - gtk-engine-murrine
     - seahorse
+    - celluloid
 - name: "Printing-Support"
   description: "Support for printing (Cups)"
   hidden: false
