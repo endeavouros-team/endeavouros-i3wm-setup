@@ -127,7 +127,7 @@
 - name: "i3 Window Manager"
   description: "i3 tiling window manager, primarily targeted at developers and advanced users. "
   hidden: false
-  selected: true
+  selected: false
   critical: false
   packages:
     - i3-gaps
@@ -145,7 +145,6 @@
     - thunar
     - thunar-archive-plugin
     - thunar-volman
-    - thunar-media-tags-plugin
     - file-roller
     - tumbler
     - gvfs
@@ -179,13 +178,14 @@
     - jq
     - feh
     - dunst
+    - arc-gtk-theme-eos
     - arc-x-icons-theme
-    - arc-gtk-theme
     - capitaine-cursors
     - galculator
     - gtk-engine-murrine
     - seahorse
-    - celluloid
+    - numlockx
+    - meld
 - name: "Printing-Support"
   description: "Support for printing (Cups)"
   hidden: false
