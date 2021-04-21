@@ -76,6 +76,7 @@
     - opendesktop-fonts
     - ttf-opensans
     - firefox
+    - firefox-i18n-$LOCALE
     - alsa-utils
     - alsa-plugins
     - alsa-firmware
@@ -117,12 +118,12 @@
     - welcome
     - eos-update-notifier
     - eos-hooks
-    - nvidia-installer-dkms
     - mkinitcpio-openswap
     - pcurses    
     - eos-log-tool
     - keyserver-rank
     - inxi
+    - tldr
 - name: "i3 Window Manager"
   description: "i3 tiling window manager, primarily targeted at developers and advanced users. "
   hidden: false
