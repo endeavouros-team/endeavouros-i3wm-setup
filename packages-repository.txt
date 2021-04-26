@@ -46,8 +46,8 @@ xed
 jq
 feh
 dunst
-arc-x-icons-theme
 arc-gtk-theme-eos
+arc-x-icons-theme
 capitaine-cursors
 galculator
 gtk-engine-murrine
