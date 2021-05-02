@@ -13,7 +13,6 @@ xdg-user-dirs-gtk
 thunar
 thunar-archive-plugin
 thunar-volman
-thunar-media-tags-plugin
 file-roller
 tumbler
 gvfs
@@ -47,9 +46,11 @@ xed
 jq
 feh
 dunst
+arc-gtk-theme-eos
 arc-x-icons-theme
-arc-gtk-theme
 capitaine-cursors
 galculator
 gtk-engine-murrine
 seahorse
+numlockx
+meld
