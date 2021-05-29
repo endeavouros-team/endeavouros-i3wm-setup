@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Edited by Andreas Lindlbauer <endeavouros.mousily@aleeas.com>
 
 temps=("#0600FF" "#0500FF" "#0400FF" "#0300FF" "#0200FF" "#0100FF" "#0000FF" "#0002FF" "#0012FF" "#0022FF" "#0032FF" "#0044FF" "#0054FF" "#0064FF" "#0074FF" "#0084FF" "#0094FF" "#00A4FF" "#00B4FF" "#00C4FF" "#00D4FF" "#00E4FF" "#00FFF4" "#00FFD0" "#00FFA8" "#00FF83" "#00FF5C" "#00FF36" "#00FF10" "#17FF00" "#3EFF00" "#65FF00" "#B0FF00" "#FDFF00" "#FFF000" "#FFDC00" "#FFC800" "#FFB400" "#FFA000" "#FF8C00" "#FF7800" "#FF6400" "#FF5000" "#FF3C00" "#FF2800" "#FF1400" "#FF0000")
 
