@@ -27,11 +27,6 @@ my $ac_adapt;
 my $full_text;
 my $short_text;
 my $label = '😅';
-#my $bat_number = $ENV{BLOCK_INSTANCE} || 0;
-# read the first line of the "acpi" command output
-# open (ACPI, "acpi -b | grep 'Battery $bat_number' |") or die;
-# $acpi = <ACPI>;
-# close(ACPI);
 open (UPOWER, "upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep 'percentage' |") or die;
 $upower = <UPOWER>;
 close(UPOWER);
