@@ -16,6 +16,8 @@
 
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+# Edited by Andreas Lindlbauer <endeavouros.mousily@aleeas.com>
 
 use strict;
 use warnings;
@@ -29,6 +31,7 @@ my $t_warn = $ENV{T_WARN} || 70;
 my $t_crit = $ENV{T_CRIT} || 90;
 my $chip = $ENV{SENSOR_CHIP} || "";
 my $temperature = -9999;
+my $label = "😀 ";
 
 sub help {
     print "Usage: temperature [-w <warning>] [-c <critical>] [--chip <chip>]\n";
@@ -55,8 +58,22 @@ close(SENSORS);
 
 $temperature eq -9999 and die 'Cannot find temperature';
 
+if ($temperature < 45) {
+  $label = '';
+} elsif ($temperature < 55) {
+  $label = '';
+} elsif ($temperature < 65) {
+  $label = '';
+} elsif ($temperature < 75) {
+  $label = '';
+} else {
+  $label = '';
+}
 # Print short_text, full_text
-print "$temperature°C\n" x2;
+print "${label}";
+print " $temperature°C\n";
+print "${label}";
+print " $temperature°C\n";
 
 # Print color, if needed
 if ($temperature >= $t_crit) {
