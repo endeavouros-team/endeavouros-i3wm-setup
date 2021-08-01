@@ -95,7 +95,7 @@ If you have the old EndeavourOS default i3-setup installed you need to remove .X
 (old color profile not used anymore for rofi menus):
 `rm ~.Xresources`
 
-# install needed apps and programms for i3wm:
+**install needed apps and programms for i3wm:**
 
 `sudo pacman -S --needed - < packages-repository.txt`
 
