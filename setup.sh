@@ -1,4 +1,4 @@
-#bin/bash
+#!/bin/bash
 
 if [ -f /tmp/new_username.txt ]
 then
