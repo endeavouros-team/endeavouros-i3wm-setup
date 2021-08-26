@@ -12,35 +12,45 @@
 # The color will gradually change for a percentage below 85%, and the urgency
 # (exit code 33) is set if there is less that 5% remaining.
 
+# Edited by Andreas Lindlbauer <endeavouros.mousily@aleeas.com>
+
 use strict;
 use warnings;
 use utf8;
 
-my $acpi;
-my $status;
+# my $acpi;
+my $upower;
 my $percent;
+my $bat_state;
+my $status;
 my $ac_adapt;
 my $full_text;
 my $short_text;
-my $bat_number = $ENV{BLOCK_INSTANCE} || 0;
-
-# read the first line of the "acpi" command output
-open (ACPI, "acpi -b | grep 'Battery $bat_number' |") or die;
-$acpi = <ACPI>;
-close(ACPI);
+my $label = '😅';
+open (UPOWER, "upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep 'percentage' |") or die;
+$upower = <UPOWER>;
+close(UPOWER);
 
 # fail on unexpected output
-if ($acpi !~ /: (\w+), (\d+)%/) {
-	die "$acpi\n";
+if ($upower !~ /:          (\d+)%/) {
+	die "$upower\n";
 }
 
-$status = $1;
-$percent = $2;
+$percent = $1;
 $full_text = "$percent%";
 
-if ($status eq 'Discharging') {
+open (BAT_STATE, "upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep 'state' |") or die;
+$bat_state = <BAT_STATE>;
+close(BAT_STATE);
+
+if ($bat_state !~ /:               (\w+)/) {
+	die "$bat_state\n";
+}
+$status = $1;
+
+if ($status eq 'discharging') {
 	$full_text .= ' ';
-} elsif ($status eq 'Charging') {
+} elsif ($status eq 'charging') {
 	$full_text .= ' ';
 } elsif ($status eq 'Unknown') {
 	open (AC_ADAPTER, "acpi -a |") or die;
@@ -60,16 +70,26 @@ if ($status eq 'Discharging') {
 
 $short_text = $full_text;
 
-if ($acpi =~ /(\d\d:\d\d):/) {
-	$full_text .= " ($1)";
+if ($percent < 20) {
+  $label = '';
+} elsif ($percent < 45) {
+  $label = '';
+} elsif ($percent < 70) {
+  $label = '';
+} elsif ($percent < 95) {
+  $label = '';
+} else {
+  $label = '';
 }
 
 # print text
-print "$full_text\n";
-print "$short_text\n";
+print " ${label}";
+print " $full_text\n";
+print " ${label}";
+print " $short_text\n";
 
 # consider color and urgent flag only on discharge
-if ($status eq 'Discharging') {
+if ($status eq 'discharging') {
 
 	if ($percent < 20) {
 		print "#FF0000\n";
