@@ -23,7 +23,7 @@
 # Main shortcuts:
 [mod] key is set to the winkey (or should i call it linkey?)
 
-<img src="https://raw.githubusercontent.com/endeavouros-team/screenshots/master/linkey.png" alt="drawing" width="400"/>
+<img src="https://raw.githubusercontent.com/endeavouros-team/screenshots/master/linkey.png" alt="drawing" width="250"/>
 
 ![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/eos-i3-main-shortcuts.png "main-shortcuts")
 
