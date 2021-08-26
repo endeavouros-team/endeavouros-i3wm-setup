@@ -7,7 +7,7 @@ i3~+Shift+e~Fancy exit-menu on bottom right:
 i3~+l~Locks the screen with a picture or blurring the screen (options in config)
 i3~+Shift+c~Reload the configuration file
 i3~+Shift+r~Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-i3~+F1~Full keybinding list in editor:
+i3~+F1~rofi-shortcuts Menu
 i3~+j~Change windows focus left
 i3~+k~Change windows focus down
 i3~+b~Change windows focus up
