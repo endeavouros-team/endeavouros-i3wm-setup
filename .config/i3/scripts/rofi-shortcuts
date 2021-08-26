@@ -7,6 +7,6 @@ grep -v "|#|" -h ~/.config/i3/keybindings |
  		-location 2\
  		-dmenu\
  		-i\
- 		-p 'Cheat-Cuts'\
+ 		-p 'Shortcuts'\
  		-hide-scrollbar
 
