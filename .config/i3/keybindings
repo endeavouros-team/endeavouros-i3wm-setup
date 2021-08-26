@@ -1,103 +1,53 @@
-EndeavourOS i3wm Keybindings cheat sheet:
+~ = windows key~EndeavourOS i3wm Keybindings cheat sheet:
+i3~+Return~Start xfce4-terminal
+i3~+c~kill focused window
+i3~F9 or +i~Application menu search by typing (fancy Rofi menu):
+i3~F10 or +t~Window switcher menu (fancy Rofu menu):
+i3~+Shift+e~Fancy exit-menu on bottom right:
+i3~+l~Locks the screen with a picture or blurring the screen (options in config)
+i3~+Shift+c~Reload the configuration file
+i3~+Shift+r~Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+i3~+F1~Full keybinding list in editor:
+i3~+j~Change windows focus left
+i3~+k~Change windows focus down
+i3~+b~Change windows focus up
+i3~+o~Change windows focus right
+i3~alternatively~You can use the cursor keys:
+i3~+Left~Focus left
+i3~+Down~Focus down
+i3~+Up~Focus up
+i3~+Right~Focus right
+i3~Binds Below~Move a focused window
+i3~+Shift+j~Move left
+i3~+Shift+k~Move down
+i3~+Shift+b~Move up
+i3~+Shift+o~Move right
+i3~Alternatively~You can use the cursor keys:
+i3~+Shift+Left~Move left
+i3~+Shift+Down~Move down
+i3~+Shift+Up~Move up
+i3~+Shift+Right~Move right
+i3~Binds Below~Split in horizontal orientation
+i3~+h~split h  	-split in horizontal orientantion
+i3~+v~split v		- split in vertical orientation
+i3~+f~Fullscreen toggle -enter fullscreen mode for the focused container
+i3~Layouts~(stacked, tabbed, toggle split)
+i3~+s~Layout stacking
+i3~+g~Layout tabbed
+i3~+e~Layout toggle split
+i3~+Shift+space~Floating toggle (tiling / floating)
+i3~+space~Focus mode_toggle -change focus between tiling / floating windows
+i3~+a~Focus parent -focus the parent container
+i3~+d~Focus child -focus the child container
+i3~+right~Mouse button -resize floating window
+i3~+p~Multimedia Keys -Redirect sound to headphones
+i3~+w~Starts Firefox
+i3~+n~Starts Thunar
+i3~Print~Take a  screenshot
+##~-->~to update this run the following command:
+##~wget --~backups=1 https://raw.githubusercontent.com/endeavouros-team/i3-EndeavourOS/master/.config/i3/keybindings -P ~/.config/i3/
+##~##~All sources and updates are available at GitHub:
+##~##~https://github.com/endeavouros-team/i3-EndeavourOS
+##~##~For reference consult our WIKI:
+##~##~https://endeavouros.com/docs/window-tiling-managers/i3-wm/
 
---> to update this run the following command:
-wget --backups=1 https://raw.githubusercontent.com/endeavouros-team/i3-EndeavourOS/master/.config/i3/keybindings -P ~/.config/i3/
-
-All sources and updates are available at GitHub:
-https://github.com/endeavouros-team/i3-EndeavourOS
-
-For reference consult our WIKI:
-https://endeavouros.com/docs/window-tiling-managers/i3-wm/
-
- = windows key
-
-# start xfce4-terminal
-+Return 
-
-# kill focused window
-+c
-
-# Application menu search by typing (fancy Rofi menu):
-F9 or +i
-
-# Window switcher menu (fancy Rofu menu):
-F10 or +t
-
-# fancy exit-menu on bottom right:
-+Shift+e
-
-# Lock the system
-# lock with a picture or blurring the screen (options in config)
-+l
-
-# reload the configuration file
-+Shift+c
-
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-+Shift+r
-
-# full keybinding list in editor:
-+F1
-
-# change window focus
-+j focus left
-+k focus down
-+b focus up
-+o focus right
-
-# alternatively, you can use the cursor keys:
-+Left focus left
-+Down focus down
-+Up focus up
-+Right focus right
-
-# move a focused window
-+Shift+j move left
-+Shift+k move down
-+Shift+b move up
-+Shift+o move right
-
-# alternatively, you can use the cursor keys:
-+Shift+Left move left
-+Shift+Down move down
-+Shift+Up move up
-+Shift+Right move right
-
-# split in horizontal orientation
-+h split h
-
-# split in vertical orientation
-+v split v
-
-# enter fullscreen mode for the focused container
-+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-+s layout stacking
-+g layout tabbed
-+e layout toggle split
-
-# toggle tiling / floating
-+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-+space focus mode_toggle
-
-# focus the parent container
-+a focus parent
-
-# focus the child container
-#+d focus child
-
-# resize floating window
-+right mouse button
-
-## Multimedia Keys
-
-# Redirect sound to headphones
-+p
-
-## App shortcuts
-+w starts Firefox
-+n starts Thunar
-Print Button screenshot
