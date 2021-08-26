@@ -186,7 +186,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # keybinding list in editor:
-bindsym $mod+F1 exec xed ~/.config/i3/keybindings
+bindsym $mod+F1 exec no-startup-id ~/.config/i3/scripts/rofi-shortcuts
 
 # Backlight control
 bindsym XF86MonBrightnessUp exec xbacklight +10
