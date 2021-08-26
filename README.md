@@ -2,6 +2,7 @@
 
 # endeavouros-i3wm-setup
 **maintainer: joekamprad --->  setup for i3-wm under [EndeavourOS](https://endeavouros.com) new config 01-2021 <---**
+[![Maintenance](https://img.shields.io/maintenance/yes/2021.svg)]()
 
 # Tutorial for i3-wm settings:
 * background handled by [nitrogen](https://wiki.archlinux.org/index.php/nitrogen)
@@ -22,7 +23,7 @@
 # Main shortcuts:
 [mod] key is set to the winkey (or should i call it linkey?)
 
-![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/linkey.png "modkey")
+<img src="https://raw.githubusercontent.com/endeavouros-team/screenshots/master/linkey.png" alt="drawing" width="400"/>
 
 ![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/eos-i3-main-shortcuts.png "main-shortcuts")
 
