@@ -1,13 +1,13 @@
 EndeavourOS i3wm Keybindings cheat sheet:
 
 --> to update this run the following command:
-wget --backups=1 https://raw.githubusercontent.com/endeavouros-team/i3-EndeavourOS/master/.config/i3/keybindings -P ~/.config/i3/
+wget --backups=1 https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/main/.config/i3/keybindings -P ~/.config/i3/
 
 All sources and updates are available at GitHub:
 https://github.com/endeavouros-team/i3-EndeavourOS
 
 For reference consult our WIKI:
-https://endeavouros.com/docs/window-tiling-managers/i3-wm/
+https://discovery.endeavouros.com/window-tiling-managers/i3-wm/
 
  = windows key
 
