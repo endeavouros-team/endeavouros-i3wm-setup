@@ -100,4 +100,64 @@ F10 or +t
 ## App shortcuts
 +w starts Firefox
 +n starts Thunar
+
+
+
+##########################################
+# Hidden pull request for testing propuses
+##########################################
+#~ = windows key~EndeavourOS i3wm Keybindings cheat sheet:
+#i3~+Return~Start xfce4-terminal
+#i3~+c~kill focused window
+#i3~F9 or +i~Application menu search by typing (fancy Rofi menu):
+#i3~F10 or +t~Window switcher menu (fancy Rofu menu):
+#i3~+Shift+e~Fancy exit-menu on bottom right:
+#i3~+l~Locks the screen with a picture or blurring the screen (options in config)
+#i3~+Shift+c~Reload the configuration file
+#i3~+Shift+r~Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+#i3~+F1~Full keybinding list in editor:
+#i3~+j~Change windows focus left
+#i3~+k~Change windows focus down
+#i3~+b~Change windows focus up
+#i3~+o~Change windows focus right
+#i3~alternatively~You can use the cursor keys:
+#i3~+Left~Focus left
+#i3~+Down~Focus down
+#i3~+Up~Focus up
+#i3~+Right~Focus right
+#i3~Binds Below~Move a focused window
+#i3~+Shift+j~Move left
+#i3~+Shift+k~Move down
+#i3~+Shift+b~Move up
+#i3~+Shift+o~Move right
+#i3~Alternatively~You can use the cursor keys:
+#i3~+Shift+Left~Move left
+#i3~+Shift+Down~Move down
+#i3~+Shift+Up~Move up
+#i3~+Shift+Right~Move right
+#i3~Binds Below~Split in horizontal orientation
+#i3~+h~split h  	-split in horizontal orientantion
+#i3~+v~split v		- split in vertical orientation
+#i3~+f~Fullscreen toggle -enter fullscreen mode for the focused container
+#i3~Layouts~(stacked, tabbed, toggle split)
+#i3~+s~Layout stacking
+#i3~+g~Layout tabbed
+#i3~+e~Layout toggle split
+#i3~+Shift+space~Floating toggle (tiling / floating)
+#i3~+space~Focus mode_toggle -change focus between tiling / floating windows
+#i3~+a~Focus parent -focus the parent container
+#i3~+d~Focus child -focus the child container
+#i3~+right~Mouse button -resize floating window
+#i3~+p~Multimedia Keys -Redirect sound to headphones
+#i3~+w~Starts Firefox
+#i3~+n~Starts Thunar
+#i3~Print~Take a  screenshot
+###~-->~to update this run the following command:
+###~wget --~backups=1 https://raw.githubusercontent.com/endeavouros-team/i3-EndeavourOS/master/.config/i3/keybindings -P ~/.config/i3/
+###~##~All sources and updates are available at GitHub:
+###~##~https://github.com/endeavouros-team/i3-EndeavourOS
+###~##~For reference consult our WIKI:
+###~##~https://endeavouros.com/docs/window-tiling-managers/i3-wm/
+
+
 Print Button screenshot

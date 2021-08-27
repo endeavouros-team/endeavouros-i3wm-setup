@@ -188,6 +188,14 @@ bindsym $mod+Shift+r restart
 # keybinding list in editor:
 bindsym $mod+F1 exec xed ~/.config/i3/keybindings
 
+##########################################
+# Hidden Pull Request for testing propuses
+##########################################
+# keybinding list in editor:
+#bindsym $mod+F1 exec no-startup-id rofi-shortcuts
+##########################################
+
+
 # Backlight control
 bindsym XF86MonBrightnessUp exec xbacklight +10
 bindsym XF86MonBrightnessDown exec xbacklight -10
