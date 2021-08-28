@@ -188,6 +188,10 @@ bindsym $mod+Shift+r restart
 # keybinding list in editor:
 bindsym $mod+F1 exec xed ~/.config/i3/keybindings
 
+# Uncomment to use rofi script instead
+# keybinding list rofi script
+#bindsym $mod+F1 exec xed ~/.config/i3/rofi-shortcuts
+
 # Backlight control
 bindsym XF86MonBrightnessUp exec xbacklight +10
 bindsym XF86MonBrightnessDown exec xbacklight -10
