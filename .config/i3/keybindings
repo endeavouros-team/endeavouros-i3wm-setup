@@ -24,7 +24,11 @@ F9 or +i
 F10 or +t
 
 # fancy exit-menu on bottom right:
-+Shift+e
+#+Shift+e
+
+# Temporary workaround to fancy exit-menu
+# i3-exit mode:
++0
 
 # Lock the system
 # lock with a picture or blurring the screen (options in config)
