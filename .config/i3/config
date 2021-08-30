@@ -171,7 +171,24 @@ bindsym $mod+Return exec xfce4-terminal
 bindsym $mod+c kill
 
 # exit-menu
-bindsym $mod+Shift+e exec ~/.config/i3/scripts/shutdown_menu -p rofi -c
+#bindsym $mod+Shift+e exec ~/.config/i3/scripts/shutdown_menu -p rofi -c
+
+# Set shut down, restart and locking features 
+# Temporary workaround to shutdown_menu
+set $mode_system  (l)ock |  (e)xit |  s(u)spend |  (h)ibernate | ﰇ (r)eboot |  (S)hutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id ~/.config/i3/scripts/blur-lock.sh, mode "default"
+    bindsym u exec --no-startup-id ~/.config/i3/scripts/blur-lock.sh && systemctl suspend, mode "default" 
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym h exec --no-startup-id ~/.config/i3/scripts/blur-lock.sh && systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym s exec --no-startup-id systemctl poweroff, mode "default"
+
+    # exit system mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+#: }}}
 
 # Lock the system
 # lock with a picture:
