@@ -6,7 +6,7 @@ network-manager-applet
 arandr
 archlinux-xdg-menu
 lxappearance-gtk3
-otf-font-awesome
+awesome-terminal-fonts
 dmenu
 polkit-gnome
 xdg-user-dirs-gtk
@@ -18,8 +18,6 @@ tumbler
 gvfs
 gvfs-mtp
 gvfs-afc
-gvfs-goa
-gvfs-google
 gvfs-gphoto2
 gvfs-nfs
 gvfs-smb
