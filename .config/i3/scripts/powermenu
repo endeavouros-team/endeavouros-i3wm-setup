@@ -22,6 +22,8 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+# modified to work with latest rofi update by joekamprad <joekamprad@endeavouros.com>
+
 #######################################################################
 #                            BEGIN CONFIG                             #
 #######################################################################
@@ -37,7 +39,6 @@ HLBG_COLOR="#bbbbbb"
 BORDER_COLOR="#222222"
 
 # Options not related to colors (most rofi options do not work anymore)
-ROFI_TEXT=":"
 ROFI_OPTIONS=(-theme ~/.config/rofi/powermenu.rasi)
 # Zenity options
 ZENITY_TITLE="Power Menu"
