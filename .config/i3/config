@@ -171,7 +171,7 @@ bindsym $mod+Return exec xfce4-terminal
 bindsym $mod+c kill
 
 # exit-menu
-bindsym $mod+Shift+e exec ~/.config/i3/scripts/shutdown_menu -p rofi -c
+bindsym $mod+Shift+e exec ~/.config/i3/scripts/powermenu rofi -theme ~/.config/rofi/powermenu.rasi
 
 # Lock the system
 # lock with a picture:
@@ -478,20 +478,20 @@ strip_workspace_numbers yes
 
 ## rofi bindings fancy application menu (two bindings F9/$mod+d)
 
-bindsym $mod+d exec rofi -modi drun -show drun -display-drun "Apps : " -line-padding 4 \
-                -columns 2 -padding 50 -hide-scrollbar \
-                -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 11"
+bindsym $mod+d exec rofi -modi drun -show drun -display-drun "Apps " -line-padding 4 \
+                -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 11" \
+		-config ~/.config/rofi/rofidmenu.rasi
                 
-bindsym F9 exec rofi -modi drun -show drun -display-drun "Apps : " -line-padding 4 \
-                -columns 2 -padding 30 -hide-scrollbar \
-                -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 11"
-
+bindsym F9 exec rofi -modi drun -show drun -display-drun "Apps " -line-padding 4 \
+                -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 11" \
+		-config ~/.config/rofi/rofidmenu.rasi
+		
 ## rofi bindings for window menu (two bindings F10/$mod+t)
 
-bindsym $mod+t exec rofi -show window -display-window "Window : " -line-padding 4 \
-                -lines 10 -padding 50 -hide-scrollbar \
-                -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 11"
+bindsym $mod+t exec rofi -show window -display-window "Window " -line-padding 4 \
+                -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 11" \
+		-config ~/.config/rofi/rofidmenu.rasi 
 
-bindsym F10 exec rofi -show window -display-window "Window : " -line-padding 4 \
-                -lines 10 -padding 50 -hide-scrollbar \
-                -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 11"
+bindsym F10 exec rofi -show window -display-window "Window " -line-padding 4 \
+                -show-icons -drun-icon-theme "Arc-X-D" -font "Noto Sans Regular 11" \
+		-config ~/.config/rofi/rofidmenu.rasi 
