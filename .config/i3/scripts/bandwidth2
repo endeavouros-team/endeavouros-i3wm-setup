@@ -9,7 +9,7 @@ iface="${BLOCK_INSTANCE}"
 iface="${IFACE:-$iface}"
 dt="${DT:-3}"
 unit="${UNIT:-MB}"
-LABEL="${LABEL:-<span font='FontAwesome'> </span>}" # down arrow up arrow
+LABEL="${LABEL:-<span font='FontAwesome'> </span>}" # down arrow up arrow
 printf_command="${PRINTF_COMMAND:-"printf \"${LABEL}%1.0f/%1.0f %s/s\\n\", rx, wx, unit;"}"
 
 function default_interface {
