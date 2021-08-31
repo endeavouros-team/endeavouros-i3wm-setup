@@ -173,9 +173,9 @@ bindsym $mod+c kill
 # exit-menu
 #bindsym $mod+Shift+e exec ~/.config/i3/scripts/shutdown_menu -p rofi -c
 
-
+# Temporary replecment for shutdown_menu
 # Set shut down, restart and locking features
-bindsym $mod+0				mode "$mode_system"
+bindsym $mod+Shift+e 	mode "$mode_system"
 # Temporary workaround to shutdown_menu
 set $mode_system  (l)ock |  (e)xit |  s(u)spend |  (h)ibernate | ﰇ (r)eboot |  (S)hutdown
 mode "$mode_system" {
