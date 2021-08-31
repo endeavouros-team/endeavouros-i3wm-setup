@@ -40,7 +40,7 @@ window {
     padding:          5;
 }
 listview {
-    lines:                          15;
+    lines:                          10;
     columns:                        3;
 }
 mainbox {
