@@ -38,17 +38,17 @@ listview {
     lines:                          6;
     columns:                        1;
 }
-
 window {
-    background-color:            @background;
-    border:                        1;
-    padding:                          2;
+    background-color:               @background;
+    border:                         1;
+    padding:                        2;
     transparency:                   "real";
     width:                          150px;
     location:                       4;
     y-offset:                       18;
-	x-offset:                        400;
-    hide-scrollbar:                 true;
+    x-offset:	                    850;
+    font:                           "Sourcecode Pro Regular 10";
+    transparency:                   "real";
 }
 element {
     border:  0;
