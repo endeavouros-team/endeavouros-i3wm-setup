@@ -38,10 +38,11 @@ window {
     background-color: @background;
     border:           1;
     padding:          5;
+    font:             "Sourcecode Pro Regular 10";
 }
 listview {
     lines:                          10;
-    columns:                        3;
+    columns:                        2;
 }
 mainbox {
     border:  0;
