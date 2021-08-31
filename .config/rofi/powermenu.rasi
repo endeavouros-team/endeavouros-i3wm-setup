@@ -45,8 +45,7 @@ window {
     transparency:                   "real";
     width:                          150px;
     location:                       4;
-    y-offset:                       18;
-    x-offset:	                    850;
+    x-offset:	                    410;
     font:                           "Sourcecode Pro Regular 10";
     transparency:                   "real";
 }
