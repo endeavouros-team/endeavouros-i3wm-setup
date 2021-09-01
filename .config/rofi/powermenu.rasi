@@ -2,16 +2,15 @@
  * ROFI configs i3 powermenu for EndeavourOS
  * Maintainer: joekamprad <joekamprad@endeavouros.com>
  *******************************************************/
-
 configuration {
     font:                           "Sourcecode Pro Regular 10";
     show-icons:                     false;
-	icon-theme: 					"Arc-X-D";
+    icon-theme: 		    "Arc-X-D";
     scroll-method:                  0;
     disable-history:                false;
     fullscreen:                     false;
-	hide-scrollbar: 				true;
-	sidebar-mode: 					false;
+    hide-scrollbar: 		    true;
+    sidebar-mode: 		    false;
 }
 
 @import "~/.config/rofi/arc_dark_colors.rasi"
