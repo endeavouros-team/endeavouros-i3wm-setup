@@ -24,7 +24,7 @@ window {
     width:                          120px;
     location:                       4;
     y-offset:                       18;
-    x-offset:	                    850;
+    x-offset:	                    420;
     transparency:                   "real";
 }
 listview {
