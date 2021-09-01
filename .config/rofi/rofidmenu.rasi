@@ -3,16 +3,16 @@
  * Maintainer: joekamprad <joekamprad@endeavouros.com>
  *******************************************************/
 configuration {
-    font:                           "Sourcecode Pro Regular 10";
-    show-icons:                     true;
-	icon-theme: 					"Arc-X-D";
-    display-drun: 					"Apps";
-    drun-display-format:            "{name}";
-    scroll-method:                  0;
-    disable-history:                false;
-    fullscreen:                     false;
-	hide-scrollbar: 				true;
-	sidebar-mode: 					false;
+    font:				"Sourcecode Pro Regular 10";
+    show-icons:				true;
+    icon-theme:				"Arc-X-D";
+    display-drun:			"Apps";
+    drun-display-format:		"{name}";
+    scroll-method:			0;
+    disable-history:			false;
+    fullscreen:				false;
+    hide-scrollbar:			true;
+    sidebar-mode:			false;
 }
 
 @import "~/.config/rofi/arc_dark_colors.rasi"
