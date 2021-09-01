@@ -1,49 +1,30 @@
-/************************************************
- * ROFI Color theme Arch Dark
- * User: leofa
- * Copyright: 2017 leofa
- * modified by joekamprad 2021 for EndeavourOS
- ***********************************************/
-
-* {
-    selected-normal-foreground:  rgba ( 249, 249, 249, 100 % );
-    foreground:                  rgba ( 196, 203, 212, 100 % );
-    normal-foreground:           @foreground;
-    alternate-normal-background: rgba ( 64, 69, 82, 59 % );
-    red:                         rgba ( 220, 50, 47, 100 % );
-    selected-urgent-foreground:  rgba ( 249, 249, 249, 100 % );
-    blue:                        rgba ( 38, 139, 210, 100 % );
-    urgent-foreground:           rgba ( 204, 102, 102, 100 % );
-    alternate-urgent-background: rgba ( 75, 81, 96, 90 % );
-    active-foreground:           rgba ( 101, 172, 255, 100 % );
-    lightbg:                     rgba ( 238, 232, 213, 100 % );
-    selected-active-foreground:  rgba ( 249, 249, 249, 100 % );
-    alternate-active-background: rgba ( 75, 81, 96, 89 % );
-    background:                  rgba ( 45, 48, 59, 95 % );
-    alternate-normal-foreground: @foreground;
-    normal-background:           @background;
-    lightfg:                     rgba ( 88, 104, 117, 100 % );
-    selected-normal-background:  rgba ( 64, 132, 214, 100 % );
-    border-color:                rgba ( 124, 131, 137, 100 % );
-    spacing:                     2;
-    separatorcolor:              rgba ( 29, 31, 33, 100 % );
-    urgent-background:           rgba ( 29, 31, 33, 17 % );
-    selected-urgent-background:  rgba ( 165, 66, 66, 100 % );
-    alternate-urgent-foreground: @urgent-foreground;
-    background-color:            rgba ( 0, 0, 0, 0 % );
-    alternate-active-foreground: @active-foreground;
-    active-background:           rgba ( 29, 31, 33, 17 % );
-    selected-active-background:  rgba ( 68, 145, 237, 100 % );
+/*******************************************************
+ * ROFI configs i3 Apps menu for EndeavourOS
+ * Maintainer: joekamprad <joekamprad@endeavouros.com>
+ *******************************************************/
+configuration {
+    font:                           "Sourcecode Pro Regular 10";
+    show-icons:                     true;
+	icon-theme: 					"Arc-X-D";
+    display-drun: 					"Apps";
+    drun-display-format:            "{name}";
+    scroll-method:                  0;
+    disable-history:                false;
+    fullscreen:                     false;
+	hide-scrollbar: 				true;
+	sidebar-mode: 					false;
 }
+
+@import "~/.config/rofi/arc_dark_colors.rasi"
+
 window {
     background-color: @background;
-    border:           1;
-    padding:          5;
-    font:             "Sourcecode Pro Regular 10";
+    border:           0;
+    padding:          10;
 }
 listview {
     lines:                          10;
-    columns:                        2;
+    columns:                        3;
 }
 mainbox {
     border:  0;
@@ -59,10 +40,10 @@ textbox {
 }
 listview {
     fixed-height: 0;
-    border:       2px 0px 0px ;
+    border:       8px 0px 0px ;
     border-color: @separatorcolor;
-    spacing:      2px ;
-    scrollbar:    true;
+    spacing:      8px ;
+    scrollbar:    false;
     padding:      2px 0px 0px ;
 }
 element {
