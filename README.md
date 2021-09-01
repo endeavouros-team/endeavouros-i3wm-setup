@@ -104,6 +104,8 @@ If you have the old EndeavourOS default i3-setup installed you need to remove .X
 or use the `setup.sh`:
 `wget https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/main/setup.sh`
 
+# warning this will may overwrite existing files!
+
 ![i3-fresh-screenshot](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/eos-i3-fresh.png)
 ![i3-fresh-screenshot-menu](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/eos-rofi-menu.png)
 
