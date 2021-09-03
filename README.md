@@ -129,7 +129,7 @@ If you have the old EndeavourOS default i3-setup installed you need to remove .X
 # screenshots:
 
 
-![i3-fresh-screenshot](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/screen-appmenmu.png)
+![i3-fresh-screenshot](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/screen-appmenu.png)
 
 ![i3-fresh-screenshot](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/screen.png)
 
