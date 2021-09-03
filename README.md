@@ -65,13 +65,30 @@ get your api key here: https://openweathermap.org/appid and City code: https://o
 # panel bar (i3-blocks):
 ![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/blocks-bar-i3.png "bar legende")
 * CONFIG FILE = ~/.config/i3/i3blocks.conf
-# Logout Menu:
+# Logout Menu (rofi):
 ![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/power-menu-i3.png "logout-menu")
-* CONFIG FILE = ~/.config/i3/scripts/shutdown_menu
+* CONFIG FILE = ~/.config/i3/scripts/powermenu
 # application menu (rofi):
 ![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/rofi-desktop-menu.png "application-menu")
-* rofi color-scheme: ~/.config/rofi/config.rasi
+* rofi color-schemes: ~/.config/rofi/arc_dark_transparent_colors.rasi
 
+## theming/colorsheme for rofi menus (application menu and Logout menu):
+
+They can be adjust and chenged inside ~/.config/rofi directory:
+
+# Configurations for the menus:
+
+* `~/.config/rofi/rofidmenu.rasi`
+* `~/.config/rofi/powermenu.rasi`
+
+# colorschemes:
+
+* `~/.config/rofi/arc_dark_transparent_colors.rasi`
+* `~/.config/rofi/arc_dark_colors-ori.rasi`
+
+colors are in rgba calling transparency in the last colum:
+
+`rgba ( 26, 28, 35, 100 % )`
 
 
 
