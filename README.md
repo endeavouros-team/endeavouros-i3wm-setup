@@ -69,7 +69,7 @@ get your api key here: https://openweathermap.org/appid and City code: https://o
 ![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/logout-menu.png "logout-menu")
 * CONFIG FILE = ~/.config/i3/scripts/powermenu
 # application menu (rofi):
-![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/appmenu "appmenu")
+![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/appmenu.png "appmenu")
 * rofi color-schemes: ~/.config/rofi/arc_dark_transparent_colors.rasi
 
 ## theming/colorsheme for rofi menus (application menu and Logout menu):
