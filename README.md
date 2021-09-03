@@ -63,13 +63,13 @@ get your api key here: https://openweathermap.org/appid and City code: https://o
 * logout button (poweroff, logout, suspending, hibernate e.t.c.)
 
 # panel bar (i3-blocks):
-![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/blocks-bar-i3.png "bar legende")
+![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/panel.png "bar legende")
 * CONFIG FILE = ~/.config/i3/i3blocks.conf
 # Logout Menu (rofi):
-![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/power-menu-i3.png "logout-menu")
+![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/logout-menu.png "logout-menu")
 * CONFIG FILE = ~/.config/i3/scripts/powermenu
 # application menu (rofi):
-![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/rofi-desktop-menu.png "application-menu")
+![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/appmenu "appmenu")
 * rofi color-schemes: ~/.config/rofi/arc_dark_transparent_colors.rasi
 
 ## theming/colorsheme for rofi menus (application menu and Logout menu):
@@ -124,6 +124,5 @@ If you have the old EndeavourOS default i3-setup installed you need to remove .X
 
 # warning this will may overwrite existing files!
 
-![i3-fresh-screenshot](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/eos-i3-fresh.png)
-![i3-fresh-screenshot-menu](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/eos-rofi-menu.png)
+![i3-fresh-screenshot](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/screen.png)
 
