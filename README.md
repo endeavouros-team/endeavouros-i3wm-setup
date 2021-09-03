@@ -76,12 +76,12 @@ get your api key here: https://openweathermap.org/appid and City code: https://o
 
 They can be adjust and chenged inside ~/.config/rofi directory:
 
-# Configurations for the menus:
+**Configurations for the menus:**
 
 * `~/.config/rofi/rofidmenu.rasi`
 * `~/.config/rofi/powermenu.rasi`
 
-# colorschemes:
+**colorschemes:**
 
 * `~/.config/rofi/arc_dark_transparent_colors.rasi`
 * `~/.config/rofi/arc_dark_colors-ori.rasi`
