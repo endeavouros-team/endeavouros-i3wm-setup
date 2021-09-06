@@ -6,9 +6,11 @@ exec --no-startup-id ~/set_once.sh
 # Maintainer: joekamprad [joekamprad@endeavouros.com] 
 # https://endeavouros.com
 #
+# iconic font icon search: https://fontawesome.com/v4.7/cheatsheet/
+#
 # --> to update this run the following command (will backup existing setup file)
 # wget --backups=1 https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/main/.config/i3/config -P ~/.config/i3/
-
+#
 # Endeavouros-i3 config file
 # Source for complete framework of our i3 config and theming here: https://github.com/endeavouros-team/endeavouros-i3wm-setup
 # EndeavourOS wiki holds some Information also: https://endeavouros.com/docs/window-tiling-managers/i3-wm/
