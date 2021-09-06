@@ -1,6 +1,6 @@
 # Firefox starting automatic on each login? 
 
-# Start understanding how to configure i3:
+## Start understanding how to configure i3:
 
 
 !! To disable autostarting firefox with this readme edit `~/.config/i3/config` and comment out this line:
