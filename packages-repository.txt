@@ -1,4 +1,3 @@
-endeavouros-skel-i3wm
 arc-gtk-theme-eos
 arc-x-icons-theme
 capitaine-cursors
