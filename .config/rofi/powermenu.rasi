@@ -8,8 +8,6 @@ configuration {
     icon-theme: 		    "Arc-X-D";
     scroll-method:                  0;
     disable-history:                false;
-    fullscreen:                     false;
-    hide-scrollbar: 		    true;
     sidebar-mode: 		    false;
 }
 
@@ -29,6 +27,7 @@ window {
 listview {
     lines:                          6;
     columns:                        1;
+    scrollbar:                     false;
 }
 element {
     border:  0;
