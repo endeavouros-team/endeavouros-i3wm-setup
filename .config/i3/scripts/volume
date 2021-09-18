@@ -23,7 +23,7 @@
 # For ALSA users, you may use "default" for your primary card
 # or you may use hw:# where # is the number of the card desired
 if [[ -z "$MIXER" ]] ; then
-    MIXER="default"
+    MIXER="pulse"
     if command -v pulseaudio >/dev/null 2>&1 && pulseaudio --check ; then
         # pulseaudio is running, but not all installations use "pulse"
         if amixer -D pulse info >/dev/null 2>&1 ; then
