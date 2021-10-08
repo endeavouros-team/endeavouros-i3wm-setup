@@ -17,3 +17,15 @@ https://github.com/endeavouros-team/endeavouros-i3wm-setup/blob/883cd60c572ee219
 **you need to comment out dex starter from `~/.config/i3/config` file !!!**
 
 `#exec --no-startup-id dex -a -s /etc/xdg/autostart/:~/.config/autostart/`
+
+## No transparency? 
+
+enable picom in `~/.config/i3/config` by uncommenting this line:
+
+```
+#transparency 
+exec --no-startup-id picom -CGb
+```
+
+And in some cases you will need to use a different configuration ( Nvidia GPU/Driver p.e. but also others)
+Do some research will help you or ask at the chat or forum.
