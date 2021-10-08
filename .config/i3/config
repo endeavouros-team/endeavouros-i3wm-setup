@@ -351,7 +351,7 @@ exec --no-startup-id blueberry-tray
 
 #transparency 
 #exec --no-startup-id xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
-exec --no-startup-id picom -CGb
+#exec --no-startup-id picom -CGb
 
 #networkmanager-applet
 exec --no-startup-id nm-applet
