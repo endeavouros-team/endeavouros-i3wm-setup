@@ -7,7 +7,7 @@ To disable autostarting firefox with this readme edit `~/.config/i3/config` and 
 
 `#exec --no-startup-id firefox https://github.com/endeavouros-team/endeavouros-i3wm-setup/blob/main/README.md`
 
-`~/.config/i3/config` is the main configuration file for i3, get into this file and configure i3 as you ike, all settings have comments to give you information about the following setting.
+`~/.config/i3/config` is the main configuration file for i3, get into this file and configure i3 as you like, all settings have comments to give you information about the following setting.
 
 https://github.com/endeavouros-team/endeavouros-i3wm-setup/blob/883cd60c572ee219ec0e3792c0f6d0c43ec70ed7/.config/i3/config#L368
 
