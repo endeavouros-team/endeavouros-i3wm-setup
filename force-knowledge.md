@@ -14,9 +14,9 @@ https://github.com/endeavouros-team/endeavouros-i3wm-setup/blob/883cd60c572ee219
 **Warning:**
 **if you install EndeavourOS-i3 aside with a full DE (XFCE4, GNOME, Plasma e.t.c.)** 
 
-**you need to comment out dex starter from `~/.config/i3/config` file !!!**
+**you need to uninstall dex https://archlinux.org/packages/community/any/dex/ as it will run apps only needed in i3 on other desktops:
+`sudo pacman -R dex
 
-`#exec --no-startup-id dex -a -s /etc/xdg/autostart/:~/.config/autostart/`
 
 ## No transparency? 
 
