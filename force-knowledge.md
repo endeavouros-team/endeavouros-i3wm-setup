@@ -14,7 +14,7 @@ https://github.com/endeavouros-team/endeavouros-i3wm-setup/blob/883cd60c572ee219
 **Warning:**
 **if you install EndeavourOS-i3 aside with a full DE (XFCE4, GNOME, Plasma e.t.c.)** 
 
-**you need to uninstall dex https://archlinux.org/packages/community/any/dex/ as it will run apps only needed in i3 on other desktops:
+**you need to uninstall dex https://archlinux.org/packages/community/any/dex/ as it will run apps only needed in i3 on other desktops:**
 `sudo pacman -R dex
 
 
