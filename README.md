@@ -122,6 +122,7 @@ If you have the old EndeavourOS default i3-setup installed you need to remove .X
 
 `wget https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/main/setup.sh`
 
+
 ## warning this will may overwrite existing files!
 
 ---
