@@ -18,10 +18,10 @@ https://discovery.endeavouros.com/window-tiling-managers/i3-wm/
 +q
 
 # Application menu search by typing (fancy Rofi menu):
-F9 or +i
++i
 
 # Window switcher menu (fancy Rofi menu):
-F10 or +t
++t
 
 # fancy exit-menu on bottom right:
 +Shift+e
