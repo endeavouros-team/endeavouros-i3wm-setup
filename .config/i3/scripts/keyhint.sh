@@ -12,11 +12,11 @@ Main() {
         "+Shift+n" "new empty workspace" ""
         "+w" "open Browser" ""
         "+n" "open Filebrowser" ""
-        "+d" "app menu" "(rofi)"
-        "+c" "close focused app" "(kill)"
-        "Print-key" "screenshot" "(scrot)"
-        "+Shift+e" "logout menu" "(rofi)"
-        "+F1" "open keybinding helper" "full list"
+        "+d" "app menu" ""
+        "+c" "close focused app" ""
+        "Print-key" "screenshot" ""
+        "+Shift+e" "logout menu" ""
+        "+F1" "open keybinding helper" ""
     )
 
     "${command[@]}"
