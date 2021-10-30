@@ -9,7 +9,7 @@ Main() {
         "ESC" "close this app" ""
         "=" "modkey" "(set mod Mod4)"
         "+enter" "open a terminal" ""
-        "+Shift+n" "new empty workspace"
+        "+Shift+n" "new empty workspace" ""
         "+w" "open Browser" ""
         "+n" "open Filebrowser" ""
         "+d" "app menu" "(rofi)"
