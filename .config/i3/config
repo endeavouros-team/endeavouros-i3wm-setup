@@ -338,6 +338,8 @@ exec --no-startup-id dex -a -s /etc/xdg/autostart/:~/.config/autostart/
 
 # num lock activated
 #exec --no-startup-id numlockx on
+# configure multiple keyboard layouts and hotkey to switch (Alt+CAPSLOCK in this example)
+#exec --no-startup-id setxkbmap -layout 'us,sk' -variant altgr-intl,qwerty -option 'grp:alt_caps_toggle'
 
 # start conky: 
 #exec_always --no-startup-id conky
