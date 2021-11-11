@@ -13,7 +13,7 @@ Main() {
         "+w" "open Browser" ""
         "+n" "open Filebrowser" ""
         "+d" "app menu" ""
-        "+c" "close focused app" ""
+        "+q" "close focused app" ""
         "Print-key" "screenshot" ""
         "+Shift+e" "logout menu" ""
         "+F1" "open keybinding helper" ""
