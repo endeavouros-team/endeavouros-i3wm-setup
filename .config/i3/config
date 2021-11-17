@@ -349,18 +349,20 @@ exec --no-startup-id ~/.screenlayout/monitor.sh
 # start blueberry app for managing bluetooth devices from tray:
 exec --no-startup-id blueberry-tray
 
-#transparency 
+# transparency 
+# uncomment one of them to be used (picom package is installed per default)
+# options could need changes, related to used GPU and drivers
 #exec --no-startup-id xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
 #exec --no-startup-id picom -CGb
 
-#networkmanager-applet
+# networkmanager-applet
 exec --no-startup-id nm-applet
 
 # set wallpaper
 exec --no-startup-id nitrogen --restore
 #exec --no-startup-id feh --bg-fill /usr/share/endeavouros/backgrounds/endeavouros_i3.png
 
-#set powersavings for display:
+# set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
 
 # Desktop notifications
@@ -376,7 +378,7 @@ for_window [class="Yad" instance="yad"] floating enable
 for_window [class="Galculator" instance="galculator"] floating enable
 for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
 
-#set floating (nontiling) for special apps
+# set floating (nontiling) for special apps
 for_window [class="Xsane" instance="xsane"] floating enable
 for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
 for_window [class="qt5ct" instance="qt5ct"] floating enable
