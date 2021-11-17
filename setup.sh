@@ -7,6 +7,7 @@ cp .gtkrc-2.0 ~/
 cp .nanorc ~/
 dbus-launch dconf load / < ~/xed.dconf
 sed -i 's|\(exec --no-startup-id ~/set_once.sh\)|# \1|' ~/.config/i3/config
-sudo pacman -S --needed - < packages-repository.txt
+wget https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-packages-lists/master/i3
+sudo pacman -S --needed - < i3
 cd ..
 rm -rf endeavouros-i3wm-setup
