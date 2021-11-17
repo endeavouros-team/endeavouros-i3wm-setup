@@ -114,6 +114,7 @@ If you have the old EndeavourOS default i3-setup installed you need to remove .X
 `rm ~.Xresources`
 
 **install needed apps and programms for i3wm:**
+We do use now the default packages lists repo for all packages lists:
 
 `wget https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-packages-lists/master/i3`
 `sudo pacman -S --needed - < i3`
