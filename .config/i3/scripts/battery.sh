@@ -18,6 +18,9 @@ use strict;
 use warnings;
 use utf8;
 
+# otherwise we get in console "Wide character in print at"
+binmode(STDOUT, ':utf8');
+
 # my $acpi;
 my $upower;
 my $percent;
