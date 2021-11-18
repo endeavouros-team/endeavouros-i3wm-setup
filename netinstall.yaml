@@ -186,6 +186,7 @@
     - seahorse
     - numlockx
     - meld
+    - nano-syntax-highlighting
 - name: "Printing-Support"
   description: "Support for printing (Cups)"
   hidden: false

@@ -46,3 +46,4 @@ galculator
 gthumb
 celluloid
 numlockx
+nano-syntax-highlighting
