@@ -90,7 +90,7 @@
     - sof-firmware
     - ffmpegthumbnailer
     - poppler-glib
-    - libgsf 
+    - libgsf
     - libopenraw
     - freetype2
     - gst-libav
@@ -119,7 +119,7 @@
     - eos-update-notifier
     - eos-hooks
     - mkinitcpio-openswap
-    - pcurses    
+    - pcurses
     - eos-log-tool
     - keyserver-rank
     - inxi
@@ -193,17 +193,17 @@
   selected: false
   critical: false
   packages:
-    - cups 
-    - cups-filters 
-    - cups-pdf 
-    - ghostscript 
-    - gsfonts 
+    - cups
+    - cups-filters
+    - cups-pdf
+    - ghostscript
+    - gsfonts
     - foomatic-db-engine
-    - foomatic-db 
-    - foomatic-db-ppds 
-    - foomatic-db-nonfree 
-    - foomatic-db-nonfree-ppds 
-    - gutenprint 
+    - foomatic-db
+    - foomatic-db-ppds
+    - foomatic-db-nonfree
+    - foomatic-db-nonfree-ppds
+    - gutenprint
     - foomatic-db-gutenprint-ppds
     - splix
     - system-config-printer
