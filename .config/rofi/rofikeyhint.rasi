@@ -1,5 +1,5 @@
 /*******************************************************
- * ROFI configs i3 Apps menu for EndeavourOS
+ * ROFI configs i3 keyhint-menu for EndeavourOS
  * Maintainer: joekamprad <joekamprad@endeavouros.com>
  *******************************************************/
 configuration {
@@ -15,7 +15,7 @@ configuration {
 	sidebar-mode: 					false;
 }
 
-@import "~/.config/rofi/arc_dark_colors.rasi"
+@import "~/.config/rofi/arc_dark_transparent_colors.rasi"
 
 window {
     background-color: @background;
