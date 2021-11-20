@@ -36,3 +36,10 @@ Disable battery indicator in i3blocks.conf:
 #label=
 #interval=30
 ```
+
+## Enable autostart implementation:
+[dex](https://github.com/jceb/dex) is now disabled in config per default to use the feature:
+enable dex in `~/.config/i3/config` by uncommenting this line:
+
+```
+exec --no-startup-id dex -a -s /etc/xdg/autostart/:~/.config/autostart/
