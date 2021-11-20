@@ -25,7 +25,7 @@ inside `~/.config/i3/config`.
 
 <img src="https://raw.githubusercontent.com/endeavouros-team/screenshots/master/linkey.png" alt="drawing" width="250"/>
 
-![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/eos-i3-main-shortcuts.png "main-shortcuts")
+![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/keyhint-nov21.png "main-shortcuts")
 
 # default i3-wm keycodes: 
 https://i3wm.org/docs/userguide.html#_default_keybindings
@@ -65,7 +65,7 @@ get your api key here: https://openweathermap.org/appid and City code: https://o
 ![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/panel.png "bar legende")
 * CONFIG FILE = ~/.config/i3/i3blocks.conf
 # Logout Menu (rofi):
-![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/logout-menu.png "logout-menu")
+![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/i3-power-nov21.png "logout-menu")
 * CONFIG FILE = ~/.config/i3/scripts/powermenu
 # application menu (rofi):
 ![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/eos-i3-shot-nov21.png "appmenu")
