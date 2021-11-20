@@ -18,6 +18,9 @@ use strict;
 use warnings;
 use utf8;
 
+# otherwise we get in console "Wide character in print at"
+binmode(STDOUT, ':utf8');
+
 # my $acpi;
 my $upower;
 my $percent;
@@ -27,7 +30,9 @@ my $ac_adapt;
 my $full_text;
 my $short_text;
 my $label = '😅';
-open (UPOWER, "upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep 'percentage' |") or die;
+my $bat_number = $ENV{BLOCK_INSTANCE} || 0;
+
+open (UPOWER, "upower -i /org/freedesktop/UPower/devices/battery_BAT$bat_number | grep 'percentage' |") or die;
 $upower = <UPOWER>;
 close(UPOWER);
 
@@ -39,7 +44,7 @@ if ($upower !~ /:          (\d+)%/) {
 $percent = $1;
 $full_text = "$percent%";
 
-open (BAT_STATE, "upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep 'state' |") or die;
+open (BAT_STATE, "upower -i /org/freedesktop/UPower/devices/battery_BAT$bat_number | grep 'state' |") or die;
 $bat_state = <BAT_STATE>;
 close(BAT_STATE);
 
