@@ -33,13 +33,13 @@
     origin = top-right
 
     # Offset from the origin
-    offset = 10x50
+    offset = 30x100
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
 
     # Maximum number of notification (0 means no limit)
-    notification_limit = 0
+    notification_limit = 5
 
     ### Progress bar ###
 
