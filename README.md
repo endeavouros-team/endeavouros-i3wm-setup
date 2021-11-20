@@ -128,10 +128,8 @@ We do use now the default packages lists repo for all packages lists:
 
 ---
 
-# screenshots:
+# screenshot:
 
 
-![i3-fresh-screenshot](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/screen-appmenu.png)
-
-![i3-fresh-screenshot](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/screen.png)
+![i3-fresh-screenshot](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/i3-eos-view-shot-nov21.png)
 
