@@ -43,3 +43,4 @@ enable dex in `~/.config/i3/config` by uncommenting this line:
 
 ```
 exec --no-startup-id dex -a -s /etc/xdg/autostart/:~/.config/autostart/
+```
