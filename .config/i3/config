@@ -337,7 +337,11 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # keep in mind that it can cause issues
 # when second to i3 a DE is installed or mixed usage of i3 + xfce4 or GNOME
 # in this cases better disable dex and use manual starting apps using xdg/autostart
+# if enabled you should comment welcome app.
 #exec --no-startup-id dex -a -s /etc/xdg/autostart/:~/.config/autostart/
+
+# start welcome app
+exec --no-startup-id sh /usr/share/endeavouros/scripts/welcome --startdelay=3 
 
 # num lock activated
 #exec --no-startup-id numlockx on
