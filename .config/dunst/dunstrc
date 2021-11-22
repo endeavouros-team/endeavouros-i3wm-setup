@@ -30,10 +30,10 @@
     height = 300
 
     # Position the notification in the top right corner
-    origin = top-right
+    origin = bottom-right
 
     # Offset from the origin
-    offset = 30x100
+    offset = 30x30
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
