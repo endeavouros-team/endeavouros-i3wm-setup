@@ -383,6 +383,8 @@ exec --no-startup-id xset s 480 dpms 600 600 600
 
 # Desktop notifications
 exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
+# alternative if you installed aside with XFCE4:
+# exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
 
 # Autostart apps as you like
 #exec --no-startup-id sleep 2 && xfce4-terminal
