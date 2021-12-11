@@ -342,7 +342,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id dex --autostart --environment i3
 
 # start welcome app
-exec --no-startup-id sh /usr/share/endeavouros/scripts/welcome --startdelay=3 
+#exec --no-startup-id sh /usr/share/endeavouros/scripts/welcome --startdelay=3 
 
 # num lock activated
 #exec --no-startup-id numlockx on
