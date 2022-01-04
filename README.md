@@ -102,6 +102,7 @@ colors are in rgba calling transparency in the last colum:
 `git clone https://github.com/endeavouros-team/endeavouros-i3wm-setup.git`
 
 `cd endeavouros-i3wm-setup`
+
 `cp .Xresources ~/.Xresources
 
 `cp -R .config/* ~/.config/`
