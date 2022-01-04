@@ -103,7 +103,7 @@ colors are in rgba calling transparency in the last colum:
 
 `cd endeavouros-i3wm-setup`
 
-`cp .Xresources ~/.Xresources
+`cp .Xresources ~/.Xresources`
 
 `cp -R .config/* ~/.config/`
 
