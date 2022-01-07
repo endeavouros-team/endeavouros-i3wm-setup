@@ -397,6 +397,7 @@ exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
 
 # autotiling script
 # https://github.com/nwg-piotr/autotiling
+# `yay -S autotiling ;) (it is in AUR)
 #exec_always --no-startup-id autotiling
 
 # Autostart apps as you like
@@ -407,12 +408,14 @@ exec --no-startup-id sleep 7 && firefox https://github.com/endeavouros-team/ende
 ###############
 # system tray #
 ###############
+# if you do not use dex: exec --no-startup-id dex --autostart --environment i3
+# you need to have tray apps started here:
 
 # start blueberry app for managing bluetooth devices from tray:
-exec --no-startup-id blueberry-tray
+#exec --no-startup-id blueberry-tray
 
 # networkmanager-applet
-exec --no-startup-id nm-applet
+#exec --no-startup-id nm-applet
 
 # clipman-applet
 #exec --no-startup-id xfce4-clipman
