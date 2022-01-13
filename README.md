@@ -14,9 +14,9 @@
 * [dex](https://github.com/jceb/dex) : autostarting apps from /etc/xdg/autostart/ (*)
 * Notifications are done with [dunst](https://dunst-project.org): CONFIG FILE = ~/.config/dunst/dunstrc
 
-**dex is commented in config, if you want autostarting like on a DE simply uncomment the line:** 
+**dex is enabled by default in config to autostart like on a DE. To disable, comment out the line:** 
 
-`exec --no-startup-id dex -a -s /etc/xdg/autostart/:~/.config/autostart/`
+`exec --no-startup-id dex --autostart --environment i3`
 
 inside `~/.config/i3/config`.
 
@@ -38,11 +38,11 @@ https://i3wm.org/docs/userguide.html#_default_keybindings
 
 ```
 # start a script to setup displays
-# uncomment the next line, use arandr to setup displays and save the file as monitor:
+# put `monitor.sh` into the location specified by this line:
 exec --no-startup-id ~/.screenlayout/monitor.sh
 ```
 this will handle to set display on each login.
-
+alternatively, you could manually make a script with xrandr.
 
 # Tiling:
 is set to default for i3wm and can be changed to: 
