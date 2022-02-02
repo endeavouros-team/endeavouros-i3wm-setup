@@ -348,7 +348,7 @@ for_window [class=TelegramDesktop] focus
 # picom: https://wiki.archlinux.org/title/Picom
 # manpage: https://man.archlinux.org/man/picom.1.en
 #exec_always --no-startup-id picom -b
-#exec_always --no-startup-id kill picom && picom -b
+#exec_always --no-startup-id killall picom && picom -b
 
 #############################################
 # autostart applications/services on login: #
