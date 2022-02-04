@@ -103,15 +103,13 @@ colors are in rgba calling transparency in the last colum:
 
 `cd endeavouros-i3wm-setup`
 
+`cp .Xresources ~/.Xresources`
+
 `cp -R .config/* ~/.config/`
 
 `chmod -R +x ~/.config/i3/scripts` (make scripts executable)
 
 `dbus-launch dconf load / < xed.dconf` (setup xed-editor)
-
-If you have the old EndeavourOS default i3-setup installed you need to remove .Xresources file
-(old color profile not used anymore for rofi menus):
-`rm ~.Xresources`
 
 **install needed apps and programms for i3wm:**
 We do use now the default packages lists repo for all packages lists:
@@ -119,9 +117,9 @@ We do use now the default packages lists repo for all packages lists:
 `wget https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-packages-lists/master/i3`
 `sudo pacman -S --needed - < i3`
 
-## or use the `setup.sh`:
+## or use the `i3.sh`:
 
-`wget https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/main/setup.sh`
+`wget https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/main/i3.sh`
 
 
 ## warning this will may overwrite existing files!
