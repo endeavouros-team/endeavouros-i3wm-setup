@@ -1,4 +1,3 @@
-
 exec --no-startup-id ~/set_once_i3.sh
 # This file is a modified version based on default i3-config-wizard config
 # source is available here:
@@ -58,7 +57,11 @@ new_window pixel 1
 gaps inner 6
 gaps outer 3
 
+# show window title bars (not officially supported with i3gaps)
+#default_border normal
 
+# window title alignment
+#title_align center
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -99,7 +102,6 @@ bindcode $mod+Mod2+80 workspace $ws8
 bindcode $mod+Mod2+81 workspace $ws9
 bindcode $mod+Mod2+90 workspace $ws10
 
-
 # move focused container to workspace
 bindsym $mod+Shift+1    move container to workspace  $ws1
 bindsym $mod+Shift+2    move container to workspace  $ws2
@@ -111,7 +113,6 @@ bindsym $mod+Shift+7    move container to workspace  $ws7
 bindsym $mod+Shift+8    move container to workspace  $ws8
 bindsym $mod+Shift+9    move container to workspace  $ws9
 bindsym $mod+Shift+0    move container to workspace  $ws10
-
 
 # move focused container to workspace with numpad keys
 bindcode $mod+Shift+Mod2+87 	move container to workspace  $ws1
@@ -253,7 +254,6 @@ bindsym $mod+Shift+n exec ~/.config/i3/scripts/empty_workspace
 bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks
 bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks
 
-
 # Pulse Audio controls
 
 #volume up
@@ -284,6 +284,9 @@ bindsym $mod+p exec /usr/local/bin/switch-audio-port
 bindsym $mod+w exec /usr/bin/firefox
 bindsym $mod+n exec /usr/bin/thunar
 bindsym Print exec "scrot ~/%Y-%m-%d-%T-screenshot.png"
+
+# Power Profiles menu switcher (rofi)
+bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
 
 ##########################################
 # configuration for workspace behaviour: #
@@ -318,13 +321,34 @@ assign [class="Thunar"] $ws3
 assign [class="Thunderbird"] $ws4
 assign [class="TelegramDesktop"] $ws5
 
-
 # automatic set focus new window if it opens on another workspace then the current:
 for_window [class=Xfce4-terminal] focus
 for_window [class=(?i)firefox] focus
 for_window [class=Thunar] focus
 for_window [class=Thunderbird] focus
 for_window [class=TelegramDesktop] focus
+
+##############
+# compositor #
+##############
+
+# transparency
+# uncomment one of them to be used (picom package is installed per default)
+# options could need changes, related to used GPU and drivers.
+# to find the right setting consult the archwiki or ask at the forum.
+#
+# xcompmgr: https://wiki.archlinux.org/title/Xcompmgr
+# manpage: https://man.archlinux.org/man/xcompmgr.1.en
+#exec --no-startup-id xcompmgr -C -n &
+# or an more specialized config like this:
+#exec --no-startup-id xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
+#
+# or:
+#
+# picom: https://wiki.archlinux.org/title/Picom
+# manpage: https://man.archlinux.org/man/picom.1.en
+#exec_always --no-startup-id picom -b
+#exec_always --no-startup-id killall picom && picom -b
 
 #############################################
 # autostart applications/services on login: #
@@ -356,40 +380,53 @@ exec --no-startup-id dex --autostart --environment i3
 # uncomment the next line, use arandr to setup displays and save the file as monitor:
 exec --no-startup-id ~/.screenlayout/monitor.sh
 
-# start blueberry app for managing bluetooth devices from tray:
-exec --no-startup-id blueberry-tray
-
-# transparency
-# uncomment one of them to be used (picom package is installed per default)
-# options could need changes, related to used GPU and drivers.
-# to find the right setting consult the archwiki or ask at the forum.
-# xcompmgr: https://wiki.archlinux.org/title/Xcompmgr
-#exec --no-startup-id xcompmgr -C -n &
-# or an more specialized config like this:
-#exec --no-startup-id xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
-# or:
-# picom: https://wiki.archlinux.org/title/Picom
-#exec --no-startup-id picom -CGb
-
-# networkmanager-applet
-exec --no-startup-id nm-applet
-
 # set wallpaper
-exec --no-startup-id nitrogen --restore
+exec --no-startup-id sleep 2 && nitrogen --restore
 #exec --no-startup-id feh --bg-fill /usr/share/endeavouros/backgrounds/endeavouros_i3.png
 
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
+
+# disable power saving (for example if using xscreensaver)
+#exec --no-startup-id xset -dpms
+
+# xscreensaver
+# https://www.jwz.org/xscreensaver
+#exec --no-startup-id xscreensaver --no-splash
 
 # Desktop notifications
 exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
 # alternative if you installed aside with XFCE4:
 # exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
 
+# autotiling script
+# https://github.com/nwg-piotr/autotiling
+# `yay -S autotiling ;) (it is in AUR)
+#exec_always --no-startup-id autotiling
+
 # Autostart apps as you like
 #exec --no-startup-id sleep 2 && xfce4-terminal
 exec --no-startup-id sleep 7 && firefox https://github.com/endeavouros-team/endeavouros-i3wm-setup/blob/main/force-knowledge.md
 #exec --no-startup-id sleep 3 && thunar
+
+###############
+# system tray #
+###############
+# if you do not use dex: exec --no-startup-id dex --autostart --environment i3
+# you need to have tray apps started here:
+
+# start blueberry app for managing bluetooth devices from tray:
+#exec --no-startup-id blueberry-tray
+
+# networkmanager-applet
+#exec --no-startup-id nm-applet
+
+# clipman-applet
+#exec --no-startup-id xfce4-clipman
+
+##################
+# floating rules #
+##################
 
 # set floating (nontiling)for apps needing it
 for_window [class="Yad" instance="yad"] floating enable
@@ -403,6 +440,7 @@ for_window [class="qt5ct" instance="qt5ct"] floating enable
 for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
 for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
 for_window [class="Pamac-manager"] floating enable
+for_window [window_role="About"] floating enable
 
 ######################################
 # color settings for bar and windows #
@@ -427,7 +465,6 @@ client.focused		    $lightblue	$darkblue	$white		$purple		$mediumgrey
 client.unfocused	    $darkblue	$darkblue	$grey		$purple		$darkgrey
 client.focused_inactive	$darkblue	$darkblue	$grey		$purple		$black
 client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown
-
 
 ############################################
 # bar settings (input comes from i3blocks) #

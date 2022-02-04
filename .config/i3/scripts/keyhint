@@ -16,7 +16,7 @@ Main() {
         "+q" "close focused app" ""
         "Print-key" "screenshot" ""
         "+Shift+e" "logout menu" ""
-        "+F1" "open keybinding helper" ""
+        "F1" "open keybinding helper" ""
     )
 
     "${command[@]}"

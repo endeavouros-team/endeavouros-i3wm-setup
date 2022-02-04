@@ -22,8 +22,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-# modified to work with latest rofi update by joekamprad <joekamprad@endeavouros.com>
-
 #######################################################################
 #                            BEGIN CONFIG                             #
 #######################################################################
@@ -38,11 +36,14 @@ HLFG_COLOR="#111111"
 HLBG_COLOR="#bbbbbb"
 BORDER_COLOR="#222222"
 
-# Options not related to colors (most rofi options do not work anymore)
-ROFI_OPTIONS=(-theme ~/.config/rofi/powermenu.rasi)
+# Options not related to colors
+#ROFI_TEXT=":"
+#ROFI_OPTIONS=(-width -11 -location 0 -hide-scrollbar -bw 30 -color-window "#dd310027,#dd0310027,#dd310027" -padding 5)
+#ROFI_OPTIONS=(-width -18 -location 4 -hide-scrollbar -color-window "#cc310027,#00a0009a,#cc310027" -padding 5 -font "Sourcecode Pro Regular 10, FontAwesome 9")
+ROFI_OPTIONS=(-theme ~/.config/rofi/power-profiles.rasi)
 # Zenity options
-ZENITY_TITLE="Power Menu"
-ZENITY_TEXT="Action:"
+ZENITY_TITLE="Power Profiles"
+ZENITY_TEXT="Set Profiles:"
 ZENITY_OPTIONS=(--column= --hide-header)
 
 #######################################################################
@@ -114,12 +115,9 @@ typeset -A menu
 # Menu with keys/commands
 
 menu=(
-  [ Shutdown]="systemctl poweroff"
-  [ Reboot]="systemctl reboot"
-  [ Suspend]="systemctl suspend"
-  [ Hibernate]="systemctl hibernate"
-  [ Lock]="~/.config/i3/scripts/blur-lock"
-  [ Logout]="i3-msg exit"
+  [ Performance]="powerprofilesctl set performance"
+  [ Balanced]="powerprofilesctl set balanced"
+  [ Power Saver]="powerprofilesctl set power-saver"
   [ Cancel]=""
 )
 
