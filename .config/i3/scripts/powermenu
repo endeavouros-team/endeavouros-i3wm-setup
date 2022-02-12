@@ -39,7 +39,7 @@ HLBG_COLOR="#bbbbbb"
 BORDER_COLOR="#222222"
 
 # Options not related to colors (most rofi options do not work anymore)
-ROFI_OPTIONS=(-theme ~/.config/rofi/powermenu.rasi)
+ROFI_OPTIONS=(-config ~/.config/rofi/rofidmenu.rasi)
 # Zenity options
 ZENITY_TITLE="Power Menu"
 ZENITY_TEXT="Action:"

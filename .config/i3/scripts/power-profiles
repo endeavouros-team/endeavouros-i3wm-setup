@@ -40,7 +40,7 @@ BORDER_COLOR="#222222"
 #ROFI_TEXT=":"
 #ROFI_OPTIONS=(-width -11 -location 0 -hide-scrollbar -bw 30 -color-window "#dd310027,#dd0310027,#dd310027" -padding 5)
 #ROFI_OPTIONS=(-width -18 -location 4 -hide-scrollbar -color-window "#cc310027,#00a0009a,#cc310027" -padding 5 -font "Sourcecode Pro Regular 10, FontAwesome 9")
-ROFI_OPTIONS=(-theme ~/.config/rofi/power-profiles.rasi)
+ROFI_OPTIONS=(-config ~/.config/rofi/rofidmenu.rasi)
 # Zenity options
 ZENITY_TITLE="Power Profiles"
 ZENITY_TEXT="Set Profiles:"

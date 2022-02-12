@@ -1,30 +1,32 @@
-# Firefox starting automatic on each login? 
+# Dive into configuring i3
 
-## Dive into configure i3:
+i3 is a dynamic tiling window manager inspired by wmii that is primarily targeted at developers and advanced users. The configuration file for endevouros-i3 can be found at `~/.config/i3/config`. Edit this file to make changes and configure i3 as you like.
 
-To disable autostarting firefox with this readme, edit `~/.config/i3/config` and comment out this line:
+# Troubleshooting
 
-`exec --no-startup-id sleep 7 && firefox https://github.com/endeavouros-team/endeavouros-i3wm-setup/blob/main/force-knowledge.md`
+## Firefox is autostarting at each login
 
-`~/.config/i3/config` is the main configuration file for i3, get into this file and configure i3 as you like, all settings have comments to give you information about the following setting:
-
-https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/main/.config/i3/config
-
-## No transparency? 
-
-enable picom in `~/.config/i3/config` by uncommenting this line:
+To disable firefox from autostarting comment out this line:
 
 ```
-#exec --no-startup-id picom -b
+exec --no-startup-id sleep 7 && firefox https://github.com/endeavouros-team/endeavouros-i3wm-setup/blob/main/force-knowledge.md
 ```
 
-And in some cases you will need to use a different configuration (Nvidia GPU/Driver p.e. but also others)
-Read the manpage, do some research will help you, or ask at the chat or forum.
+## No transparency
 
-## Not on a notebook? 
+[picom](https://wiki.archlinux.org/title/Picom) is used to enable transparency. To enable it uncomment this line:
+
+```
+exec_always --no-startup-id picom -b
+```
+
+In some cases you might need to use a different configuration to make picom work for example while using NVIDIA's proprietary drivers.
+
+## Disable the battery indicator
+
 ![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/battery-red-i3.png "no-battery?")
 
-Disable battery indicator in i3blocks.conf:
+To disable battery indicator edit the file `~/.config/i3/i3blocks.conf` and comment out these lines:
 
 ```
 # Battery indicator
@@ -36,10 +38,20 @@ Disable battery indicator in i3blocks.conf:
 #interval=30
 ```
 
-## autostart implementation:
-[dex](https://github.com/jceb/dex) is enabled in config per default:
-disable dex in `~/.config/i3/config` by commenting out this line:
+## Autostart implementation
+
+[dex](https://man.archlinux.org/man/community/dex/dex.1.en) is used to autostart applications on startup. To disable it comment out this line:
 
 ```
 exec --no-startup-id dex --autostart --environment i3
 ```
+
+## Reset configuration
+
+The default configuration file for i3 can be found at `/etc/i3/config`. The default configuration file for endevouros-i3 can be found [here](https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/main/.config/i3/config). To replace your current configuration with the default of endevouros-i3 run the following command. This will also make a backup of your current configuration at `~/.config/i3/config.1`:
+
+```
+wget --backups=1 https://raw.githubusercontent.com/endeavouros-team endeavouros-i3wm-setup/main/.config/i3/config -P ~/.config/i3/
+```
+
+Still having some issues? Surf through the [ArchWiki](https://wiki.archlinux.org/title/i3) or ask for help on [EndeavourOS Forum](https://forum.endeavouros.com/).
