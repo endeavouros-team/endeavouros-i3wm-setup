@@ -52,4 +52,4 @@ The default configuration file for i3 can be found at `/etc/i3/config`. The defa
 wget --backups=1 https://raw.githubusercontent.com/endeavouros-team endeavouros-i3wm-setup/main/.config/i3/config -P ~/.config/i3/
 ```
 
-Still having some issues? Surf through the [ArchWiki](https://wiki.archlinux.org/title/i3) or ask for help on [EndeavourOS Forum](https://forum.endeavouros.com/).
+Still having some issues? Surf through the [EndeavourOS Wiki](https://discovery.endeavouros.com/window-tiling-managers/i3-wm/2021/03/) or ask for help on [EndeavourOS Forum](https://forum.endeavouros.com/).
