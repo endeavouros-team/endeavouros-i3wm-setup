@@ -1,11 +1,9 @@
-# Dive into configuring i3
+# Firefox is autostarting at each login?
 
-i3 is a dynamic tiling window manager inspired by wmii that is primarily targeted at developers and advanced users. The configuration file for endevouros-i3 can be found at `~/.config/i3/config`. Edit this file to make changes and configure i3 as you like.
+## Dive into configuring i3
 
-# Troubleshooting
-
-## Firefox is autostarting at each login
-
+i3 is a dynamic tiling window manager inspired by wmii that is primarily targeted at developers and advanced users. The configuration file for endevouros-i3 can be found at `~/.config/i3/config`. Edit this file to make changes and use <kbd>$mod+Shift+r</kbd> to restart i3 in place.
+ 
 To disable firefox from autostarting comment out this line:
 
 ```
