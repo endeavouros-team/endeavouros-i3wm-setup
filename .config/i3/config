@@ -474,7 +474,7 @@ client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown
 # Start i3bar to display a workspace bar
 # (plus the system information i3status finds out, if available)
 bar {
-		font pango:Noto Sans Regular 10, FontAwesome 10
+		font pango:Noto Sans Regular 10
 		status_command i3blocks -c ~/.config/i3/i3blocks.conf
 	    	position bottom
 #	    	i3bar_command i3bar --transparency
@@ -508,7 +508,7 @@ strip_workspace_numbers yes
 # #08052be6 --> e6=90%
 
 # bar {
-#	font pango:Noto Sans Regular 9, FontAwesome 9
+#	font pango:Noto Sans Regular 9
 #	status_command i3blocks -c ~/.config/i3/i3blocks-2.conf
 #	i3bar_command i3bar --transparency
 #	output HDMI-0
