@@ -72,6 +72,7 @@ get your api key here: https://openweathermap.org/appid and City code: https://o
 * rofi color-schemes: ~/.config/rofi/arc_dark_transparent_colors.rasi
 # power-profiles handler menu:
 ![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/ppd-i3.png "power-profiles")
+* let you easely switch powermodes from the i3-bar.
 
 ## theming/colorsheme for rofi menus (application menu and Logout menu):
 
