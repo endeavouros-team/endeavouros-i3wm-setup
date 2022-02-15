@@ -1,7 +1,7 @@
 ![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/eos-i3-banner.png "eos-i3")
 
 # endeavouros-i3wm-setup
-**maintainer: joekamprad --->  setup for i3-wm under [EndeavourOS](https://endeavouros.com) new config 01-2021 <---**
+**maintainer: joekamprad --->  setup for i3-wm under [EndeavourOS](https://endeavouros.com) new config 2022 <---**
 
 [![Maintenance](https://img.shields.io/maintenance/yes/2022.svg)]()
 
@@ -70,6 +70,8 @@ get your api key here: https://openweathermap.org/appid and City code: https://o
 # application menu (rofi):
 ![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/eos-i3-shot-nov21.png "appmenu")
 * rofi color-schemes: ~/.config/rofi/arc_dark_transparent_colors.rasi
+# power-profiles handler menu:
+![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/ppd-i3.png "power-profiles")
 
 ## theming/colorsheme for rofi menus (application menu and Logout menu):
 
