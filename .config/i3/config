@@ -1,4 +1,4 @@
-exec --no-startup-id ~/set_once_i3.sh
+exec --no-startup-id ~/set_once.sh
 # This file is a modified version based on default i3-config-wizard config
 # source is available here:
 # https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/master/.config/i3/config
