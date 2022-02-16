@@ -97,7 +97,7 @@ colors are in rgba calling transparency in the last colum:
 **General theming // gtk3 and icons:**   
 * `~/.config/gtk-3.0`
 * `~/.Xresources`   
-There is !(LXAppearance)[https://wiki.lxde.org/en/LXAppearance] installed where you can browse and set GTK3 theme, icons and Xcursortheme.   
+There is ![LXAppearance](https://wiki.lxde.org/en/LXAppearance) installed where you can browse and set GTK3 theme, icons and Xcursortheme.   
 But Xcursor  needs to be set inside the `~/.Xresources`  manually if you change it in LXAppearance to get applied for all apps.   
 
 # Tutorial to install EndeavourOS-i3 setup from scratch 
