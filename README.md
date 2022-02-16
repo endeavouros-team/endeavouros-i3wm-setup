@@ -21,7 +21,7 @@
 inside `~/.config/i3/config`.
 
 # Main shortcuts:
-[mod] key is set to the winkey (or should i call it linkey?)
+[mod] key is set to the win-key (or should i call it linkey?)
 
 <img src="https://raw.githubusercontent.com/endeavouros-team/screenshots/master/linkey.png" alt="drawing" width="250"/>
 
@@ -92,7 +92,11 @@ colors are in rgba calling transparency in the last colum:
 
 `rgba ( 26, 28, 35, 100 % )`
 
-
+**General theming // gtk3 and icons:**   
+* `~/.config/gtk-3.0`
+* `~/.Xresources`   
+There is !(LXAppearance)[https://wiki.lxde.org/en/LXAppearance] installed where you can browse and set GTK3 theme, icons and Xcursortheme.   
+But Xcursor  needs to be set inside the `~/.Xresources`  manually if you change it in LXAppearance to get applied for all apps.   
 
 # Tutorial to install EndeavourOS-i3 setup from scratch 
 **for later installs, if you have installed another DE on initial install from the ISO**
