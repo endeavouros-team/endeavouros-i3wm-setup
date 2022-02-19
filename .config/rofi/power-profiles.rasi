@@ -4,7 +4,7 @@
  *******************************************************/
 
 configuration {
-    font:                           "Sourcecode Pro Regular 10";
+    font:                           "Noto Sans Mono 10";
     show-icons:                     false;
 	icon-theme: 					"Arc-X-D";
     scroll-method:                  0;
