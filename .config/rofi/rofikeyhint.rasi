@@ -3,7 +3,7 @@
  * Maintainer: joekamprad <joekamprad@endeavouros.com>
  *******************************************************/
 configuration {
-    font:                           "Noto Sans Mono 10";
+    font:                           "Noto Sans 10";
     show-icons:                     false;
 	icon-theme: 					"Arc-X-D";
     display-drun: 					"KeyHint";
@@ -19,7 +19,7 @@ configuration {
 
 window {
     background-color: @background;
-    border:           0;
+    border:           1;
     padding:          30;
 }
 listview {

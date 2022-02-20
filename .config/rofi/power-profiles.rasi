@@ -4,7 +4,7 @@
  *******************************************************/
 
 configuration {
-    font:                           "Noto Sans Mono 10";
+    font:                           "Noto Sans 10";
     show-icons:                     false;
 	icon-theme: 					"Arc-X-D";
     scroll-method:                  0;
@@ -19,7 +19,7 @@ configuration {
 
 window {
     background-color:               @background;
-    border:                         0;
+    border:                         1;
     padding:                        10;
     transparency:                   "real";
     width:                          170px;
