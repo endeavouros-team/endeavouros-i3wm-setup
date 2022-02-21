@@ -61,7 +61,7 @@ gaps outer 3
 #default_border normal
 
 # window title alignment
-#title_align center
+title_align center
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -470,9 +470,9 @@ set $yellowbrown	#e1b700
 
 # define colors for windows:
 #class		        	border		bground		text		indicator	child_border
-client.focused		    $lightblue	$darkblue	$white		$purple		$mediumgrey
-client.unfocused	    $darkblue	$darkblue	$grey		$purple		$darkgrey
-client.focused_inactive	$darkblue	$darkblue	$grey		$purple		$black
+client.focused		    $lightblue	$darkgrey	$white		$purple		$mediumgrey
+client.unfocused	    $darkblue	$darkgrey	$grey		$purple		$lightblue
+client.focused_inactive	$darkblue	$darkgrey	$grey		$purple		$black
 client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown
 
 ############################################
@@ -501,11 +501,11 @@ strip_workspace_numbers yes
 		    separator          $purple
 		    background         $darkgrey
 		    statusline         $white
-#                          		border 		        bg		txt		indicator
+#  		border 		        bg				txt			indicator
 		focused_workspace	$mediumgrey	   	$grey		$darkgrey	$purple
-		active_workspace	$lightblue      	$mediumgrey	$darkgrey	$purple
-		inactive_workspace	$darkgrey   		$darkgrey	$grey		$purple
-		urgent_workspace	$urgentred	    	$urgentred	$white		$purple
+		active_workspace	$lightblue      $mediumgrey	$darkgrey	$purple
+		inactive_workspace	$darkgrey   	$darkgrey	$grey		$purple
+		urgent_workspace	$urgentred	    $urgentred	$white		$purple
 	}
 }
 
