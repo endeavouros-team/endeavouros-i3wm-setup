@@ -4,9 +4,9 @@
  *******************************************************/
 
 configuration {
-    font:                           "Sourcecode Pro Regular 10";
+    font:                           "Noto Sans Regular 10";
     show-icons:                     false;
-	icon-theme: 					"Arc-X-D";
+    icon-theme: 					"Qogir";
     scroll-method:                  0;
     disable-history:                false;
     fullscreen:                     false;
