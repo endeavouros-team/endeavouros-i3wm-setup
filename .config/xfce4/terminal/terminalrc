@@ -37,6 +37,6 @@ TabActivityColor=#81813d3d9c9c
 ColorCursorUseDefault=FALSE
 ColorBoldIsBright=FALSE
 ScrollingUnlimited=TRUE
-FontName=Source Code Pro 10
+FontName=Noto Sans Mono Regular 10
 ColorPalette=rgb(0,0,0);rgb(170,0,0);rgb(76,61,170);rgb(170,85,0);rgb(0,0,170);rgb(170,0,170);rgb(0,170,170);rgb(170,170,170);rgb(85,85,85);rgb(255,85,85);rgb(85,255,85);rgb(255,255,85);rgb(85,85,255);rgb(255,85,255);rgb(85,255,255);rgb(255,255,255)
 ScrollingBar=TERMINAL_SCROLLBAR_NONE

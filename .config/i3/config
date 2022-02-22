@@ -61,7 +61,7 @@ gaps outer 3
 #default_border normal
 
 # window title alignment
-#title_align center
+title_align center
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -162,6 +162,14 @@ bindcode $mod+Shift+90 	 move container to workspace  $ws10
 #}
 
 #bindsym $mod+r mode "resize"
+
+# Move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+ 
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+# To remove a window from scratchpad toggle floating mode using $mod+Shift+space
 
 ######################################
 # keybindings for different actions: #
@@ -462,9 +470,9 @@ set $yellowbrown	#e1b700
 
 # define colors for windows:
 #class		        	border		bground		text		indicator	child_border
-client.focused		    $lightblue	$darkblue	$white		$purple		$mediumgrey
-client.unfocused	    $darkblue	$darkblue	$grey		$purple		$darkgrey
-client.focused_inactive	$darkblue	$darkblue	$grey		$purple		$black
+client.focused		    $lightblue	$darkgrey	$white		$purple		$mediumgrey
+client.unfocused	    $darkblue	$darkgrey	$grey		$purple		$lightblue
+client.focused_inactive	$darkblue	$darkgrey	$grey		$purple		$black
 client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown
 
 ############################################
@@ -476,12 +484,12 @@ client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown
 bar {
 		font pango: Noto Sans Regular 10
 		status_command i3blocks -c ~/.config/i3/i3blocks.conf
-	    	position bottom
-#	    	i3bar_command i3bar --transparency
+	    position bottom
+#	    i3bar_command i3bar --transparency
 # it could be that you have no primary display set: set one (xrandr --output <output> --primary)
 # reference: https://i3wm.org/docs/userguide.html#_tray_output
-		    tray_output primary
-		    tray_padding 0
+		tray_output primary
+		tray_padding 0
 
 # When strip_workspace_numbers is set to yes,
 # any workspace that has a name of the form
@@ -489,15 +497,15 @@ bar {
 strip_workspace_numbers yes
 ##strip_workspace_name no
 
-		    colors {
-		    separator          $purple
-		    background         $darkgrey
-		    statusline         $white
-#                          		border 		        bg		txt		indicator
+		colors {
+		separator          $purple
+		background         $darkgrey
+		statusline         $white
+#  		border 		        bg				txt			indicator
 		focused_workspace	$mediumgrey	   	$grey		$darkgrey	$purple
-		active_workspace	$lightblue      	$mediumgrey	$darkgrey	$purple
-		inactive_workspace	$darkgrey   		$darkgrey	$grey		$purple
-		urgent_workspace	$urgentred	    	$urgentred	$white		$purple
+		active_workspace	$lightblue      $mediumgrey	$darkgrey	$purple
+		inactive_workspace	$darkgrey   	$darkgrey	$grey		$purple
+		urgent_workspace	$urgentred	    $urgentred	$white		$purple
 	}
 }
 
@@ -523,9 +531,9 @@ strip_workspace_numbers yes
 #	colors {
 #		separator          $purple
 #		background         $darkbluetrans
-#        	statusline         $white
-#					border		bg		txt		indicator
-#		focused_workspace	$lighterblue	$lighterblue	$darkblue	$purple
+#       statusline         $white
+#		border		bg		txt			indicator
+#		focused_workspace	$lighterblue$lighterblue$darkblue	$purple
 #		active_workspace	$lightdblue	$lightdblue	$darkblue	$purple
 #		inactive_workspace	$darkblue	$darkblue	$lightdblue	$purple
 #		urgent_workspace	$urgentred	$urgentred	$white		$purple

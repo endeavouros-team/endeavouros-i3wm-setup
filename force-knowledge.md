@@ -28,12 +28,12 @@ To disable battery indicator edit the file `~/.config/i3/i3blocks.conf` and comm
 
 ```
 # Battery indicator
-#[battery]
-#command=~/.config/i3/scripts/battery2
+[battery]
+command=~/.config/i3/scripts/battery2
 # for alternative battery script  change to battery1
 # change this to battery-pinebook-pro if you are running on pinebook-pro
-#label=
-#interval=30
+label=
+interval=30
 ```
 
 ## Autostart implementation
