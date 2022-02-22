@@ -23,7 +23,7 @@ exec --no-startup-id ~/set_once.sh
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Noto Sans Regular 10
+font pango: Noto Sans Regular 10
 
 # set the mod key to the winkey:
 set $mod Mod4
