@@ -441,7 +441,7 @@ for_window [class="urxvt"] border pixel 1
 #for_window [class=".*"] resize set 640 480 #to change size of all floating windows 
 
 # set position of floating window
-for_window [class=".*"] move position center
+#for_window [class=".*"] move position center
 
 ######################################
 # color settings for bar and windows #
