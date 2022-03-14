@@ -1,7 +1,7 @@
 ![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/eos-i3-banner.png "eos-i3")
 
 # endeavouros-i3wm-setup
-**maintainer: joekamprad --->  setup for i3-wm under [EndeavourOS](https://endeavouros.com) new config 01-2021 <---**
+**maintainer: joekamprad --->  setup for i3-wm under [EndeavourOS](https://endeavouros.com) new config 2022 <---**
 
 [![Maintenance](https://img.shields.io/maintenance/yes/2022.svg)]()
 
@@ -21,7 +21,7 @@
 inside `~/.config/i3/config`.
 
 # Main shortcuts:
-[mod] key is set to the winkey (or should i call it linkey?)
+[mod] key is set to the win-key (or should i call it linkey?)
 
 <img src="https://raw.githubusercontent.com/endeavouros-team/screenshots/master/linkey.png" alt="drawing" width="250"/>
 
@@ -70,8 +70,13 @@ get your api key here: https://openweathermap.org/appid and City code: https://o
 # application menu (rofi):
 ![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/eos-i3-shot-nov21.png "appmenu")
 * rofi color-schemes: ~/.config/rofi/arc_dark_transparent_colors.rasi
+# power-profiles handler menu:
+![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/ppd-i3.png "power-profiles")
+* let you easely switch powermodes from the i3-bar.
 
-## theming/colorsheme for rofi menus (application menu and Logout menu):
+## theming/colorshemes:   
+
+**for rofi menus (application menu and Logout menu):**
 
 They can be adjust and chenged inside ~/.config/rofi directory:
 
@@ -89,7 +94,11 @@ colors are in rgba calling transparency in the last colum:
 
 `rgba ( 26, 28, 35, 100 % )`
 
-
+**General theming // gtk3 and icons:**   
+* `~/.config/gtk-3.0`
+* `~/.Xresources`   
+There is ![LXAppearance](https://wiki.lxde.org/en/LXAppearance) installed where you can browse and set GTK3 theme, icons and Xcursortheme.   
+But Xcursor  needs to be set inside the `~/.Xresources`  manually if you change it in LXAppearance to get applied for all apps.   
 
 # Tutorial to install EndeavourOS-i3 setup from scratch 
 **for later installs, if you have installed another DE on initial install from the ISO**

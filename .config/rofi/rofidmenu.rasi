@@ -3,9 +3,9 @@
  * Maintainer: joekamprad <joekamprad@endeavouros.com>
  *******************************************************/
 configuration {
-    font:				"Sourcecode Pro Regular 10";
+    font:				"Noto Sans Regular 10";
     show-icons:				true;
-    icon-theme:				"Arc-X-D";
+    icon-theme:				"Qogir";
     display-drun:			"Apps";
     drun-display-format:		"{name}";
     scroll-method:			0;
