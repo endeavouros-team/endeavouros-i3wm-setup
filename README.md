@@ -25,7 +25,7 @@ inside `~/.config/i3/config`.
 
 <img src="https://raw.githubusercontent.com/endeavouros-team/screenshots/master/linkey.png" alt="drawing" width="250"/>
 
-![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/keyhint-nov21.png "main-shortcuts")
+![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/keyhint-april14.png "main-shortcuts")
 
 # default i3-wm keycodes: 
 https://i3wm.org/docs/userguide.html#_default_keybindings
