@@ -10,6 +10,7 @@
 * gtk3 theme handled by [lxappearance-gtk3](https://wiki.lxde.org/de/LXAppearance)
 * Filebrowser = [Thunar](https://docs.xfce.org/xfce/thunar/start)
 * default Terminal-Emulator = [xfce4-terminal](https://docs.xfce.org/apps/terminal/start)
+  * This is set also inside ~/.profile (export TERMINAL=xfce4-terminal) so remind to change it there too if you want to change4 default terminal.
 * Text-Editor = [xed](https://github.com/linuxmint/xed)
 * [dex](https://github.com/jceb/dex) : autostarting apps from /etc/xdg/autostart/ (*)
 * Notifications are done with [dunst](https://dunst-project.org): CONFIG FILE = ~/.config/dunst/dunstrc
@@ -98,7 +99,7 @@ colors are in rgba calling transparency in the last colum:
 * `~/.config/gtk-3.0`
 * `~/.Xresources`   
 There is ![LXAppearance](https://wiki.lxde.org/en/LXAppearance) installed where you can browse and set GTK3 theme, icons and Xcursortheme.   
-But Xcursor  needs to be set inside the `~/.Xresources`  manually if you change it in LXAppearance to get applied for all apps.   
+But Xcursor  needs to be set inside the `~/.Xresources`  manually if you change it in LXAppearance to get applied for all apps.
 
 # Tutorial to install EndeavourOS-i3 setup from scratch 
 **for later installs, if you have installed another DE on initial install from the ISO**
