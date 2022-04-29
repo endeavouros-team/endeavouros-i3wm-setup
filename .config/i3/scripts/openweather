@@ -8,12 +8,12 @@ Aborting."; exit 1; }
 command -v wget >/dev/null 2>&1 || { echo >&2 "Program 'wget' required but is not installed.  
 Aborting."; exit 1; }
 
-APIKEY="get your key first"
-#ZIPCODE="1234"
-#CITY_ID="Get your City ID first"
-#URL="http://api.openweathermap.org/data/2.5/weather?id=${CITY_ID}&units=metric&APPID=${APIKEY}"
-LAT="Find out your position with your latitude"
-LON="and longitude"
+# To use this script you need to create an API key here https://home.openweathermap.org
+# You need to put your Open Weather APIKEY here:
+APIKEY="keykeykey"
+# And get your Latitute and Longitudes to put in here:
+LAT="XX.XXXX"
+LON="XX.XXXX"
 URL="http://api.openweathermap.org/data/2.5/onecall?lat=${LAT}&lon=${LON}&units=metric&exclude=minutely,hourly,daily&APPID=${APIKEY}"
 WEATHER_RESPONSE=$(wget -qO- "${URL}")
 
