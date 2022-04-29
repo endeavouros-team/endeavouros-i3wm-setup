@@ -337,9 +337,14 @@ for_window [class=TelegramDesktop] focus
 #
 # picom: https://wiki.archlinux.org/title/Picom
 # manpage: https://man.archlinux.org/man/picom.1.en
+# The default configuration is available in /etc/xdg/picom.conf 
+# For modifications, it can be copied to ~/.config/picom/picom.conf or ~/.config/picom.conf
+
+# using default config 
 #exec_always --no-startup-id picom -b
-#exec_always --no-startup-id killall picom && picom -b
-#exec_always --no-startup-id picom --config ~/.config/picom.conf
+
+# for custom config:
+#exec_always --no-startup-id picom --config  ~/.config/picom.conf
 
 #############################################
 # autostart applications/services on login: #
