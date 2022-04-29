@@ -22,7 +22,6 @@ window {
     location:                       east;
 /*y-offset:                       18;*/
 /*x-offset:	                    850;*/
-    transparency:                   "real";
 }
 listview {
     lines:                          6;
