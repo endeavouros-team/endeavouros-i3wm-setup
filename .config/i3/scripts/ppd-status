@@ -4,13 +4,4 @@
 #A script to show current power profile
 
 current_profile=$(/usr/bin/powerprofilesctl get)
- if [ "$current_profile" == "performance" ]
- then
-     echo "<span font='FontAwesome' color='yellow'></span>"
- elif [ "$current_profile" == "balanced" ]
- then
-     echo "<span font='FontAwesome' color='white'></span>"
- else
-     echo "<span font='FontAwesome' color='green'></span>"
- fi
-
+echo "$current_profile"
