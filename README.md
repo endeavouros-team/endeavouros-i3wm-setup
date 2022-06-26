@@ -127,9 +127,9 @@ We do use now the default packages lists repo for all packages lists:
 `wget https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-packages-lists/master/i3`
 `sudo pacman -S --needed - < i3`
 
-## or use the `i3.sh`:
+## or use the `i3_install`:
 
-`wget https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/main/i3.sh`
+`wget https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/main/i3_install`
 
 
 ## warning this will may overwrite existing files!
