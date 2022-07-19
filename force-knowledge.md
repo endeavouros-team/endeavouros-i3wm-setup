@@ -2,7 +2,7 @@
 
 ## Dive into configuring i3
 
-i3 is a dynamic tiling window manager inspired by wmii that is primarily targeted at developers and advanced users. The configuration file for endevouros-i3 can be found at `~/.config/i3/config`. Edit this file to make changes and use <kbd>$mod+Shift+r</kbd> to restart i3 in place.
+i3 is a dynamic tiling window manager inspired by wmii that is primarily targeted at developers and advanced users. The configuration file for endeavouros-i3 can be found at `~/.config/i3/config`. Edit this file to make changes and use <kbd>$mod+Shift+r</kbd> to restart i3 in place.
  
 To disable firefox from autostarting comment out this line:
 
@@ -46,7 +46,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 ## Reset configuration
 
-The default configuration file for i3 can be found at `/etc/i3/config`. The default configuration file for endevouros-i3 can be found [here](https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/main/.config/i3/config). To replace your current configuration with the default of endeavouros-i3 run the following command. This will also make a backup of your current configuration at `~/.config/i3/config.1`:
+The default configuration file for i3 can be found at `/etc/i3/config`. The default configuration file for endeavouros-i3 can be found [here](https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/main/.config/i3/config). To replace your current configuration with the default of endeavouros-i3 run the following command. This will also make a backup of your current configuration at `~/.config/i3/config.1`:
 
 ```
 wget --backups=1 https://raw.githubusercontent.com/endeavouros-team endeavouros-i3wm-setup/main/.config/i3/config -P ~/.config/i3/
