@@ -36,6 +36,9 @@ https://discovery.endeavouros.com/window-tiling-managers/i3-wm/
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 +Shift+r
 
+# keybinding in fancy rofi (automated)
+F1
+
 # full keybinding list in editor:
 +F1
 
