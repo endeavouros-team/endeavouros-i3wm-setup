@@ -2,38 +2,37 @@
  * ROFI configs i3 powermenu for EndeavourOS
  * Maintainer: joekamprad <joekamprad@endeavouros.com>
  *******************************************************/
-
 configuration {
-    font:                           "Noto Sans Regular 10";
-    show-icons:                     false;
-    icon-theme: 					"Qogir";
-    scroll-method:                  0;
-    disable-history:                false;
-    fullscreen:                     false;
-	hide-scrollbar: 				true;
-	sidebar-mode: 					false;
+    font:             "Noto Sans Regular 10";
+    show-icons:       false;
+    icon-theme:       "Qogir";
+    scroll-method:    0;
+    disable-history:  false;
+    fullscreen:       false;
+    hide-scrollbar:   true;
+    sidebar-mode:     false;
 }
 
 @import "~/.config/rofi/arc_dark_colors.rasi"
 
 
 window {
-    background-color:               @background;
-    border:                         0;
-    padding:                        10;
-    transparency:                   "real";
-    width:                          170px;
-    location:                       east;
-    /*y-offset:                       18;*/
-    /*x-offset:	                    850;*/
+    background-color: @background;
+    border:           0;
+    padding:          10;
+    transparency:     "real";
+    width:            170px;
+    location:         east;
+    /*y-offset:       18;*/
+    /*x-offset:       850;*/
 }
 listview {
-    lines:                           4;
-    columns:                        1;
+    lines:   4;
+    columns: 1;
 }
 element {
     border:  0;
-    padding: 1px ;
+    padding: 1px;
 }
 element-text {
     background-color: inherit;
@@ -76,14 +75,14 @@ element.alternate.active {
     text-color:       @alternate-active-foreground;
 }
 scrollbar {
-    width:        4px ;
+    width:        4px;
     border:       0;
     handle-color: @normal-foreground;
-    handle-width: 8px ;
+    handle-width: 8px;
     padding:      0;
 }
 mode-switcher {
-    border:       2px 0px 0px ;
+    border:       2px 0px 0px;
     border-color: @separatorcolor;
 }
 button {
@@ -97,7 +96,7 @@ button.selected {
 inputbar {
     spacing:    0;
     text-color: @normal-foreground;
-    padding:    1px ;
+    padding:    1px;
 }
 case-indicator {
     spacing:    0;
@@ -117,6 +116,6 @@ inputbar {
 textbox-prompt-colon {
     expand:     false;
     str:        "Set Power Profile:";
-    margin:     0px 0.3em 0em 0em ;
+    margin:     0px 0.3em 0em 0em;
     text-color: @normal-foreground;
 }
