@@ -125,6 +125,7 @@ But Xcursor  needs to be set inside the `~/.Xresources`  manually if you change 
 We do use now the default packages lists repo for all packages lists:
 
 `wget https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-packages-lists/master/i3`
+
 `sudo pacman -S --needed - < i3`
 
 ## or use the `i3_install`:
