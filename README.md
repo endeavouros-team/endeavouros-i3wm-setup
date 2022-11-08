@@ -114,12 +114,11 @@ But Xcursor  needs to be set inside the `~/.Xresources`  manually if you change 
 
 `cp .Xresources ~/.Xresources`
 
-3. copy scripts inside ~/.config/i3/scripts must be executable ! [chmod +x] them please ;):
-
 `cp -R .config/* ~/.config/`
 
+3. Scripts inside `~/.config/i3/scripts` must be executable ! [chmod +x] them please ;):
+
 `chmod -R +x ~/.config/i3/scripts` 
-(make scripts executable)
 
 4. set theming for xed texteditor:
 
@@ -140,7 +139,6 @@ or use the packages tool from our repo: `eos-packagelist --install "i3-Window-Ma
 
 ## warning this will may overwrite existing files!
 
----
 
 # screenshot:
 
