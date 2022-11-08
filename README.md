@@ -116,13 +116,13 @@ But Xcursor  needs to be set inside the `~/.Xresources`  manually if you change 
 
 `cp -R .config/* ~/.config/`
 
-3. Scripts inside `~/.config/i3/scripts` must be executable ! [chmod +x] them please ;):
+3. Scripts inside `~/.config/i3/scripts` must be executable:
 
 `chmod -R +x ~/.config/i3/scripts` 
 
 4. set theming for xed texteditor:
 
-`dbus-launch dconf load / < xed.dconf` (setup xed-editor)
+`dbus-launch dconf load / < xed.dconf`
 
 5. install needed packages:
 
@@ -132,10 +132,11 @@ But Xcursor  needs to be set inside the `~/.Xresources`  manually if you change 
 
 or use the packages tool from our repo: `eos-packagelist --install "i3-Window-Manager"`
 
-**or use the `i3_install` script from the git:**
+**Use the `i3_install` script from the git for automatic install it to your users home:**
+This script will setup configurations needed and install all needed packages:
 
 `wget https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/main/i3_install`
-
+and run it: `./i3_install`
 
 ## warning this will may overwrite existing files!
 
