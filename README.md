@@ -104,31 +104,36 @@ But Xcursor  needs to be set inside the `~/.Xresources`  manually if you change 
 # Tutorial to install EndeavourOS-i3 setup from scratch 
 **for later installs, if you have installed another DE on initial install from the ISO**
 
-1. get the dot files
-2. copy files to the right directories (.config of your user):
-3. copy scripts inside ~/.config/i3/scripts must be executable ! [chmod +x] them please ;)
-4. install needed packages
+1. get the dot files:
 
 `git clone https://github.com/endeavouros-team/endeavouros-i3wm-setup.git`
 
 `cd endeavouros-i3wm-setup`
 
+2. copy files to the right directories (.config of your user):
+
 `cp .Xresources ~/.Xresources`
+
+3. copy scripts inside ~/.config/i3/scripts must be executable ! [chmod +x] them please ;):
 
 `cp -R .config/* ~/.config/`
 
-`chmod -R +x ~/.config/i3/scripts` (make scripts executable)
+`chmod -R +x ~/.config/i3/scripts` 
+(make scripts executable)
+
+4. set theming for xed texteditor:
 
 `dbus-launch dconf load / < xed.dconf` (setup xed-editor)
 
-**install needed apps and programms for i3wm:**
-We do use now the default packages lists repo for all packages lists:
+5. install needed packages:
 
 `wget https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-packages-lists/master/i3`
 
 `sudo pacman -S --needed - < i3`
 
-## or use the `i3_install`:
+or use the packages tool from our repo: `eos-packagelist --install "i3-Window-Manager"`
+
+**or use the `i3_install` script from the git:**
 
 `wget https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/main/i3_install`
 
