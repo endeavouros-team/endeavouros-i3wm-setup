@@ -6,7 +6,7 @@
 [![Maintenance](https://img.shields.io/maintenance/yes/2022.svg)]()
 
 # Tutorial for i3-wm settings:
-* background handled by [nitrogen](https://wiki.archlinux.org/index.php/nitrogen)
+* background handled by [feh](https://feh.finalrewind.org/)
 * gtk3 theme handled by [lxappearance-gtk3](https://wiki.lxde.org/de/LXAppearance)
 * Filebrowser = [Thunar](https://docs.xfce.org/xfce/thunar/start)
 * default Terminal-Emulator = [xfce4-terminal](https://docs.xfce.org/apps/terminal/start)
