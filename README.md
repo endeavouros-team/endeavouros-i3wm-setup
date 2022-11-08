@@ -138,11 +138,10 @@ This script will setup configurations needed and install all needed packages:
 `wget https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/main/i3_install`
 and run it: `./i3_install`
 
-## warning this will may overwrite existing files!
+**warning i3_install will overwrite existing files**
+Make sure you backup users configs before running it on your own.
 
 
 # screenshot:
-
-
 ![i3-fresh-screenshot](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/i3-eos-view-shot-nov21.png)
 
