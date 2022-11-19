@@ -326,12 +326,13 @@ for_window [class=TelegramDesktop] focus
 ##############
 
 # transparency
-# uncomment one of them to be used (picom package is installed per default)
+# uncomment one of them to be used
 # options could need changes, related to used GPU and drivers.
 # to find the right setting consult the archwiki or ask at the forum.
 #
 # xcompmgr: https://wiki.archlinux.org/title/Xcompmgr
 # manpage: https://man.archlinux.org/man/xcompmgr.1.en
+# install xcompmgr package to use it (yay -S xcompmgr)
 #exec --no-startup-id xcompmgr -C -n &
 # or an more specialized config like this:
 #exec --no-startup-id xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
@@ -342,8 +343,8 @@ for_window [class=TelegramDesktop] focus
 # manpage: https://man.archlinux.org/man/picom.1.en
 # The default configuration is available in /etc/xdg/picom.conf 
 # For modifications, it can be copied to ~/.config/picom/picom.conf or ~/.config/picom.conf
-#
-# using default config 
+# install picom package (yay -S picom)
+# start using default config 
 #exec_always --no-startup-id picom -b
 #
 # for custom config:
