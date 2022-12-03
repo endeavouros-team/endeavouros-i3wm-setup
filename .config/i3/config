@@ -314,7 +314,7 @@ assign [class="Thunar"] $ws3
 assign [class="Thunderbird"] $ws4
 assign [class="TelegramDesktop"] $ws5
 
-# automatic set focus new window if it opens on another workspace then the current:
+# automatic set focus new window if it opens on another workspace than the current:
 for_window [class=Xfce4-terminal] focus
 for_window [class=(?i)firefox] focus
 for_window [class=Thunar] focus
