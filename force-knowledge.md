@@ -12,15 +12,16 @@ exec --no-startup-id sleep 7 && firefox https://github.com/endeavouros-team/ende
 
 ## No transparency
 
-[picom](https://wiki.archlinux.org/title/Picom) can be used to enable transparency. To enable it uncomment this line:
+[picom](https://wiki.archlinux.org/title/Picom) can be used to enable transparency. 
+install picom `sudo pacman -Syu picom`
 
-```
-exec_always --no-startup-id picom -b
-```
-.. and install picom `sudo pacman -Syu picom`
+The default configuration is available in /etc/xdg/picom.conf. 
+
+For modifications, it can be copied to ~/.config/picom/picom.conf or ~/.config/picom.conf. 
 
 In some cases you might need to use a different configuration to make picom work for example while using NVIDIA's proprietary drivers.
 After install and uncommeting it you need to logout and back in to see if it works.
+
 
 ## Disable the battery indicator
 
