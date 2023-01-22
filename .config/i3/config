@@ -311,7 +311,7 @@ set $ws10 "10"
 assign [class="Xfce4-terminal"] $ws1
 assign [class="(?i)firefox"] $ws2
 assign [class="Thunar"] $ws3
-assign [class="Thunderbird"] $ws4
+assign [class="thunderbird"] $ws4
 assign [class="TelegramDesktop"] $ws5
 
 # automatic set focus new window if it opens on another workspace than the current:
