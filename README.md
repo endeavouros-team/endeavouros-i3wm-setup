@@ -3,7 +3,7 @@
 # endeavouros-i3wm-setup
 **maintainer: joekamprad --->  setup for i3-wm under [EndeavourOS](https://endeavouros.com) new config 2022 <---**
 
-[![Maintenance](https://img.shields.io/maintenance/yes/2022.svg)]()
+[![Maintenance](https://img.shields.io/maintenance/yes/2023.svg)]()
 
 # Tutorial for i3-wm settings:
 * background handled by [feh](https://feh.finalrewind.org/)
