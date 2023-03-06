@@ -3,9 +3,7 @@
 # endeavouros-i3wm-setup
 **maintainer: joekamprad --->  setup for i3-wm under [EndeavourOS](https://endeavouros.com) new config 2022 <---**
 
-[![Maintenance](https://img.shields.io/maintenance/yes/2023.svg)]()
-
-[![href="https://github.com/endeavouros-team/endeavouros-i3wm-setup/graphs/contributors"](https://img.shields.io/github/contributors/endeavouros-team/endeavouros-i3wm-setup.svg?style=flat)]()
+[![Maintenance](https://img.shields.io/maintenance/yes/2023.svg)]() [![href="https://github.com/endeavouros-team/endeavouros-i3wm-setup/graphs/contributors"](https://img.shields.io/github/contributors/endeavouros-team/endeavouros-i3wm-setup.svg?style=flat)]()
 
 # Tutorial for i3-wm settings:
 * background handled by [feh](https://feh.finalrewind.org/)
