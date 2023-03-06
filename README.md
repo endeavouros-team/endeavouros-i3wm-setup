@@ -5,6 +5,10 @@
 
 [![Maintenance](https://img.shields.io/maintenance/yes/2023.svg)]()
 
+	<a href="https://github.com/boltgolt/howdy/graphs/contributors">
+		<img src="https://img.shields.io/github/contributors/endeavouros-team/endeavouros-i3wm-setup.svg?style=flat">
+	</a>
+ 
 # Tutorial for i3-wm settings:
 * background handled by [feh](https://feh.finalrewind.org/)
 * gtk3 theme handled by [lxappearance-gtk3](https://wiki.lxde.org/de/LXAppearance)
