@@ -403,10 +403,10 @@ exec --no-startup-id xset s 480 dpms 600 600 600
 # Desktop notifications
 # dunst config used ~/.config/dunst/dunstrc
 # set alternative config if needed:
-#exec --no-startup-id dunst --config ~/.config/dunst/dunstrc
+#exec --no-startup-id /usr/bin/dunst --config ~/.config/dunst/dunstrc
 # may yneed to run dbus-launch explicitly: 
-#exec --no-startup-id dbus-launch dunst
-exec --no-startup-id dunst
+#exec --no-startup-id dbus-launch /usr/bin/dunst
+exec --no-startup-id /usr/bin/dunst
 # alternative if you installed aside with XFCE4:
 # exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
 
