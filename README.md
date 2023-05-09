@@ -28,8 +28,6 @@ inside `~/.config/i3/config`.
 
 ![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/keyhint-april14.png "main-shortcuts")
 
-# default i3-wm keycodes: 
-https://i3wm.org/docs/userguide.html#_default_keybindings
 
 # Display setup with arandr
 ![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/arandr-display-setup-i3.png "arandr-i3-display-setup")
