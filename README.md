@@ -38,7 +38,7 @@ The keyboard icon on panel open a little GUI helper and by pressing <kbd>F1</kbd
 
 
 # Display setup with arandr
-<img src="https://raw.githubusercontent.com/endeavouros-team/screenshots/master/arandr-display-setup-i3.png" "arandr-i3-display-setup" width="250"/>
+<img src="https://raw.githubusercontent.com/endeavouros-team/screenshots/master/arandr-display-setup-i3.png" alt="arandr-i3-display-setup" width="250"/>
 * open arandr and setup display/s as you need.
 * save the setup from arandr menu or button exactly with filename `monitor`.
 ---> on i3 EndeavourOS we have a starter line in the ~/.config/i3/config
