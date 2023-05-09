@@ -26,8 +26,6 @@ inside `~/.config/i3/config`.
 
 <img src="https://raw.githubusercontent.com/endeavouros-team/screenshots/master/linkey.png" alt="drawing" width="250"/>
 
-<img src="https://raw.githubusercontent.com/endeavouros-team/screenshots/master/keyhint-april14.png" alt="main-shortcuts" width="250"/>
-
 # default EndeavourOS i3-wm keycodes:
 
 Keybindings are different from the i3 defaults to fit into the setup.
