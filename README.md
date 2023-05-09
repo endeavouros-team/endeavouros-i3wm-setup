@@ -28,8 +28,16 @@ inside `~/.config/i3/config`.
 
 ![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/keyhint-april14.png "main-shortcuts")
 
-# default i3-wm keycodes: 
-https://i3wm.org/docs/userguide.html#_default_keybindings
+# default EndeavourOS i3-wm keycodes:
+
+Keybindings are different from the i3 defaults to fit into the setup.
+
+There are 2 tools that helps you to check them:
+
+The keyboard icon on panel open a little GUI helper and by pressing <kbd>F1</kbd>
+
+<img src="https://raw.githubusercontent.com/endeavouros-team/screenshots/master/i3-keybind-helper.png" alt="keybind-helper" width="250"/>
+
 
 # Display setup with arandr
 ![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/arandr-display-setup-i3.png "arandr-i3-display-setup")
