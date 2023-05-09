@@ -26,7 +26,7 @@ inside `~/.config/i3/config`.
 
 <img src="https://raw.githubusercontent.com/endeavouros-team/screenshots/master/linkey.png" alt="drawing" width="250"/>
 
-![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/keyhint-april14.png "main-shortcuts")
+<img src="https://raw.githubusercontent.com/endeavouros-team/screenshots/master/keyhint-april14.png" alt="main-shortcuts" width="250"/>
 
 # default EndeavourOS i3-wm keycodes:
 
@@ -40,7 +40,7 @@ The keyboard icon on panel open a little GUI helper and by pressing <kbd>F1</kbd
 
 
 # Display setup with arandr
-![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/arandr-display-setup-i3.png "arandr-i3-display-setup")
+<img src="https://raw.githubusercontent.com/endeavouros-team/screenshots/master/arandr-display-setup-i3.png" "arandr-i3-display-setup" width="250"/>
 * open arandr and setup display/s as you need.
 * save the setup from arandr menu or button exactly with filename `monitor`.
 ---> on i3 EndeavourOS we have a starter line in the ~/.config/i3/config
