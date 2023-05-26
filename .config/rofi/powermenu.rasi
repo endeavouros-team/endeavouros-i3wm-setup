@@ -1,6 +1,6 @@
 /*******************************************************
  * ROFI configs i3 powermenu for EndeavourOS
- * Maintainer: joekamprad <joekamprad@endeavouros.com>
+ * Maintainer: joekamprad [joekamprad //a_t// endeavouros.com]
  *******************************************************/
 configuration {
     font:            "Noto Sans Regular 10";

@@ -1,4 +1,5 @@
-#!/usr/bin/env bash 
+#!/usr/bin/env bash
+# Maintainer: joekamprad [joekamprad //a_t// endeavouros.com]
 git clone https://github.com/endeavouros-team/endeavouros-i3wm-setup.git
 cd endeavouros-i3wm-setup
 cp -R .config ~/                                            
