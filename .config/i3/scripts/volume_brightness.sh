@@ -1,6 +1,8 @@
 #!/bin/bash
 # original source: https://gitlab.com/Nmoleo/i3-volume-brightness-indicator
 
+# taken from here: https://gitlab.com/Nmoleo/i3-volume-brightness-indicator
+
 # See README.md for usage instructions
 bar_color="#7f7fff"
 volume_step=1
