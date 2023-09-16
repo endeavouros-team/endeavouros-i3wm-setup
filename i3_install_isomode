@@ -4,15 +4,16 @@ username="$1"
 git clone -b kde https://github.com/endeavouros-team/endeavouros-i3wm-setup.git
 cd endeavouros-i3wm-setup/etc/skel/
 cp -R .config /home/$username/
-cp xed.dconf /home/$username/
+cp .Xresources .profile set_once.sh xed.dconf /home/$username/
 cd ..
 rm -rf endeavouros-i3wm-setup
 chown -R $username:$username /home/$username
 su $username
-cd /home/$username/
-dbus-launch dconf load / < /home/$username/xed.dconf
+cd /home/$username
 chmod -R +x /home/$username/.config/i3/scripts
+sed -i 's|\(exec --no-startup-id ~/set_once.sh\)|# \1|' ~/.config/i3/config
 wget https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-packages-lists/master/i3
 sudo pacman -S --needed --noconfirm - < /home/$username/i3
 rm /home/$username/i3
 #eos-packagelist --install "i3-Window-Manager"
+cd /
