@@ -6,7 +6,7 @@ cp -R .config /home/$username/
 cp xed.dconf /home/$username/
 cd ..
 rm -rf endeavouros-i3wm-setup
-sudo -u $username
+su $username
 chmod -R +x /home/$username/.config/i3/scripts
 dbus-launch dconf load / < /home/$username/xed.dconf
 rm /home/$username/xed.dconf
