@@ -11,8 +11,7 @@ chown -R $username:$username /home/$username
 su $username
 cd /home/$username
 chmod -R +x /home/$username/.config/i3/scripts
-chmod -R /home/$username/set_once.sh
-sed -i 's|\(exec --no-startup-id ~/set_once.sh\)|# \1|' ~/.config/i3/config
+chmod +x /home/$username/set_once.sh
 wget https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-packages-lists/master/i3
 sudo pacman -S --needed --noconfirm - < /home/$username/i3
 rm /home/$username/i3
