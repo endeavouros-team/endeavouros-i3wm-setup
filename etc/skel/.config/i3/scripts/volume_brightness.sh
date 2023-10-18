@@ -21,7 +21,7 @@ function get_mute {
 
 # Uses regex to get brightness from xbacklight
 function get_brightness {
-    xbacklight -get | grep -Po '[0-9]{1,3}' | head -n 1
+    xbacklight | grep -Po '[0-9]{1,3}' | head -n 1
 }
 
 # Returns a mute icon, a volume-low icon, or a volume-high icon, depending on the volume
