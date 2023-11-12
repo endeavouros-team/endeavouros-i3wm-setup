@@ -115,17 +115,31 @@ if ! command_exists systemctl ; then
   exit 1
 fi
 
-# menu defined as an associative array
-typeset -A menu
+# default_menu_options defined as an associative array
+typeset -A default_menu_options
 
-# Menu with keys/commands
+# The default options with keys/commands
 
-menu=(
+default_menu_options=(
   [ Performance]="powerprofilesctl set performance"
   [ Balanced]="powerprofilesctl set balanced"
   [ Power Saver]="powerprofilesctl set power-saver"
   [ Cancel]=""
 )
+
+# The menu that will be displayed
+typeset -A menu
+menu=()
+
+# Only add power profiles that are available to menu
+for key in "${!default_menu_options[@]}"; do
+  grep_arg=${default_menu_options[${key}]##* }
+  if powerprofilesctl list | grep -q "$grep_arg"; then
+    menu[${key}]=${default_menu_options[${key}]}
+  fi
+done
+unset grep_arg
+unset default_menu_options
 
 menu_nrows=${#menu[@]}
 
