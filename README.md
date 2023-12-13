@@ -114,7 +114,7 @@ But Xcursor  needs to be set inside the `~/.Xresources`  manually if you change 
 
 `git clone https://github.com/endeavouros-team/endeavouros-i3wm-setup.git`
 
-`cd endeavouros-i3wm-setup`
+`cd endeavouros-i3wm-setup/etc/skel/`
 
 2. copy files to the right directories (.config of your user):
 
