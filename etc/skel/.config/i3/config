@@ -152,7 +152,7 @@ bindcode $mod+Shift+90 	 move container to workspace  $ws10
 #        bindsym j resize shrink width 10 px or 10 ppt
 #        bindsym k resize grow height 10 px or 10 ppt
 #        bindsym l resize shrink height 10 px or 10 ppt
-#        bindsym ntilde resize grow width 10 px or 10 ppt
+#        bindsym ; resize grow width 10 px or 10 ppt
 
 # same bindings, but for the arrow keys
 #	bindsym Left resize shrink width 10 px or 10 ppt
