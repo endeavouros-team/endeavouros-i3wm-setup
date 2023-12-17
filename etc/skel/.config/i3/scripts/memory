@@ -55,7 +55,7 @@ END {
 	# printf("%.1fG/%.1fG (%.f%%)\n", used, total, pct)
 
 	# short text
-	printf("%.f%%\n", pct)
+	printf("%02.f%%\n", pct)
 
 	# color
 	if (pct > 90) {
