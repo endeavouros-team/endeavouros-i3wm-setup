@@ -43,7 +43,7 @@
 
     ### Progress bar ###
 
-    # Turn on the progess bar. It appears when a progress hint is passed with
+    # Turn on the progress bar. It appears when a progress hint is passed with
     # for example dunstify -h int:value:12
     progress_bar = true
 
@@ -346,7 +346,7 @@
 #    ellipsize
 #    alignment
 #
-# Shell-like globbing will get expanded.
+# Shell-like globing will get expanded.
 #
 # Instead of the appname filter, it's recommended to use the desktop_entry filter.
 # GLib based applications export their desktop-entry name. In comparison to the appname,
