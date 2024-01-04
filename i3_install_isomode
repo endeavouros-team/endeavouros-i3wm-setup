@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Maintainer: joekamprad [joekamprad //a_t// endeavouros.com]
 username="$1"
-git clone -b kde https://github.com/endeavouros-team/endeavouros-i3wm-setup.git
+git clone https://github.com/endeavouros-team/endeavouros-i3wm-setup.git
 cd endeavouros-i3wm-setup/etc/skel/
 cp -R .config /home/$username/
 cp .Xresources .profile set_once.sh xed.dconf /home/$username/
