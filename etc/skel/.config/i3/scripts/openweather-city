@@ -2,7 +2,7 @@
 
 command -v jq >/dev/null 2>&1 || { echo >&2 "Program 'jq' required but it is not installed.
 Aborting."; exit 1; }
-command -v wget >/dev/null 2>&1 || { echo >&2 "Program 'curl' required but is not installed.
+command -v curl >/dev/null 2>&1 || { echo >&2 "Program 'curl' required but is not installed.
 Aborting."; exit 1; }
 
 # To use this script you need to create an API key here https://home.openweathermap.org
