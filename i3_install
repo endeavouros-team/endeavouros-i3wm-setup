@@ -10,7 +10,6 @@ rm xed.dconf
 cd ..
 rm -rf endeavouros-i3wm-setup
 wget https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-packages-lists/master/i3
-sudo pacman -S --needed - < i3 
-sudo pacman -S brightnessctl
+sudo pacman -S --needed - < i3
 rm i3
 #eos-packagelist --install "i3-Window-Manager"

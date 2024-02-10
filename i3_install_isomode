@@ -12,6 +12,5 @@ chmod -R +x /home/$username/.config/i3/scripts
 chmod +x /home/$username/set_once.sh
 wget https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-packages-lists/master/i3
 pacman -S --needed --noconfirm - < i3
-pacman -S brightnessctl
 rm i3
 systemctl enable lightdm
