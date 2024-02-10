@@ -2,7 +2,7 @@
 
 command -v jq >/dev/null 2>&1 || { echo >&2 "Program 'jq' required but it is not installed.
 Aborting."; exit 1; }
-command -v wget >/dev/null 2>&1 || { echo >&2 "Program 'wget' required but is not installed.
+command -v curl >/dev/null 2>&1 || { echo >&2 "Program 'curl' required but is not installed.
 Aborting."; exit 1; }
 
 # To use this script you need to create an API key here https://home.openweathermap.org
@@ -13,7 +13,7 @@ APIKEY="keykey"
 CITY_ID="idid"
 URL="http://api.openweathermap.org/data/2.5/weather?id=${CITY_ID}&units=metric&APPID=${APIKEY}"
 
-WEATHER_RESPONSE=$(wget -qO- "${URL}")
+WEATHER_RESPONSE=$(timeout --signal=1 2s curl -s "${URL}") ||  exit 1;
 
 WEATHER_CONDITION=$(echo $WEATHER_RESPONSE | jq '.weather[0].main' | sed 's/"//g')
 WEATHER_TEMP=$(echo $WEATHER_RESPONSE | jq '.main.temp')
