@@ -22,6 +22,13 @@ For modifications, it can be copied to ~/.config/picom/picom.conf or ~/.config/p
 In some cases you might need to use a different configuration to make picom work for example while using NVIDIA's proprietary drivers.
 After install and uncommeting it you need to logout and back in to see if it works.
 
+Uncommend the already existing exec line in your `~/.config/i3/config` to start it on login of your user:
+
+```
+# start using default config 
+#exec_always --no-startup-id picom -b
+```
+
 
 ## Disable the battery indicator
 
