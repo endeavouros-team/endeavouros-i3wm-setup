@@ -1,7 +1,7 @@
 ![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/eos-i3-banner.png "eos-i3")
 
 # endeavouros-i3wm-setup
-**maintainer: joekamprad --->  setup for i3-wm under [EndeavourOS](https://endeavouros.com) new config (2022) <---**
+**maintainer: joekamprad - setup for i3-wm under [EndeavourOS](https://endeavouros.com)**
 
 [![Maintenance](https://img.shields.io/maintenance/yes/2024.svg)]() [![](https://img.shields.io/github/contributors/endeavouros-team/endeavouros-i3wm-setup.svg?style=flat)](https://github.com/endeavouros-team/endeavouros-i3wm-setup/graphs/contributors)
 
