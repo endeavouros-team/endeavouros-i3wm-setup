@@ -3,6 +3,9 @@
 # endeavouros-i3wm-setup
 **maintainer: joekamprad --->  setup for i3-wm under [EndeavourOS](https://endeavouros.com) new config (2022) <---**
 
+You can find some details about enhancements and changes on my little blog:
+[kamprad.net-EneavourOS-i3wm-setup](https://www.kamprad.net/index.php/endeavouros-i3wm-setup)
+
 [![Maintenance](https://img.shields.io/maintenance/yes/2024.svg)]() [![](https://img.shields.io/github/contributors/endeavouros-team/endeavouros-i3wm-setup.svg?style=flat)](https://github.com/endeavouros-team/endeavouros-i3wm-setup/graphs/contributors)
 
 # Tutorial for i3-wm settings:
