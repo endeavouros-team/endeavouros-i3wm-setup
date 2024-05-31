@@ -191,6 +191,6 @@ For installing it later on, in case if you have installed another DE on initial 
         $ ./i3_install
         ```
 
-## Screenshots
+## Screenshot
 
 ![i3-fresh-screenshot](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/i3-eos-view-shot-nov21.png)
