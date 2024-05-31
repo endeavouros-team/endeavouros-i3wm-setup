@@ -26,8 +26,8 @@ i3 is a dynamic tiling window manager inspired by wmii that is primarily targete
   $ sudo pacman -Syu picom
   ```
 
-* The default configuration is available in `/etc/xdg/picom.conf`.
-* To modify picom settings for per user, copy global picom config in to user home directory.
+  * The default configuration is available in `/etc/xdg/picom.conf`.
+  To modify picom settings for per user, copy global picom config in to user home directory.
 
   ```
   $ mkdir -pv "${HOME}"/.config/picom
@@ -35,16 +35,17 @@ i3 is a dynamic tiling window manager inspired by wmii that is primarily targete
   ```
   
 * In some cases you might need to use a different configuration to make picom work. Eg. While using NVIDIA's proprietary drivers.
-* After installing and uncommeting the settings, logout and log back in for changes to take effect.
-* Open `"${HOME}"/.config/picom/picom.conf`
+  After installing and uncommeting the settings, logout and log back in for changes to take effect.
+  Open `"${HOME}"/.config/picom/picom.conf`
+  
 * Add/remove `#` at the start of the line to disable/enable picom auto start at login.
-* Before (default setting, picom will not auto start at login)
+  Before (default setting, picom will not auto start at login)
 
   ```
   #exec_always --no-startup-id picom -b
   ```
 
-* After (changed setting, picom will auto start at login)
+  After (changed setting, picom will auto start at login)
 
   ```
   exec_always --no-startup-id picom -b
@@ -55,8 +56,8 @@ i3 is a dynamic tiling window manager inspired by wmii that is primarily targete
 ![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/battery-red-i3.png "no-battery?")
 
 * Open `"${HOME}"/.config/i3/i3blocks.conf`
-* Add/remove `#` at the start of the lines to disable/enable battery indicator.
-* Before (default setting, battery indicator enabled)
+  Add/remove `#` at the start of the lines to disable/enable battery indicator.
+  Before (default setting, battery indicator enabled)
 
   ```
   # Battery indicator
@@ -83,9 +84,9 @@ i3 is a dynamic tiling window manager inspired by wmii that is primarily targete
 ## Autostart Implementation
 
 * [dex](https://man.archlinux.org/man/community/dex/dex.1.en) is used to auto start applications on startup in i3wm.
-* Open `"${HOME}"/.config/i3/config`.
-* Add/remove `#` at the start of the line to disable/enable xdg auto start.
-* Before (default setting, xdg auto start enabled)
+  Open `"${HOME}"/.config/i3/config`.
+  Add/remove `#` at the start of the line to disable/enable xdg auto start.
+  Before (default setting, xdg auto start enabled)
 
   ```
   exec --no-startup-id dex --autostart --environment i3
@@ -100,8 +101,10 @@ i3 is a dynamic tiling window manager inspired by wmii that is primarily targete
 ## Reset Configuration
 
 * The default configuration file for i3 can be found at `/etc/i3/config`.
-* The default configuration file for endeavouros-i3 can be found [here](https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/main/etc/skel/.config/i3/config).
-* To replace your current configuration with the default of endeavouros-i3 run the following command. This will also make a backup of your current configuration at `"${HOME}"/.config/i3/config.1`.
+
+ * The default configuration file for endeavouros-i3 can be found [here](https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/main/etc/skel/.config/i3/config).
+
+ To replace your current configuration with the default of endeavouros-i3 run the following command. This will also make a backup of your current configuration at `"${HOME}"/.config/i3/config.1`.
 
   ```
   $ wget --backups=1 https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/main/etc/skel/.config/i3/config -P "${HOME}"/.config/i3/
