@@ -1,7 +1,3 @@
-<!-- Comments -->
-<!-- markdownlint-disable MD001 MD033 -->
-<!-- markdownlint-disable MD001 MD014 -->
-
 # endeavouros-i3wm-setup
 
 ![Stars](https://img.shields.io/github/stars/endeavouros-team/endeavouros-i3wm-setup.svg?style=flat) ![Forks](https://img.shields.io/github/forks/endeavouros-team/endeavouros-i3wm-setup.svg?style=flat) ![Contributors](https://img.shields.io/github/contributors/endeavouros-team/endeavouros-i3wm-setup.svg?style=flat) ![Maintenance](https://img.shields.io/maintenance/yes/2024.svg)
@@ -60,7 +56,7 @@ Keybindings are different from the i3 defaults to fit into the setup. There are 
 * Save the setup from `arandr` menu or button exactly with filename `monitor`.
 * In i3 EndeavourOS we have a starter line in the `"${HOME}"/.config/i3/config`
 
-  ```shell
+  ```
   # start a script to setup displays
   # put `monitor.sh` into the location specified by this line
   exec --no-startup-id "${HOME}"/.screenlayout/monitor.sh
@@ -137,27 +133,27 @@ For installing it later on, in case if you have installed another DE on initial 
 
 1. Clone endeavouros-i3wm-setup dotfiles repo
 
-    ```shell
+    ```
     $ git clone https://github.com/endeavouros-team/endeavouros-i3wm-setup.git`
     $ cd endeavouros-i3wm-setup/etc/skel/`
     ```
 
 2. Copy the files to user home directories.
 
-    ```shell
+    ```
     $ cp .Xresources "${HOME}"/.Xresources
     $ cp -R .config/* "${HOME}"/.config/
     ```
 
 3. Make all scripts executable inside i3 config
 
-    ```shell
+    ```
     $ chmod -R +x "${HOME}"/.config/i3/scripts`
     ```
 
 4. Apply settings and theming for `xed` text editor
 
-    ```shell
+    ```
     $ dbus-launch dconf load / < xed.dconf
     ```
 
@@ -165,21 +161,21 @@ For installing it later on, in case if you have installed another DE on initial 
 
     * Method 1 - Using EndeavourOS-packages-lists repo
 
-        ```shell
+        ```
         $ wget https://raw.githubusercontent.com/endeavouros-team EndeavourOS-packages-lists/master/i3
         $ sudo pacman -S --needed - < i3
         ```
 
     * Method 2 - Using eos-packagelist package from EOS repo
 
-        ```shell
+        ```
         $ eos-packagelist --install 'i3-Window-Manager'
         ```
 
     * Method 3 - Using the i3_install script from the git for automated config and package installation in user home directory.
     **WARNING - Method 3 will overwrite existing files. Make sure you backup users configs before running it on your own.**
 
-        ```shell
+        ```
         $ wget https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/main/i3_install
         $ cd endeavouros-i3wm-setup
         $ ./i3_install
