@@ -1,65 +1,112 @@
-# Firefox is autostarting at each login?
+# Dive into configuring i3
 
-## Dive into configuring i3
+i3 is a dynamic tiling window manager inspired by wmii that is primarily targeted at developers and advanced users. The configuration file for endeavouros-i3 can be found at `"${HOME}"/.config/i3/config`. Edit this file to make changes and use <kbd>mod</kbd>+<kbd>Shift</kbd>+<kbd>r</kbd> to restart i3 in place.
 
-i3 is a dynamic tiling window manager inspired by wmii that is primarily targeted at developers and advanced users. The configuration file for endeavouros-i3 can be found at `~/.config/i3/config`. Edit this file to make changes and use <kbd>$mod+Shift+r</kbd> to restart i3 in place.
- 
-To disable firefox from autostarting comment out this line:
+## Firefox Autostart
 
-```
-exec --no-startup-id sleep 7 && firefox https://github.com/endeavouros-team/endeavouros-i3wm-setup/blob/main/force-knowledge.md
-```
+* Open `"${HOME}"/.config/i3/config`.
+* Add/remove `#` at the start of the line to disable/enable auto start at login.
+* Before (default setting, firefox will auto start at login)
 
-## No transparency
+  ```plain
+  exec --no-startup-id sleep 7 && firefox https://github.com/endeavouros-team/endeavouros-i3wm-setup/blob/main/force-knowledge.md
+  ```
 
-[picom](https://wiki.archlinux.org/title/Picom) can be used to enable transparency. 
-install picom `sudo pacman -Syu picom`
+* After (changed setting, firefox will not auto start at login)
 
-The default configuration is available in /etc/xdg/picom.conf. 
+  ```plain
+  #exec --no-startup-id sleep 7 && firefox https://github.com/endeavouros-team/endeavouros-i3wm-setup/blob/main/force-knowledge.md
+  ```
 
-For modifications, it can be copied to ~/.config/picom/picom.conf or ~/.config/picom.conf. 
+## Transparency Effects
 
-In some cases you might need to use a different configuration to make picom work for example while using NVIDIA's proprietary drivers.
-After install and uncommeting it you need to logout and back in to see if it works.
+* [picom](https://wiki.archlinux.org/title/Picom) can be installed and configured to enable transparency effects inside i3wm.
 
-Uncommend the already existing exec line in your `~/.config/i3/config` to start it on login of your user:
+  ```plain
+  $ sudo pacman -Syu picom
+  ```
 
-```
-# start using default config 
-#exec_always --no-startup-id picom -b
-```
+* The default configuration is available in `/etc/xdg/picom.conf`.
+* To modify picom settings for per user, copy global picom config in to user home directory.
 
+  ```plain
+  $ mkdir -pv "${HOME}"/.config/picom`
+  $ cp /etc/xdg/picom.conf "${HOME}"/.config/picom/picom.conf
+  ```
+  
+* In some cases you might need to use a different configuration to make picom work. Eg. While using NVIDIA's proprietary drivers.
+* After installing and uncommeting the settings, logout and log back in for changes to take effect.
+* Open `"${HOME}"/.config/picom/picom.conf`
+* Add/remove `#` at the start of the line to disable/enable picom auto start at login.
+* Before (default setting, picom will not auto start at login)
 
-## Disable the battery indicator
+  ```plain
+  #exec_always --no-startup-id picom -b
+  ```
+
+* After (changed setting, picom will auto start at login)
+
+  ```plain
+  exec_always --no-startup-id picom -b
+  ```
+
+## Battery Indicator
 
 ![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/battery-red-i3.png "no-battery?")
 
-To disable battery indicator edit the file `~/.config/i3/i3blocks.conf` and comment out these lines:
+* Open `"${HOME}"/.config/i3/i3blocks.conf`
+* Add/remove `#` at the start of the lines to disable/enable battery indicator.
+* Before (default setting, battery indicator enabled)
 
-```
-# Battery indicator
-#[battery]
-#command=~/.config/i3/scripts/battery2
-# for alternative battery script  change to battery1
-# change this to battery-pinebook-pro if you are running on pinebook-pro
-#label=
-#interval=30
-```
+  ```plain
+  # Battery indicator
+  # for alternative battery script change to battery1
+  # change this to battery-pinebook-pro if you are running on pinebook-pro
+  [battery]
+  command=~/.config/i3/scripts/battery2
+  label=
+  interval=30
+  ```
 
-## Autostart implementation
+* After (changed setting, battery indicator disabled)
 
-[dex](https://man.archlinux.org/man/community/dex/dex.1.en) is used to autostart applications on startup. To disable it comment out this line:
+  ```plain
+  # Battery indicator
+  # for alternative battery script change to battery1
+  # change this to battery-pinebook-pro if you are running on pinebook-pro
+  #[battery]
+  #command=~/.config/i3/scripts/battery2
+  #label=
+  #interval=30
+  ```
 
-```
-exec --no-startup-id dex --autostart --environment i3
-```
+## XDG Autostart
 
-## Reset configuration
+* [dex](https://man.archlinux.org/man/community/dex/dex.1.en) is used to auto start applications on startup.
+* Open `"${HOME}"/.config/i3/config`.
+* Add/remove `#` at the start of the line to disable/enable xdg auto start.
+* Before (default setting, xdg auto start enabled)
 
-The default configuration file for i3 can be found at `/etc/i3/config`. The default configuration file for endeavouros-i3 can be found [here](https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/main/etc/skel/.config/i3/config). To replace your current configuration with the default of endeavouros-i3 run the following command. This will also make a backup of your current configuration at `~/.config/i3/config.1`:
+  ```plain
+  exec --no-startup-id dex --autostart --environment i3
+  ```
 
-```
-wget --backups=1 https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/main/.config/i3/config -P ~/.config/i3/
-```
+* After (changed setting, xdg auto start disabled)
+
+  ```plain
+  #exec --no-startup-id dex --autostart --environment i3
+  ```
+
+## Reset Configuration
+
+* The default configuration file for i3 can be found at `/etc/i3/config`.
+* The default configuration file for endeavouros-i3 can be found [here](https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/main/etc/skel/.config/i3/config).
+* To replace your current configuration with the default of endeavouros-i3 run the following command. This will also make a backup of your current configuration at `"${HOME}"/.config/i3/config.1`.
+
+  ```plain
+  wget --backups=1 https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/main/etc/skel/.config/i3/config -P "${HOME}"/.config/i3/
+  ```
+
+## Help
 
 Still having some issues? Surf through the [EndeavourOS Wiki](https://discovery.endeavouros.com/window-tiling-managers/i3-wm/2021/03/) or ask for help on [EndeavourOS Forum](https://forum.endeavouros.com/).
