@@ -1,158 +1,186 @@
+# endeavouros-i3wm-setup
+
+![Stars](https://img.shields.io/github/stars/endeavouros-team/endeavouros-i3wm-setup.svg?style=flat) ![Forks](https://img.shields.io/github/forks/endeavouros-team/endeavouros-i3wm-setup.svg?style=flat) ![Contributors](https://img.shields.io/github/contributors/endeavouros-team/endeavouros-i3wm-setup.svg?style=flat) ![Maintenance](https://img.shields.io/maintenance/yes/2024.svg)
+
 ![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/eos-i3-banner.png "eos-i3")
 
-# endeavouros-i3wm-setup
-**maintainer: joekamprad - setup for i3-wm under [EndeavourOS](https://endeavouros.com)**
+## Summary
 
-[![Maintenance](https://img.shields.io/maintenance/yes/2024.svg)]() [![](https://img.shields.io/github/contributors/endeavouros-team/endeavouros-i3wm-setup.svg?style=flat)](https://github.com/endeavouros-team/endeavouros-i3wm-setup/graphs/contributors)
+* Dotfiles for i3 window manager under [EndeavourOS](https://endeavouros.com)
+* Maintained by [killajoe](https://github.com/killajoe) (Joe Kamprad)
+* You can find some details about enhancements and changes on my blog [kamprad.net](https://kamprad.net/index.php/endeavouros-i3wm-setup).
 
+## Settings Tutorial
 
-You can find some details about enhancements and changes on my little blog:
+Default applications
 
-[kamprad.net-EneavourOS-i3wm-setup](https://www.kamprad.net/index.php/endeavouros-i3wm-setup)
+* Background Wallpaper - [feh](https://feh.finalrewind.org)
+* File Browser - [thunar](https://docs.xfce.org/xfce/thunar/start)
+* GTK3 Theming - [lxappearance-gtk3](https://wiki.lxde.org/de/LXAppearance)
+  * Config - `"${HOME}"/.config/gtk-3.0/`
+* Terminal Emulator - [xfce4-terminal](https://docs.xfce.org/apps/terminal/start)
+  * This is also set inside `"${HOME}"/.profile` as `export TERMINAL=xfce4-terminal`
+  * If you want to change the default terminal, you need to change it in `"${HOME}"/.profile` as well.
+* Text Editor - [xed](https://github.com/linuxmint/xed)
+  * Config - `xed.dconf`
+  * To reset default settings `dconf reset -f /org/x/editor/preferences/editor`
+* XDG Autostart - [dex](https://github.com/jceb/dex)
+  * Autostarting apps from `/etc/xdg/autostart/`
+  * Dex is enabled by default in i3 config to autostart applications like on a DE.
+  * To disable, comment out the line `exec --no-startup-id dex --autostart --environment i3` in `"${HOME}"/i3/config`
+* Notifications - [dunst](https://dunst-project.org)
+  * Config - `"${HOME}"/.config/dunst/dunstrc`
+* App Launcher - [rofi](https://davatorium.github.io/rofi)
+  * Config - `"${HOME}"/.config/rofi`
 
-# Tutorial for i3-wm settings:
-* background handled by [feh](https://feh.finalrewind.org/)
-* gtk3 theme handled by [lxappearance-gtk3](https://wiki.lxde.org/de/LXAppearance)
-* Filebrowser = [Thunar](https://docs.xfce.org/xfce/thunar/start)
-* default Terminal-Emulator = [xfce4-terminal](https://docs.xfce.org/apps/terminal/start)
-  * This is set also inside ~/.profile (export TERMINAL=xfce4-terminal) so remind to change it there too if you want to change4 default terminal.
-* Text-Editor = [xed](https://github.com/linuxmint/xed)
-* [dex](https://github.com/jceb/dex) : autostarting apps from /etc/xdg/autostart/ (*)
-* Notifications are done with [dunst](https://dunst-project.org): CONFIG FILE = ~/.config/dunst/dunstrc
+## Main Shortcuts
 
-**dex is enabled by default in config to autostart like on a DE. To disable, comment out the line:** 
-
-`exec --no-startup-id dex --autostart --environment i3`
-
-inside `~/.config/i3/config`.
-
-# Main shortcuts:
-[mod] key is set to the win-key (or should i call it linkey?)
+<kbd>mod</kbd> key is set to the Windows/Super key.
 
 <img src="https://raw.githubusercontent.com/endeavouros-team/screenshots/master/linkey.png" alt="drawing" width="250"/>
 
-# default EndeavourOS i3-wm keycodes:
+## Default Key Bindings
 
-Keybindings are different from the i3 defaults to fit into the setup.
+Keybindings are different from the i3 defaults to fit into the setup. There are 2 methods that lets you view the default key bindings.
 
-There are 2 tools that helps you to check them:
-
-The keyboard icon on panel open a little GUI helper and by pressing <kbd>F1</kbd>
+* Method 1 - The keyboard icon on panel opens a little GUI helper.
+* Method 2 - By pressing <kbd>F1</kbd> key.
 
 <img src="https://raw.githubusercontent.com/endeavouros-team/screenshots/master/i3-keybind-helper.png" alt="keybind-helper" width="250"/>
 
+## Display Setup
 
-# Display setup with arandr
 <img src="https://raw.githubusercontent.com/endeavouros-team/screenshots/master/arandr-display-setup-i3.png" alt="arandr-i3-display-setup" width="250"/>
-* open arandr and setup display/s as you need.
-* save the setup from arandr menu or button exactly with filename `monitor`.
----> on i3 EndeavourOS we have a starter line in the ~/.config/i3/config
 
-```
-# start a script to setup displays
-# put `monitor.sh` into the location specified by this line:
-exec --no-startup-id ~/.screenlayout/monitor.sh
-```
-this will handle to set display on each login.
-alternatively, you could manually make a script with xrandr.
+* Open `arandr` and setup the display(s) as per your needs.
+* Save the setup from `arandr` menu or button exactly with filename `monitor`.
+* In i3 EndeavourOS we have a starter line in the `"${HOME}"/.config/i3/config`
 
-# Tiling:
-is set to default for i3wm and can be changed to: 
-* stacking:
-Only the focused window in the container is displayed. You get a list of windows at the top of the container.
+  ```
+  # start a script to setup displays
+  # put `monitor.sh` into the location specified by this line
+  exec --no-startup-id "${HOME}"/.screenlayout/monitor.sh
+  ```
 
-* tabbed:
-so each new window will open fullscreen as a tab, you can change between window-tabs with mouse or shortcut:
-[mod]+**Left** focus left (left arrow key)
-[mod]+**Right** focus right (right arrow key)
+* This will handle to set display on each login.
+* Alternatively, you could manually make a script with `xrandr`.
 
-# i3blocks:
-* pulseaudio (mousewheel volume level, rightclick open pulseaudio control)
-* weather (openweather you need to get city code and apikey first [adding it to ~/.config/i3/scripts/openweather.sh])
-get your api key here: https://openweathermap.org/appid and City code: https://openweathermap.org/find?q= (search your city     and take the city code from the url in your browser [7 numbers at the end of the url])
-* tray-icons (showing network-manager and update-icon)
-* logout button (poweroff, logout, suspending, hibernate e.t.c.)
+## Tiling
 
-# panel bar (i3-blocks):
+Tiling set to default for i3wm and can be changed to
+
+* Stacking Mode - Only the focused window in the container is displayed. You get a list of windows at the top of the container.
+* Tabbed Mode - Each new window will open in fullscreen as a tab, you can change between window tabs with mouse or shortcut
+  * <kbd>mod</kbd>+<kbd>Left</kbd> focus left (left arrow key)
+  * <kbd>mod</kbd>+<kbd>Right</kbd> focus right (right arrow key)
+
+## Panel Bar (i3blocks)
+
+* Uses `i3blocks`. Lets you view workspaces, active i3 blocks, tray icons and launch applications.
+* Config - `"${HOME}"/.config/i3/i3blocks.conf`
+* Pulse Audio
+
+  * Use mouse wheel over volume level
+  * Right click open pulseaudio control
+* Weather
+  * Get your API key - <https://openweathermap.org/appid>
+  * Get your city code - <https://openweathermap.org/find?q=>
+    * Search your city and take the city code from the URL bar in your browser (7 numbers at the end of the URL)
+  * Add the API key and city code to `"$HOME"/.config/i3/scripts/openweather.sh`
+* Tray Icons (network manager, update icon, etc.)
+* Logout Button (Cancel, Lock, Logout, Reboot, Shutdown, Suspend etc.)
+
 ![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/panel.png "bar legende")
-* CONFIG FILE = ~/.config/i3/i3blocks.conf
-# Logout Menu (rofi):
+
+## Logout Menu
+
+* Uses `rofi`. Lets you perform power actions on your machine.
+* Config = `"${HOME}"/.config/i3/scripts/powermenu`
 ![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/i3-power-nov21.png "logout-menu")
-* CONFIG FILE = ~/.config/i3/scripts/powermenu
-# application menu (rofi):
+
+## Application Menu
+
+* Uses `rofi`. Lets you launch apps, run commands, switch windows.
+* Config - `"${HOME}"/.config/rofi`
 ![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/eos-i3-shot-nov21.png "appmenu")
-* rofi color-schemes: ~/.config/rofi/arc_dark_transparent_colors.rasi
-# power-profiles handler menu:
+
+## Power Profiles Handler Menu
+
+* Uses `powerprofilesctl`. Lets you easily switch power modes from the panel bar.
 ![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/ppd-i3.png "power-profiles")
-* let you easely switch powermodes from the i3-bar.
 
-## theming/colorshemes:   
+## Theming / Color Schemes
 
-**for rofi menus (application menu and Logout menu):**
+* Rofi Application Menu and Logout Menu
 
-They can be adjust and chenged inside ~/.config/rofi directory:
+  * `"${HOME}"/.config/rofi/rofidmenu.rasi`
+  * `"${HOME}"/.config/rofi/powermenu.rasi`
 
-**Configurations for the menus:**
+* Rofi Color Schemes
 
-* `~/.config/rofi/rofidmenu.rasi`
-* `~/.config/rofi/powermenu.rasi`
+  * `"${HOME}"/.config/rofi/arc_dark_transparent_colors.rasi`
+  * `"${HOME}"/.config/rofi/arc_dark_colors-ori.rasi`
+  * Colors are in RGBA, calling transparency in the last column `rgba ( 26, 28, 35, 100 % )`
+* GTK3 Theming and Icons
 
-**colorschemes:**
+  * `"${HOME}"/.config/gtk-3.0`, `"${HOME}"/.Xresources`
+  * There is `laxppearance` installed where you can browse and set GTK3 theme, icons and xcursor theme.
+  * Xcursor needs to be set inside the `"${HOME}"/.Xresources` manually. If you change it in lxappearance it will be applied for all apps.
 
-* `~/.config/rofi/arc_dark_transparent_colors.rasi`
-* `~/.config/rofi/arc_dark_colors-ori.rasi`
+## Tutorial to install EndeavourOS-i3wm-setup from scratch
 
-colors are in rgba calling transparency in the last colum:
+For installing it later on, in case if you have installed another DE on initial install from the ISO
 
-`rgba ( 26, 28, 35, 100 % )`
+1. Clone endeavouros-i3wm-setup dotfiles repo
 
-**General theming // gtk3 and icons:**   
-* `~/.config/gtk-3.0`
-* `~/.Xresources`   
-There is ![LXAppearance](https://wiki.lxde.org/en/LXAppearance) installed where you can browse and set GTK3 theme, icons and Xcursortheme.   
-But Xcursor  needs to be set inside the `~/.Xresources`  manually if you change it in LXAppearance to get applied for all apps.
+    ```
+    $ git clone https://github.com/endeavouros-team/endeavouros-i3wm-setup.git`
+    $ cd endeavouros-i3wm-setup/etc/skel/`
+    ```
 
-# Tutorial to install EndeavourOS-i3 setup from scratch 
-**for later installs, if you have installed another DE on initial install from the ISO**
+2. Copy the files to user home directories.
 
-1. get the dot files:
+    ```
+    $ cp .Xresources "${HOME}"/.Xresources
+    $ cp -R .config/* "${HOME}"/.config/
+    ```
 
-`git clone https://github.com/endeavouros-team/endeavouros-i3wm-setup.git`
+3. Make all scripts executable inside i3 config
 
-`cd endeavouros-i3wm-setup/etc/skel/`
+    ```
+    $ chmod -R +x "${HOME}"/.config/i3/scripts`
+    ```
 
-2. copy files to the right directories (.config of your user):
+4. Apply settings and theming for `xed` text editor
 
-`cp .Xresources ~/.Xresources`
+    ```
+    $ dbus-launch dconf load / < xed.dconf
+    ```
 
-`cp -R .config/* ~/.config/`
+5. Install using different methods
 
-3. Scripts inside `~/.config/i3/scripts` must be executable:
+    * Method 1 - Using EndeavourOS-packages-lists repo
 
-`chmod -R +x ~/.config/i3/scripts` 
+        ```
+        $ wget https://raw.githubusercontent.com/endeavouros-team EndeavourOS-packages-lists/master/i3
+        $ sudo pacman -S --needed - < i3
+        ```
 
-4. set theming for xed texteditor:
+    * Method 2 - Using eos-packagelist package from EOS repo
 
-`dbus-launch dconf load / < xed.dconf`
+        ```
+        $ eos-packagelist --install 'i3-Window-Manager'
+        ```
 
-5. install needed packages:
+    * Method 3 - Using the i3_install script from the git for automated config and package installation in user home directory.
+    **WARNING - Method 3 will overwrite existing files. Make sure you backup users configs before running it on your own.**
 
-`wget https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-packages-lists/master/i3`
+        ```
+        $ wget https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/main/i3_install
+        $ cd endeavouros-i3wm-setup
+        $ ./i3_install
+        ```
 
-`sudo pacman -S --needed - < i3`
+## Screenshots
 
-or use the packages tool from our repo: `eos-packagelist --install "i3-Window-Manager"`
-
-**Use the `i3_install` script from the git for automatic install it to your users home:**
-This script will setup configurations needed and install all needed packages:
-
-`wget https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/main/i3_install`
-and run it: `./i3_install`
-
-**warning i3_install will overwrite existing files**
-Make sure you backup users configs before running it on your own.
-
-
-# screenshot:
 ![i3-fresh-screenshot](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/i3-eos-view-shot-nov21.png)
-
