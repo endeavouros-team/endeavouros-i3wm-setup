@@ -1,4 +1,5 @@
 # Dive into configuring i3
+
 i3 is a dynamic tiling window manager inspired by wmii that is primarily targeted at developers and advanced users. The configuration file for endeavouros-i3 can be found at `"${HOME}"/.config/i3/config`. Edit this file to make changes and use <kbd>mod</kbd>+<kbd>Shift</kbd>+<kbd>r</kbd> to restart i3 in place.
 
 ## Firefox is autostarting at each login?
