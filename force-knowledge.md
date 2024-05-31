@@ -5,7 +5,7 @@ i3 is a dynamic tiling window manager inspired by wmii that is primarily targete
 ## Firefox is autostarting at each login?
 
  Open `"${HOME}"/.config/i3/config`.
- Add/remove `#` at the start of the line to disable/enable auto start at login.
+ Add/remove `#` at the start of the line to disable/enable auto start at login:
  
  Before (default setting, firefox will auto start at login)
 
@@ -21,7 +21,7 @@ i3 is a dynamic tiling window manager inspired by wmii that is primarily targete
 
 ## No transparency effects?
 
-* [picom](https://wiki.archlinux.org/title/Picom) can be installed and configured to enable transparency effects inside i3wm.
+* [picom](https://wiki.archlinux.org/title/Picom) can be installed and configured to enable transparency effects inside i3wm:
 
   ```
   $ sudo pacman -Syu picom
@@ -40,8 +40,9 @@ i3 is a dynamic tiling window manager inspired by wmii that is primarily targete
   Open `"${HOME}"/.config/picom/picom.conf`
   
 * Add/remove `#` at the start of the line to disable/enable picom auto start at login.
+* 
   Before (default setting, picom will not auto start at login)
-
+  
   ```
   #exec_always --no-startup-id picom -b
   ```
