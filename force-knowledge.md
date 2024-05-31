@@ -85,8 +85,11 @@ After (changed setting, battery indicator disabled)
 ## Autostart Implementation
 
  **[dex](https://man.archlinux.org/man/community/dex/dex.1.en) is used to auto start applications on startup in i3wm.**
+ 
   Open `"${HOME}"/.config/i3/config`.
+  
   Add/remove `#` at the start of the line to disable/enable xdg auto start.
+  
   Before (default setting, xdg auto start enabled)
 
   ```
