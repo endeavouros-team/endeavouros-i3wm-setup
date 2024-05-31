@@ -103,17 +103,20 @@ Tiling set to default for i3wm and can be changed to
 
 * Uses `rofi`. Lets you perform power actions on your machine.
 * Config = `"${HOME}"/.config/i3/scripts/powermenu`
+  
 ![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/i3-power-nov21.png "logout-menu")
 
 ## Application Menu
 
 * Uses `rofi`. Lets you launch apps, run commands, switch windows.
 * Config - `"${HOME}"/.config/rofi`
+  
 ![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/eos-i3-shot-nov21.png "appmenu")
 
 ## Power Profiles Handler Menu
 
 * Uses `powerprofilesctl`. Lets you easily switch power modes from the panel bar.
+  
 ![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/ppd-i3.png "power-profiles")
 
 ## Theming / Color Schemes
