@@ -4,15 +4,16 @@ i3 is a dynamic tiling window manager inspired by wmii that is primarily targete
 
 ## Firefox is autostarting at each login?
 
-* Open `"${HOME}"/.config/i3/config`.
-* Add/remove `#` at the start of the line to disable/enable auto start at login.
-* Before (default setting, firefox will auto start at login)
+ Open `"${HOME}"/.config/i3/config`.
+ Add/remove `#` at the start of the line to disable/enable auto start at login.
+ 
+ Before (default setting, firefox will auto start at login)
 
   ```
   exec --no-startup-id sleep 7 && firefox https://github.com/endeavouros-team/endeavouros-i3wm-setup/blob/main/force-knowledge.md
   ```
 
-* After (changed setting, firefox will not auto start at login)
+ After (changed setting, firefox will not auto start at login)
 
   ```
   #exec --no-startup-id sleep 7 && firefox https://github.com/endeavouros-team/endeavouros-i3wm-setup/blob/main/force-knowledge.md
