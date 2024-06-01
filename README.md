@@ -145,12 +145,12 @@ There is ![nwg-look](https://github.com/nwg-piotr/nwg-look) installed where you 
 
  As some applications now went to libadwaita theming (GTK4) you may can  add a `"${HOME}"/.config/gtk-4.0/settings.ini` with only the  theme lines:
 
-        ```
-        [Settings]
-        gtk-theme-name=Arc-Dark
-        ```
-    
-    So these will also follow the theme you set (will be needed to change manually on theme chanmges)
+```
+[Settings]
+gtk-theme-name=Arc-Dark
+```
+
+ So these will also follow the theme you set (will be needed to change manually on theme chanmges)
     
 
 
