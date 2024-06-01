@@ -139,7 +139,7 @@ Colors are in RGBA, calling transparency in the last column `rgba ( 26, 28, 35, 
 
 `"${HOME}"/.config/gtk-3.0`, `"${HOME}"/.Xresources`
 
-There is `![nwg-lookt](https://github.com/nwg-piotr/nwg-look) installed where you can browse and set GTK theme, icons and xcursor theme.
+There is ![nwg-look](https://github.com/nwg-piotr/nwg-look) installed where you can browse and set GTK theme, icons and xcursor theme.
 
  Xcursor needs `"${HOME}"/.Xresources`  on cases to have the right size in all cases.
 
