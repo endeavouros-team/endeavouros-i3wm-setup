@@ -102,7 +102,7 @@ Tiling set to default for i3wm and can be changed to
 ## Logout Menu
 
 * Uses `rofi`. Lets you perform power actions on your machine.
-* Config = `"${HOME}"/.config/i3/scripts/powermenu`
+* Config - `"${HOME}"/.config/i3/scripts/powermenu`
   
 ![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/i3-power-nov21.png "logout-menu")
 
@@ -123,19 +123,35 @@ Tiling set to default for i3wm and can be changed to
 
 * Rofi Application Menu and Logout Menu
 
-  * `"${HOME}"/.config/rofi/rofidmenu.rasi`
-  * `"${HOME}"/.config/rofi/powermenu.rasi`
+ `"${HOME}"/.config/rofi/rofidmenu.rasi`
+ 
+ `"${HOME}"/.config/rofi/powermenu.rasi`
 
 * Rofi Color Schemes
 
-  * `"${HOME}"/.config/rofi/arc_dark_transparent_colors.rasi`
-  * `"${HOME}"/.config/rofi/arc_dark_colors-ori.rasi`
-  * Colors are in RGBA, calling transparency in the last column `rgba ( 26, 28, 35, 100 % )`
+ `"${HOME}"/.config/rofi/arc_dark_transparent_colors.rasi`
+ 
+ `"${HOME}"/.config/rofi/arc_dark_colors-ori.rasi`
+ 
+Colors are in RGBA, calling transparency in the last column `rgba ( 26, 28, 35, 100 % )`
+
 * GTK3 Theming and Icons
 
-  * `"${HOME}"/.config/gtk-3.0`, `"${HOME}"/.Xresources`
-  * There is `laxppearance` installed where you can browse and set GTK3 theme, icons and xcursor theme.
-  * Xcursor needs to be set inside the `"${HOME}"/.Xresources` manually. If you change it in lxappearance it will be applied for all apps.
+`"${HOME}"/.config/gtk-3.0`, `"${HOME}"/.Xresources`
+
+There is `![nwg-lookt](https://github.com/nwg-piotr/nwg-look) installed where you can browse and set GTK theme, icons and xcursor theme.
+
+ Xcursor needs `"${HOME}"/.Xresources`  on cases to have the right size in all cases.
+
+ As some applications now went to libadwaita theming (GTK4) you may can  add a `"${HOME}"/.config/gtk-4.0/settings.ini` with only the  theme lines:
+
+    ```
+    [Settings]
+    gtk-theme-name=Arc-Dark
+    ```
+    So these will also follow the theme you set (will be needed to change manually on theme chanmges)
+    
+
 
 ## Tutorial to install EndeavourOS-i3wm-setup from scratch
 
@@ -144,8 +160,8 @@ For installing it later on, in case if you have installed another DE on initial 
 1. Clone endeavouros-i3wm-setup dotfiles repo
 
     ```
-    $ git clone https://github.com/endeavouros-team/endeavouros-i3wm-setup.git`
-    $ cd endeavouros-i3wm-setup/etc/skel/`
+    $ git clone https://github.com/endeavouros-team/endeavouros-i3wm-setup.git
+    $ cd endeavouros-i3wm-setup/etc/skel/
     ```
 
 2. Copy the files to user home directories.
@@ -158,7 +174,7 @@ For installing it later on, in case if you have installed another DE on initial 
 3. Make all scripts executable inside i3 config
 
     ```
-    $ chmod -R +x "${HOME}"/.config/i3/scripts`
+    $ chmod -R +x "${HOME}"/.config/i3/scripts
     ```
 
 4. Apply settings and theming for `xed` text editor
@@ -169,20 +185,20 @@ For installing it later on, in case if you have installed another DE on initial 
 
 5. Install using different methods
 
-    * Method 1 - Using EndeavourOS-packages-lists repo
+    * **Method 1** - Using EndeavourOS-packages-lists repo
 
         ```
         $ wget https://raw.githubusercontent.com/endeavouros-team EndeavourOS-packages-lists/master/i3
         $ sudo pacman -S --needed - < i3
         ```
 
-    * Method 2 - Using eos-packagelist package from EOS repo
+    * **Method 2** - Using eos-packagelist package from EOS repo
 
         ```
-        $ eos-packagelist --install 'i3-Window-Manager'
+        $ eos-packagelist --install 'i3-Window-Manager
         ```
 
-    * Method 3 - Using the i3_install script from the git for automated config and package installation in user home directory.
+    * **Method 3** - Using the i3_install script from the git for automated config and package installation in user home directory.
     **WARNING - Method 3 will overwrite existing files. Make sure you backup users configs before running it on your own.**
 
         ```
