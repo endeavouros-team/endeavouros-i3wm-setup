@@ -204,7 +204,6 @@ For installing it later on, in case if you have installed another DE on initial 
 
         ```
         $ wget https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/main/i3_install
-        $ cd endeavouros-i3wm-setup
         $ ./i3_install
         ```
 
