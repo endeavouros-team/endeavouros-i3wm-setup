@@ -150,7 +150,7 @@ There is ![nwg-look](https://github.com/nwg-piotr/nwg-look) installed where you 
 gtk-theme-name=Arc-Dark
 ```
 
- So these will also follow the theme you set (will be needed to change manually on theme chanmges)
+ With this gtk4-libadwaita apps will also follow the theme (will be needed to change manually on theme changes)
     
 
 
