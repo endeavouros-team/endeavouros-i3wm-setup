@@ -8,7 +8,8 @@
 
 * Dotfiles for i3 window manager under [EndeavourOS](https://endeavouros.com)
 * Maintained by [killajoe](https://github.com/killajoe) (Joe Kamprad)
-* You can find some details about enhancements and changes on my blog [kamprad.net](https://kamprad.net/index.php/endeavouros-i3wm-setup).
+* You can find some details about enhancements and changes on my blog
+  [kamprad.net](https://kamprad.net/index.php/endeavouros-i3wm-setup)
 
 ## Settings Tutorial
 
@@ -144,14 +145,14 @@ There is ![nwg-look](https://github.com/nwg-piotr/nwg-look) installed where you 
 
  Xcursor needs `"${HOME}"/.Xresources`  on cases to have the right size in all cases.
 
- As some applications now went to libadwaita theming (GTK4) you may can  add a `"${HOME}"/.config/gtk-4.0/settings.ini` with only the  theme lines:
+ As some applications now went to GTK4 you can add a `"${HOME}"/.config/gtk-4.0/settings.ini` with only the theme lines:
 
 ```
 [Settings]
 gtk-theme-name=Arc-Dark
 ```
 
- With this gtk4-libadwaita apps will also follow the theme (will be needed to change manually on theme changes)
+ With this gtk4 apps will also follow the theme (will be needed to change manually on theme changes)
     
 
 
