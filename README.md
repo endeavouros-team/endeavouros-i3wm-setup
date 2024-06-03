@@ -14,30 +14,31 @@
 
 Default applications
 
-* Background Wallpaper - [feh](https://feh.finalrewind.org)
+* **Background Wallpaper - [feh](https://feh.finalrewind.org)**
   
-* File Browser - [thunar](https://docs.xfce.org/xfce/thunar/start)
+* **File Browser - [thunar](https://docs.xfce.org/xfce/thunar/start)**
   
-* GTK3 Theming - [lxappearance-gtk3](https://wiki.lxde.org/de/LXAppearance)
+* **GTK3 Theming - [lxappearance-gtk3](https://wiki.lxde.org/de/LXAppearance)**
   * Config - `"${HOME}"/.config/gtk-3.0/`
+  * changing to nwg-look - ![nwg-look](https://github.com/nwg-piotr/nwg-look)
     
-* Terminal Emulator - [xfce4-terminal](https://docs.xfce.org/apps/terminal/start)
+* **Terminal Emulator - [xfce4-terminal](https://docs.xfce.org/apps/terminal/start)**
   * This is also set inside `"${HOME}"/.profile` as `export TERMINAL=xfce4-terminal`
   * If you want to change the default terminal, you need to change it in `"${HOME}"/.profile` as well.
  
-* Text Editor - [xed](https://github.com/linuxmint/xed)
+* **Text Editor - [xed](https://github.com/linuxmint/xed)**
   * Config - `xed.dconf`
   * To reset default settings `dconf reset -f /org/x/editor/preferences/editor`
     
-* XDG Autostart - [dex](https://github.com/jceb/dex)
+* **XDG Autostart - [dex](https://github.com/jceb/dex)**
   * Autostarting apps from `/etc/xdg/autostart/`
   * Dex is enabled by default in i3 config to autostart applications like on a DE.
   * To disable, comment out the line `exec --no-startup-id dex --autostart --environment i3` in `"${HOME}"/i3/config`
     
-* Notifications - [dunst](https://dunst-project.org)
+* **Notifications - [dunst](https://dunst-project.org)**
   * Config - `"${HOME}"/.config/dunst/dunstrc`
     
-* App Launcher - [rofi](https://davatorium.github.io/rofi)
+* **App Launcher - [rofi](https://davatorium.github.io/rofi)**
   * Config - `"${HOME}"/.config/rofi`
 
 ## Main Shortcuts
