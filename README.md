@@ -19,9 +19,8 @@ Default applications
   
 * **File Browser - [thunar](https://docs.xfce.org/xfce/thunar/start)**
   
-* **GTK3 Theming - [lxappearance-gtk3](https://wiki.lxde.org/de/LXAppearance)**
-  * Config - `"${HOME}"/.config/gtk-3.0/`
-  * changing to nwg-look - ![nwg-look](https://github.com/nwg-piotr/nwg-look)
+* **GTK Theming - ![nwg-look](https://github.com/nwg-piotr/nwg-look)**
+  * Config - `"${HOME}"/.config/gtk-3.0/ "${HOME}"/.config/gtk-4.0/ "${HOME}"/.gtkrc-2.0  "${HOME}"/.local/share/nwg-look/gsettings`
     
 * **Terminal Emulator - [xfce4-terminal](https://docs.xfce.org/apps/terminal/start)**
   * This is also set inside `"${HOME}"/.profile` as `export TERMINAL=xfce4-terminal`
