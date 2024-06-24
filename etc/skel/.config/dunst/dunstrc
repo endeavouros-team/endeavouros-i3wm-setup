@@ -1,3 +1,5 @@
+# customized dunst setup fro EndeavourOS i3
+# https://github.com/endeavouros-team/endeavouros-i3wm-setup
 # See dunst(5) for all configuration options
 
 [global]
@@ -198,6 +200,7 @@
     # Paths to default icons.
     #icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
     icon_path = /usr/share/icons/Qogir/16/status:/usr/share/icons/Qogir/16/devices/:/usr/share/icons/Qogir/24/panel/:/usr/share/icons/Qogir/16/apps/:/usr/share/pixmaps/
+    
     ### History ###
 
     # Should a notification popped up from history be sticky or timeout
@@ -296,14 +299,14 @@
     foreground = "#ffffff"
     timeout = 5
     # Icon for notifications with low urgency, uncomment to enable
-    icon = /usr/share/icons/Arc-X-D/status/16/dialog-information.png
+    icon = /usr/share/icons/Qogir/16/status/package-installed-outdated.svg
 
 [urgency_normal]
     background = "#28143c"
     foreground = "#ffffff"
     timeout = 5
     # Icon for notifications with normal urgency, uncomment to enable
-    icon = /usr/share/icons/Arc-X-D/status/16/dialog-question.png
+    icon = /usr/share/icons/Qogir/16/emblems/emblem-question.svg
 
 [urgency_critical]
     background = "#28143c"
@@ -311,7 +314,7 @@
     frame_color = "#ff7f7f"
     timeout = 120
     # Icon for notifications with critical urgency, uncomment to enable
-    icon = /usr/share/icons/Arc-X-D/status/16/dialog-warning.png
+    icon = /usr/share/icons/Qogir/16/actions/dialog-warning.svg
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.
