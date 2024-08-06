@@ -4,9 +4,12 @@
 # taken from here: https://gitlab.com/Nmoleo/i3-volume-brightness-indicator
 
 # See README.md for usage instructions
+
+# Modified to optionally use brightnessctl and pass in step sizes as arguments
+
 bar_color="#7f7fff"
-volume_step=1
-brightness_step=2.5
+volume_step=$2
+brightness_step=$2
 max_volume=100
 
 # Uses regex to get volume from pactl
@@ -20,8 +23,13 @@ function get_mute {
 }
 
 # Uses regex to get brightness from xbacklight
-function get_brightness {
+function get_brightness_xbl {
     xbacklight | grep -Po '[0-9]{1,3}' | head -n 1
+}
+
+# Get brightness percentage from brightnessctl
+function get_brightness_blctl {
+     brightnessctl | awk -F'[()%]' '{print $2}' | tr -d '\n'
 }
 
 # Returns a mute icon, a volume-low icon, or a volume-high icon, depending on the volume
@@ -50,13 +58,20 @@ function show_volume_notif {
 }
 
 # Displays a brightness notification using dunstify
-function show_brightness_notif {
-    brightness=$(get_brightness)
+function show_brightness_notif_xbl {
+    brightness=$(get_brightness_xbl)
     get_brightness_icon
     dunstify -t 1000 -r 2593 -u normal "$brightness_icon $brightness%" -h int:value:$brightness -h string:hlcolor:$bar_color
 }
 
-# Main function - Takes user input, "volume_up", "volume_down", "brightness_up", or "brightness_down"
+# Displays a brightness notification using dunstify
+function show_brightness_notif_blctl {
+    brightness=$(get_brightness_blctl)
+    get_brightness_icon
+    dunstify -t 1000 -r 2593 -u normal "$brightness_icon $brightness%" -h int:value:$brightness -h string:hlcolor:$bar_color
+}
+
+# Main function - Takes user input, "volume_up", "volume_down", "brightness_up_xbl", "brightness_down_xbl", "brightness_up_blctl", or "brightness_down_blctl".
 case $1 in
     volume_up)
     # Unmutes and increases volume, then displays the notification
@@ -82,15 +97,27 @@ case $1 in
     show_volume_notif
     ;;
 
-    brightness_up)
+    brightness_up_xbl)
     # Increases brightness and displays the notification
     xbacklight -inc $brightness_step -time 0 
-    show_brightness_notif
+    show_brightness_notif_xbl
     ;;
 
-    brightness_down)
+    brightness_down_xbl)
     # Decreases brightness and displays the notification
     xbacklight -dec $brightness_step -time 0
-    show_brightness_notif
+    show_brightness_notif_xbl
+    ;;
+
+    brightness_up_blctl)
+    # Increases brightness and displays the notification
+    brightnessctl set +$brightness_step%
+    show_brightness_notif_blctl
+    ;;
+
+    brightness_down_blctl)
+    # Decreases brightness and displays the notification
+    brightnessctl set $brightness_step%-
+    show_brightness_notif_blctl
     ;;
 esac
