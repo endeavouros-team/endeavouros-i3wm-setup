@@ -205,12 +205,12 @@ bindsym F1 exec --no-startup-id ~/.config/i3/scripts/keyhint-2
 bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh brightness_up_xbl 5
 bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh brightness_down_xbl 5
 # Alternative brightness control using brightnessctl 
-# backlightctl: https://archlinux.org/packages/extra/x86_64/brightnessctl/ (yay -S brightnessctl)
+# brightnessctl: https://archlinux.org/packages/extra/x86_64/brightnessctl/ (yay -S brightnessctl)
 #bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
 #bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 # Alternative brightness control using brightnessctl (with dunst notif)
-#bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh brightness_up_blctl 5
-#bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh brightness_down_blctl 5
+#bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh brightness_up_bctl 5
+#bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh brightness_down_bctl 5
 
 # change focus
 bindsym $mod+j focus left

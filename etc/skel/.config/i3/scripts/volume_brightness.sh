@@ -6,8 +6,7 @@
 # Modified to optionally use brightnessctl and pass in step sizes as arguments
 
 bar_color="#7f7fff"
-volume_step=$2
-brightness_step=$2
+step=$2
 max_volume=100
 
 # Uses regex to get volume from pactl
@@ -26,7 +25,7 @@ function get_brightness_xbl {
 }
 
 # Get brightness percentage from brightnessctl
-function get_brightness_blctl {
+function get_brightness_bctl {
      brightnessctl | awk -F'[()%]' '{print $2}' | tr -d '\n'
 }
 
@@ -63,29 +62,29 @@ function show_brightness_notif_xbl {
 }
 
 # Displays a brightness notification using dunstify
-function show_brightness_notif_blctl {
-    brightness=$(get_brightness_blctl)
+function show_brightness_notif_bctl {
+    brightness=$(get_brightness_bctl)
     get_brightness_icon
     dunstify -t 1000 -r 2593 -u normal "$brightness_icon $brightness%" -h int:value:$brightness -h string:hlcolor:$bar_color
 }
 
-# Main function - Takes user input, "volume_up", "volume_down", "brightness_up_xbl", "brightness_down_xbl", "brightness_up_blctl", or "brightness_down_blctl".
+# Main function - Takes user input, "volume_up", "volume_down", "brightness_up_xbl", "brightness_down_xbl", "brightness_up_bctl", or "brightness_down_bctl".
 case $1 in
     volume_up)
     # Unmutes and increases volume, then displays the notification
     pactl set-sink-mute @DEFAULT_SINK@ 0
     volume=$(get_volume)
-    if [ $(( "$volume" + "$volume_step" )) -gt $max_volume ]; then
+    if [ $(( "$volume" + "$step" )) -gt $max_volume ]; then
         pactl set-sink-volume @DEFAULT_SINK@ $max_volume%
     else
-        pactl set-sink-volume @DEFAULT_SINK@ +$volume_step%
+        pactl set-sink-volume @DEFAULT_SINK@ +$step%
     fi
     show_volume_notif
     ;;
 
     volume_down)
     # Raises volume and displays the notification
-    pactl set-sink-volume @DEFAULT_SINK@ -$volume_step%
+    pactl set-sink-volume @DEFAULT_SINK@ -$step%
     show_volume_notif
     ;;
 
@@ -97,25 +96,25 @@ case $1 in
 
     brightness_up_xbl)
     # Increases brightness and displays the notification
-    xbacklight -inc $brightness_step -time 0 
+    xbacklight -inc $step -time 0 
     show_brightness_notif_xbl
     ;;
 
     brightness_down_xbl)
     # Decreases brightness and displays the notification
-    xbacklight -dec $brightness_step -time 0
+    xbacklight -dec $step -time 0
     show_brightness_notif_xbl
     ;;
 
-    brightness_up_blctl)
+    brightness_up_bctl)
     # Increases brightness and displays the notification
-    brightnessctl set +$brightness_step%
-    show_brightness_notif_blctl
+    brightnessctl set +$step%
+    show_brightness_notif_bctl
     ;;
 
-    brightness_down_blctl)
+    brightness_down_bctl)
     # Decreases brightness and displays the notification
-    brightnessctl set $brightness_step%-
-    show_brightness_notif_blctl
+    brightnessctl set $step%-
+    show_brightness_notif_bctl
     ;;
 esac
