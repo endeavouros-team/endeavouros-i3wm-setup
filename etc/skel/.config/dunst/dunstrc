@@ -1,4 +1,4 @@
-# customized dunst setup fro EndeavourOS i3
+# customized dunst setup from EndeavourOS i3
 # https://github.com/endeavouros-team/endeavouros-i3wm-setup
 # See dunst(5) for all configuration options
 
@@ -28,14 +28,15 @@
     # constant width of 300
     width = 300
 
+    # dynamic height from 0 to 300
     # The maximum height of a single notification, excluding the frame.
-    height = 300
+    height = (0, 300)
 
     # Position the notification in the top right corner
     origin = bottom-right
 
     # Offset from the origin
-    offset = 30x40
+    offset = (30, 40)
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
