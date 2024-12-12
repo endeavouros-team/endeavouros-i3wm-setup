@@ -1,3 +1,5 @@
+# customized dunst setup from EndeavourOS i3
+# https://github.com/endeavouros-team/endeavouros-i3wm-setup
 # See dunst(5) for all configuration options
 
 [global]
