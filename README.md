@@ -152,7 +152,17 @@ gtk-theme-name=Arc-Dark
 ```
 
  With this gtk4 apps will also follow the theme (will be needed to change manually on theme changes)
-    
+
+ * Screen locker and locking session after sleep:
+   blur-lock and xss-lock are used.
+   see `~/.config/i3/config`
+   
+```
+# lock by blurring the screen:
+bindsym $mod+l exec --no-startup-id ~/.config/i3/scripts/blur-lock
+# lock in case after sleep
+exec --no-startup-id xss-lock --transfer-sleep-lock -- "~/.config/i3/scripts/blur-lock"
+```
 
 
 ## Tutorial to install EndeavourOS-i3wm-setup from scratch
