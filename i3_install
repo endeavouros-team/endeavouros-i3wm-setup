@@ -2,7 +2,7 @@
 # Maintainer: joekamprad [joekamprad //a_t// endeavouros.com]
 git clone https://github.com/endeavouros-team/endeavouros-i3wm-setup.git
 cd endeavouros-i3wm-setup/etc/skel/
-cp -R .config ~/                                            
+cp -R .config ~/
 chmod -R +x ~/.config/i3/scripts
 cp .Xresources .profile xed.dconf ~/
 dbus-launch dconf load / < ~/xed.dconf
