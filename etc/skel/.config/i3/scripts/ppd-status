@@ -7,5 +7,19 @@
 
 # script to show current power profile
 
+# assign tags or translations to each profile
+declare -A tags
+tags=(
+  [performance]="Performance"
+  [balanced]="Balanced"
+  [power-saver]="Power saver"
+)
+
+# Get current profile 
 current_profile=$(/usr/bin/powerprofilesctl get)
-echo "$current_profile"
+
+# Get tag from the array
+profile_tag=${tags[$current_profile]}
+
+# Show tag on i3block
+echo "${profile_tag:-$current_profile}"
