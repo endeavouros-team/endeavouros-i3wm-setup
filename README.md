@@ -1,6 +1,6 @@
 # endeavouros-i3wm-setup
 
-![Stars](https://img.shields.io/github/stars/endeavouros-team/endeavouros-i3wm-setup.svg?style=flat) ![Forks](https://img.shields.io/github/forks/endeavouros-team/endeavouros-i3wm-setup.svg?style=flat) ![Contributors](https://img.shields.io/github/contributors/endeavouros-team/endeavouros-i3wm-setup.svg?style=flat) ![Maintenance](https://img.shields.io/maintenance/yes/2024.svg)
+![Stars](https://img.shields.io/github/stars/endeavouros-team/endeavouros-i3wm-setup.svg?style=flat) ![Forks](https://img.shields.io/github/forks/endeavouros-team/endeavouros-i3wm-setup.svg?style=flat) ![Contributors](https://img.shields.io/github/contributors/endeavouros-team/endeavouros-i3wm-setup.svg?style=flat) ![Maintenance](https://img.shields.io/maintenance/yes/2025.svg)
 
 ![alt text](https://raw.githubusercontent.com/endeavouros-team/screenshots/master/eos-i3-banner.png "eos-i3")
 
