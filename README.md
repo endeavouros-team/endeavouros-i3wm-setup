@@ -200,7 +200,7 @@ For installing it later on, in case if you have installed another DE on initial 
     * **Method 1** - Using EndeavourOS-packages-lists repo
 
         ```
-        $ wget https://raw.githubusercontent.com/endeavouros-team EndeavourOS-packages-lists/master/i3
+        $ wget https://raw.githubusercontent.com/endeavouros-team/EndeavourOS-packages-lists/master/i3
         $ sudo pacman -S --needed - < i3
         ```
 
