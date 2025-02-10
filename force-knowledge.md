@@ -84,7 +84,7 @@ After (changed setting, battery indicator disabled)
 
 ## Autostart Implementation
 
- **[dex](https://man.archlinux.org/man/community/dex/dex.1.en) is used to auto start applications on startup in i3wm.**
+ **[dex](https://man.archlinux.org/man/extra/dex/dex.1.en) is used to auto start applications on startup in i3wm.**
  
   Open `"${HOME}"/.config/i3/config`.
   
