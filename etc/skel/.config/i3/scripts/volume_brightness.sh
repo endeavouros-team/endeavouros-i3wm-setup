@@ -1,8 +1,6 @@
 #!/bin/bash
 # original source: https://gitlab.com/Nmoleo/i3-volume-brightness-indicator
 
-# taken from here: https://gitlab.com/Nmoleo/i3-volume-brightness-indicator
-
 # See README.md for usage instructions
 bar_color="#7f7fff"
 volume_step=1
@@ -52,8 +50,9 @@ function show_volume_notif {
 # Displays a brightness notification using dunstify
 function show_brightness_notif {
     brightness=$(get_brightness)
+    echo $brightness
     get_brightness_icon
-    dunstify -t 1000 -r 2593 -u normal "$brightness_icon $brightness%" -h int:value:$brightness -h string:hlcolor:$bar_color
+    notify-send -t $notification_timeout -h string:x-dunst-stack-tag:brightness_notif -h int:value:$brightness "$brightness_icon $brightness%"
 }
 
 # Main function - Takes user input, "volume_up", "volume_down", "brightness_up", or "brightness_down"
@@ -84,13 +83,13 @@ case $1 in
 
     brightness_up)
     # Increases brightness and displays the notification
-    xbacklight -inc $brightness_step -time 0 
+    xbacklight -A $brightness_step 
     show_brightness_notif
     ;;
 
     brightness_down)
     # Decreases brightness and displays the notification
-    xbacklight -dec $brightness_step -time 0
+    xbacklight -U $brightness_step
     show_brightness_notif
     ;;
 esac
