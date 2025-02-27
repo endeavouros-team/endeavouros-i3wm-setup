@@ -6,7 +6,7 @@
 # See README.md for usage instructions
 bar_color="#7f7fff"
 volume_step=1
-brightness_step=2.5
+brightness_step=5
 max_volume=100
 
 # Uses regex to get volume from pactl
@@ -42,11 +42,11 @@ function get_brightness_icon {
     brightness_icon=""
 }
 
-# Displays a volume notification using dunstify
+# Displays a volume notification using notify-send
 function show_volume_notif {
     volume=$(get_mute)
     get_volume_icon
-    dunstify -i audio-volume-muted-blocking -t 1000 -r 2593 -u normal "$volume_icon $volume%" -h int:value:$volume -h string:hlcolor:$bar_color
+    notify-send -i audio-volume-muted -t 1000 "Volume" "$volume_icon $volume%" -h int:value:$volume -h string:x-canonical-private-synchronous:volume
 }
 
 # Displays a brightness notification using dunstify
