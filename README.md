@@ -207,7 +207,7 @@ For installing it later on, in case if you have installed another DE on initial 
     * **Method 2** - Using eos-packagelist package from EOS repo
 
         ```
-        $ eos-packagelist --install 'i3-Window-Manager
+        $ eos-packagelist --install "i3-Window-Manager"
         ```
 
     * **Method 3** - Using the i3_install script from the git for automated config and package installation in user home directory.
