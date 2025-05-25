@@ -285,8 +285,8 @@ bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
-# Redirect sound to headphones
-bindsym $mod+p exec --no-startup-id /usr/local/bin/switch-audio-port
+# toggle between audio devices for output
+bindsym $mod+p exec --no-startup-id ~/.config/i3/scripts/audio-device-switch
 
 ## App shortcuts
 bindsym $mod+w exec --no-startup-id /usr/bin/firefox
