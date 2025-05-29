@@ -35,16 +35,23 @@ function get_volume_icon {
     fi
 }
 
-# Always returns the same icon - I couldn't get the brightness-low icon to work with fontawesome
+# Returns an increasingly filled circle
 function get_brightness_icon {
-    brightness_icon=""
+    brightness=$(get_brightness)
+    if [ "$brightness" -eq 0 ] ; then
+        brightness_icon=""
+    elif [ "$sc_brightness" -lt 50 ] ; then
+        brightness_icon=""
+    else
+        brightness_icon=""
+    fi
 }
 
 # Displays a volume notification using notify-send
 function show_volume_notif {
     volume=$(get_mute)
     get_volume_icon
-    notify-send -i audio-volume-muted -t 1000 "Volume" "$volume_icon $volume%" -h int:value:$volume -h string:x-canonical-private-synchronous:volume
+    notify-send -i audio-volume-high -t 1000 "Volume" "$volume_icon $volume%" -h int:value:$volume -h string:x-canonical-private-synchronous:volume
 }
 
 # Displays a brightness notification using dunstify
@@ -83,7 +90,7 @@ case $1 in
 
     brightness_up)
     # Increases brightness and displays the notification
-    xbacklight -A $brightness_step 
+    xbacklight -A $brightness_step
     show_brightness_notif
     ;;
 
