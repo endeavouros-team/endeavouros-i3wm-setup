@@ -2,7 +2,6 @@
 # original source: https://gitlab.com/Nmoleo/i3-volume-brightness-indicator
 
 # See README.md for usage instructions
-bar_color="#7f7fff"
 volume_step=1
 brightness_step=5
 max_volume=100
@@ -83,7 +82,7 @@ case $1 in
 
     brightness_up)
     # Increases brightness and displays the notification
-    xbacklight -A $brightness_step 
+    xbacklight -A $brightness_step
     show_brightness_notif
     ;;
 
