@@ -206,14 +206,15 @@ bindsym F1 exec --no-startup-id ~/.config/i3/scripts/keyhint-2
 # Backlight setting using dunst osc
 bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh brightness_up
 bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh brightness_down
-a
 
 # alternative screen & keyboard brightness setting with brightnessctl using dunst osc
-# install brightnessctl to work (sudo pacman -S brightnessctl)
+# install brightnessctl (sudo pacman -S brightnessctl)
+# then specify the device in volume_brightness2.sh using the grep command there
 # keyboard backlight setting using brightnessctl
 #bindsym Mod1+space       exec --no-startup-id ~/.config/i3/scripts/volume_brightness2.sh keyboard_brightness_up
 #bindsym Mod1+Shift+space exec --no-startup-id ~/.config/i3/scripts/volume_brightness2.sh keyboard_brightness_down
-## screen brightness setting using brightnessctl
+#
+# screen brightness setting using brightnessctl
 #bindsym XF86MonBrightnessUp   exec --no-startup-id ~/.config/i3/scripts/volume_brightness2.sh screen_brightness_up
 #bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/scripts/volume_brightness2.sh screen_brightness_down
 
@@ -497,16 +498,16 @@ set $darkbluetrans  #08052be6
 set $darkblue       #08052b
 set $lightblue      #5294e2
 set $urgentred      #e53935
-set $white      #ffffff
-set $black      #000000
-set $purple     #e345ff
+set $white          #ffffff
+set $black          #000000
+set $purple         #e345ff
 set $darkgrey       #383c4a
-set $grey       #b0b5bd
+set $grey           #b0b5bd
 set $mediumgrey     #8b8b8b
 set $yellowbrown    #e1b700
 
 # define colors for windows:
-#class                  border      bground     text        indicator   child_border
+#class                      border      bground     text        indicator   child_border
 client.focused              $lightblue  $darkblue   $white      $mediumgrey $mediumgrey
 client.unfocused            $darkblue   $darkblue   $grey       $darkgrey   $darkgrey
 client.focused_inactive     $darkblue   $darkblue   $grey       $black      $black
@@ -538,7 +539,7 @@ strip_workspace_numbers yes
             separator          $purple
             background         $darkgrey
             statusline         $white
-#                               border              bg         txt     indicator
+#                           border              bg          txt         indicator
         focused_workspace   $mediumgrey         $grey       $darkgrey   $purple
         active_workspace    $lightblue          $mediumgrey $darkgrey   $purple
         inactive_workspace  $darkgrey           $darkgrey   $grey       $purple
@@ -569,11 +570,11 @@ strip_workspace_numbers yes
 #       separator          $purple
 #       background         $darkbluetrans
 #           statusline         $white
-#                   border      bg      txt     indicator
+#                           border          bg              txt         indicator
 #       focused_workspace   $lighterblue    $lighterblue    $darkblue   $purple
-#       active_workspace    $lightdblue $lightdblue $darkblue   $purple
-#       inactive_workspace  $darkblue   $darkblue   $lightdblue $purple
-#       urgent_workspace    $urgentred  $urgentred  $white      $purple
+#       active_workspace    $lightdblue     $lightdblue     $darkblue   $purple
+#       inactive_workspace  $darkblue       $darkblue       $lightdblue $purple
+#       urgent_workspace    $urgentred      $urgentred      $white      $purple
 #   }
 #}
 
