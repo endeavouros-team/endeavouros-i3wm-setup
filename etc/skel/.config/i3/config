@@ -209,7 +209,6 @@ bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/scripts/volume_b
 
 # alternative screen & keyboard brightness setting with brightnessctl using dunst osc
 # install brightnessctl (sudo pacman -S brightnessctl)
-# then specify the device in volume_brightness2.sh using the grep command there
 # keyboard backlight setting using brightnessctl
 #bindsym Mod1+space       exec --no-startup-id ~/.config/i3/scripts/volume_brightness2.sh keyboard_brightness_up
 #bindsym Mod1+Shift+space exec --no-startup-id ~/.config/i3/scripts/volume_brightness2.sh keyboard_brightness_down

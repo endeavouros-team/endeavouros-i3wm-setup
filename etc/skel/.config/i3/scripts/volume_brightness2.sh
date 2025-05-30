@@ -9,24 +9,22 @@ screen_brightness_step=1
 max_volume=100
 notification_timeout=1000
 
-# Specify Icon Theme here
+# Specify Icon Theme here:
 volume_theme_icon="audio-volume-high"
 screen_brightness_theme_icon="display-brightness"
 keyboard_brightness_theme_icon="display-brightness"
 
-# Keyboard Backlight device here:
-# copy result from (brightnessctl --list | grep -Po '\w+::kbd_backlight') to device
-device="chromeos::kbd_backlight"
+# Keyboard Backlight device detection here:
+device_cache="/tmp/kbd_backlight_device"
 
-### Auto-detect keyboard and cache alternative here: (uncomment and delete device if wanted)
-# device_cache="/tmp/kbd_backlight_device"
-#
-# if [ -f "$device_cache" ]; then         # If there is cache, load it into device
-#     device=$(cat "$device_cache")
-# else                                    # If there is no cache, create one
-#     device=$(brightnessctl --list | grep -Po '\w+::kbd_backlight')
-#     echo "$device" > "$device_cache"
-# fi
+if [ -f "$device_cache" ]; then
+    # If there is cache, load it into device
+    device=$(cat "$device_cache")
+else
+    # If there is no cache, create one
+    device=$(brightnessctl --list | grep -Po '\w+::kbd_backlight')
+    echo "$device" > "$device_cache"
+fi
 
 # Uses regex to get volume from pactl
 function get_volume {
@@ -41,19 +39,18 @@ function get_mute {
 # Get keyboard_brightness from brightnessctl
 function get_keyboard_brightness {
     if [ -n "$device" ]; then
-        curr=$(brightnessctl -d "$device" get)
-        echo $(( curr ))
-    else
-        echo "No keyboard backlight device found"
+        keyboard_curr=$(brightnessctl -d "$device" get)
+        keyboard_max=$(brightnessctl -d "$device" max)
+        echo $(( keyboard_curr * 100 / keyboard_max))
     fi
 }
 
 
 # Grabs screen brightness and formats it out of 100
 function get_screen_brightness {
-    curr=$(brightnessctl -q get)
-    max=$(brightnessctl -q max)
-    echo $(( curr * 100 / max ))
+    screen_curr=$(brightnessctl -q get)
+    screen_max=$(brightnessctl -q max)
+    echo $(( screen_curr * 100 / screen_max ))
 }
 
 # Returns a mute icon, a volume-low icon, or a volume-high icon, depending on the volume
