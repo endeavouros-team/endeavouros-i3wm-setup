@@ -14,7 +14,7 @@ APIKEY="keykeykey"
 # And get your Latitute and Longitudes to put in here:
 LAT="XX.XXXX"
 LON="XX.XXXX"
-URL="http://api.openweathermap.org/data/2.5/onecall?lat=${LAT}&lon=${LON}&units=metric&exclude=minutely,hourly,daily&APPID=${APIKEY}"
+URL="https://api.openweathermap.org/data/3.0/onecall?lat=${LAT}&lon=${LON}&units=metric&exclude=minutely,hourly,daily&appid=${APIKEY}"
 WEATHER_RESPONSE=$(wget -qO- "${URL}")
 
 WEATHER_CONDITION=$(echo "$WEATHER_RESPONSE" | jq '.current.weather[0].main' | sed 's/"//g')
