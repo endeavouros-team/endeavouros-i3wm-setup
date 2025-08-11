@@ -11,7 +11,7 @@ APIKEY="keykey"
 # find your City ID here: https://openweathermap.org/
 # search for your city and copy the ID from the URL inside the browser.
 CITY_ID="idid"
-URL="http://api.openweathermap.org/data/2.5/weather?id=${CITY_ID}&units=metric&APPID=${APIKEY}"
+URL="https://api.openweathermap.org/data/2.5/weather?id=${CITY_ID}&units=metric&APPID=${APIKEY}"
 
 WEATHER_RESPONSE=$(timeout --signal=1 2s curl -s "${URL}") ||  exit 1;
 
