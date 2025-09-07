@@ -164,6 +164,29 @@ bindsym $mod+l exec --no-startup-id ~/.config/i3/scripts/blur-lock
 exec --no-startup-id xss-lock --transfer-sleep-lock -- "~/.config/i3/scripts/blur-lock"
 ```
 
+# Details/Options on the panel
+
+You will find examples scripts and blocks under:
+scripts: `$HOME/.config/i3/scripts/`
+blocks: `$HOME/.config/i3/i3blocks.conf`
+
+**open weather:**
+
+run `~/.config/i3/scripts/openweather -s` to create setup you will need:
+1. Fee API key from: https://openweathermap.org/api
+2. city IDs from: https://openweathermap.org/find
+
+Open i3blocks.conf and enable weather module by removing the commenting # there:
+
+` nano $HOME/.config/i3/i3blocks.conf`
+
+```
+#[Weather]
+#command=~/.config/i3/scripts/openweather
+#interval=1800
+#color=#7275b3
+``` 
+
 
 ## Tutorial to install EndeavourOS-i3wm-setup from scratch
 
