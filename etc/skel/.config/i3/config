@@ -378,6 +378,9 @@ for_window [class="urxvt"] border pixel 1
 # autostart applications/services on login: #
 #############################################
 
+# make sure it loads gtk configs
+exec_always $HOME/.config/i3/scripts/import-gsettings
+
 ## compositor
 
 # aka transparency
