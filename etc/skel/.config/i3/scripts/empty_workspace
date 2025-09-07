@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# Copyright (C) 2025 Johannes Kamprad
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+# empty_workspace - open a new workspace automatically named with next number on i3
+
+
 MAX_DESKTOPS=20
 
 WORKSPACES=$(seq -s '\n' 1 1 ${MAX_DESKTOPS})

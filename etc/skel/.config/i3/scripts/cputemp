@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# script to monitor temperatures in waybar/i3blocks e.t.c.
+# example only use `sensors` to find your names to replace `Tdie|Tctl|Package`
+# example output part from sensors:
+# zenpower-pci-00c3
+# Adapter: PCI adapter
+# SVI2_Core:     1.03 V
+# SVI2_SoC:    994.00 mV
+# Tdie:         +53.1°C
+# Tctl:         +53.1°C
+# Tccd1:        +42.5°C
+# Tccd2:        +43.2°C
+
+temp=$(sensors 2>/dev/null | grep -E 'Tdie|Tctl|Package id 0' | grep -oP '\+?[0-9]+\.\d+(?=°C)' | tr -d '+' | head -n1)
+
+echo "${temp}°C"

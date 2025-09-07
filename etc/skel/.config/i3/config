@@ -346,38 +346,60 @@ for_window [class=Thunar] focus
 for_window [class=Thunderbird] focus
 for_window [class=TelegramDesktop] focus
 
-##############
-# compositor #
-##############
+##################
+# floating rules #
+##################
 
-# transparency
-# uncomment one of them to be used
-# options could need changes, related to used GPU and drivers.
-# to find the right setting consult the archwiki or ask at the forum.
-#
-# xcompmgr: https://wiki.archlinux.org/title/Xcompmgr
-# manpage: https://man.archlinux.org/man/xcompmgr.1.en
-# install xcompmgr package to use it (yay -S xcompmgr)
-#exec --no-startup-id xcompmgr -C -n &
-# or an more specialized config like this:
-#exec --no-startup-id xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
-#
-# or:
-#
-# picom: https://wiki.archlinux.org/title/Picom
-# manpage: https://man.archlinux.org/man/picom.1.en
-# The default configuration is available in /etc/xdg/picom.conf
-# For modifications, it can be copied to ~/.config/picom/picom.conf or ~/.config/picom.conf
-# install picom package (yay -S picom)
-# start using default config
-#exec_always --no-startup-id picom -b
-#
-# for custom config:
-#exec_always --no-startup-id picom --config  ~/.config/picom.conf
+# set floating (nontiling) for apps needing it
+for_window [class="Yad" instance="yad"] floating enable
+for_window [class="Galculator" instance="galculator"] floating enable
+for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
+
+# set floating (nontiling) for special apps
+for_window [class="Xsane" instance="xsane"] floating enable
+for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
+for_window [class="qt5ct" instance="qt5ct"] floating enable
+for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
+for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
+for_window [class="Pamac-manager"] floating enable
+for_window [window_role="About"] floating enable
+
+# set border of floating window
+for_window [class="urxvt"] border pixel 1
+
+# set size of floating window
+#for_window [window_role="(?i)GtkFileChooserDialog"] resize set 640 480 #to set size of file choose dialog
+#for_window [class=".*"] resize set 640 480 #to change size of all floating windows
+
+# set position of floating window
+#for_window [class=".*"] move position center
 
 #############################################
 # autostart applications/services on login: #
 #############################################
+
+## compositor
+
+# aka transparency
+# uncomment one of them to be used
+# options could need changes, related to used GPU and drivers.
+# to find the right setting consult the archwiki or ask at the forum.
+
+# picom: https://wiki.archlinux.org/title/Picom
+# manpage: https://man.archlinux.org/man/picom.1.en
+# The default configuration is available in /etc/xdg/picom.conf
+# For modifications, it can be copied to ~/.config/picom/picom.conf or ~/.config/picom.conf
+# install picom package (sudo pacman -Syu picom)
+
+# start using default config
+#exec_always --no-startup-id picom -b
+
+# for custom config:
+#exec_always --no-startup-id picom --config  ~/.config/picom.conf
+
+
+## applications/services
+
 
 #get auth work with polkit-gnome
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -426,18 +448,20 @@ exec --no-startup-id xset s 480 dpms 600 600 600
 #exec --no-startup-id xscreensaver --no-splash
 
 # Desktop notifications
+
 # dunst config used ~/.config/dunst/dunstrc
 # set alternative config if needed:
 #exec --no-startup-id /usr/bin/dunst --config ~/.config/dunst/dunstrc
 # may need to run dbus-launch explicitly:
 #exec --no-startup-id dbus-launch /usr/bin/dunst
 exec --no-startup-id /usr/bin/dunst
+
 # alternative if you installed aside with XFCE4:
 # exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
 
 # autotiling script
 # https://github.com/nwg-piotr/autotiling
-# `yay -S autotiling ;) (it is in AUR)
+# `pacman -Syu autotiling`
 #exec_always --no-startup-id autotiling
 
 # Autostart apps as you like
@@ -445,9 +469,9 @@ exec --no-startup-id /usr/bin/dunst
 exec --no-startup-id sleep 7 && firefox https://github.com/endeavouros-team/endeavouros-i3wm-setup/blob/main/force-knowledge.md
 #exec --no-startup-id sleep 3 && thunar
 
-###############
-# system tray #
-###############
+
+## system tray
+
 # if you do not use dex: exec --no-startup-id dex --autostart --environment i3
 # you need to have tray apps started manually one by one:
 
@@ -459,34 +483,6 @@ exec --no-startup-id sleep 7 && firefox https://github.com/endeavouros-team/ende
 
 # clipman-applet
 #exec --no-startup-id xfce4-clipman
-
-##################
-# floating rules #
-##################
-
-# set floating (nontiling) for apps needing it
-for_window [class="Yad" instance="yad"] floating enable
-for_window [class="Galculator" instance="galculator"] floating enable
-for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
-
-# set floating (nontiling) for special apps
-for_window [class="Xsane" instance="xsane"] floating enable
-for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
-for_window [class="qt5ct" instance="qt5ct"] floating enable
-for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
-for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enable
-for_window [class="Pamac-manager"] floating enable
-for_window [window_role="About"] floating enable
-
-# set border of floating window
-for_window [class="urxvt"] border pixel 1
-
-# set size of floating window
-#for_window [window_role="(?i)GtkFileChooserDialog"] resize set 640 480 #to set size of file choose dialog
-#for_window [class=".*"] resize set 640 480 #to change size of all floating windows
-
-# set position of floating window
-#for_window [class=".*"] move position center
 
 ######################################
 # color settings for bar and windows #
@@ -581,21 +577,15 @@ strip_workspace_numbers yes
 # Application menu handled by rofi: #
 #####################################
 
-## rofi bindings fancy application menu ($mod+d /F9 optional disabled)
+## rofi bindings fancy application menu
 
 bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun \
         -config ~/.config/rofi/rofidmenu.rasi
 
-#bindsym F9 exec --no-startup-id rofi -modi drun -show drun \
-#       -config ~/.config/rofi/rofidmenu.rasi
-
-## rofi bindings for window menu ($mod+t /F10 optional disabled)
+## rofi bindings for window menu
 
 bindsym $mod+t exec --no-startup-id rofi -show window \
         -config ~/.config/rofi/rofidmenu.rasi
-
-#bindsym F10 exec --no-startup-id rofi -show window \
-#       -config ~/.config/rofi/rofidmenu.rasi
 
 ## rofi bindings to manage clipboard (install rofi-greenclip from the AUR)
 

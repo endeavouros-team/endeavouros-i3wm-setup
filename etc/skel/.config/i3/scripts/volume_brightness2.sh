@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 # original source: https://gitlab.com/Nmoleo/i3-volume-brightness-indicator
 # alternative to volume_brightness.sh that uses brightnessctl for both keyboard & screen brightness
 

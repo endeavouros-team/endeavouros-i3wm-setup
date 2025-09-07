@@ -1,93 +1,471 @@
 #!/usr/bin/env bash
-# Edited by Andreas Lindlbauer <endeavouros.mousily@aleeas.com>
 
-temps=("#0600FF" "#0500FF" "#0400FF" "#0300FF" "#0200FF" "#0100FF" "#0000FF" "#0002FF" "#0012FF" "#0022FF" "#0032FF" "#0044FF" "#0054FF" "#0064FF" "#0074FF" "#0084FF" "#0094FF" "#00A4FF" "#00B4FF" "#00C4FF" "#00D4FF" "#00E4FF" "#00FFF4" "#00FFD0" "#00FFA8" "#00FF83" "#00FF5C" "#00FF36" "#00FF10" "#17FF00" "#3EFF00" "#65FF00" "#B0FF00" "#FDFF00" "#FFF000" "#FFDC00" "#FFC800" "#FFB400" "#FFA000" "#FF8C00" "#FF7800" "#FF6400" "#FF5000" "#FF3C00" "#FF2800" "#FF1400" "#FF0000")
+# openweater - OpenWeatherMap Weather Fetcher for Waybar/Status Bars 
+#
+# Copyright (C) 2025 Johannes Kamprad
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
 
-command -v jq >/dev/null 2>&1 || { echo >&2 "Program 'jq' required but it is not installed.  
-Aborting."; exit 1; }
-command -v wget >/dev/null 2>&1 || { echo >&2 "Program 'wget' required but is not installed.  
-Aborting."; exit 1; }
 
-# To use this script you need to create an API key here https://home.openweathermap.org
-# You need to put your Open Weather APIKEY here:
-APIKEY="keykeykey"
-# And get your Latitute and Longitudes to put in here:
-LAT="XX.XXXX"
-LON="XX.XXXX"
-URL="https://api.openweathermap.org/data/3.0/onecall?lat=${LAT}&lon=${LON}&units=metric&exclude=minutely,hourly,daily&appid=${APIKEY}"
-WEATHER_RESPONSE=$(wget -qO- "${URL}")
+# openweater - OpenWeatherMap Weather Fetcher for Waybar/Status Bars
+# Secure API key handling with configurable locations
+# including setup script and help
+# Options:
+#    -h, --help              Show this help message
+#    -c, --city-id ID        Override city ID (required if not in config)
+#    -k, --api-key KEY       Override API key (not recommended, use config file)
+#    -u, --units UNITS       Units: metric, imperial, kelvin (default: $DEFAULT_UNITS)
+#    -f, --force-refresh     Force refresh (ignore cache)
+#    --setup                 Interactive setup wizard
+#    --show-config           Show current configuration
 
-WEATHER_CONDITION=$(echo "$WEATHER_RESPONSE" | jq '.current.weather[0].main' | sed 's/"//g')
-WEATHER_TEMP=$(echo "$WEATHER_RESPONSE" | jq '.current.feels_like')
-WEATHER_INT=${WEATHER_TEMP%.*}
+set -euo pipefail
 
-TIME_NOW=$( echo "$WEATHER_RESPONSE" | jq '.current.dt')
-SUNRISE=$( echo "$WEATHER_RESPONSE" | jq '.current.sunrise')
-SUNSET=$( echo "$WEATHER_RESPONSE" | jq '.current.sunset')
-DESCRIPTION=$( echo "$WEATHER_RESPONSE" | jq '.current.weather[0].description' | sed 's/"//g')
-WEATHER_ALERT=$( echo "$WEATHER_RESPONSE" | jq '.alerts[0].event' | sed 's/"//g')
-DAYTIME="n"
+# Set C locale to avoid German decimal formatting issues
+export LC_NUMERIC=C
+export LC_ALL=C
 
-if [[ "$TIME_NOW" > "$SUNRISE" ]] && [[ "$TIME_NOW" < "$SUNSET" ]]; then
-    DAYTIME="d"
-fi
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
 
-case $WEATHER_CONDITION in
-  'Clouds')
-    if [ "$DAYTIME" == "d" ]; then
-        WEATHER_ICON=""
-    else
-        WEATHER_ICON=""
+# Default configuration (no default location)
+DEFAULT_UNITS="metric"
+CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}"
+CONFIG_FILE="$CONFIG_DIR/openweather/config"
+CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/openweather"
+CACHE_FILE="$CACHE_DIR/weather_data"
+CACHE_DURATION=600  # 10 minutes
+
+# Logging functions
+log_error() {
+    echo -e "${RED}[ERROR]${NC} $*" >&2
+}
+
+log_warn() {
+    echo -e "${YELLOW}[WARN]${NC} $*" >&2
+}
+
+# Show help
+show_help() {
+    cat << EOF
+Usage: $(basename "$0") [OPTIONS]
+
+Secure OpenWeatherMap weather fetcher with configurable locations.
+
+Options:
+    -h, --help              Show this help message
+    -c, --city-id ID        Override city ID (required if not in config)
+    -k, --api-key KEY       Override API key (not recommended, use config file)
+    -u, --units UNITS       Units: metric, imperial, kelvin (default: $DEFAULT_UNITS)
+    -f, --force-refresh     Force refresh (ignore cache)
+    --setup                 Interactive setup wizard
+    --show-config           Show current configuration
+    
+Configuration:
+    Config file: $CONFIG_FILE
+    
+    Create config file with:
+    OPENWEATHER_API_KEY="your_api_key_here"
+    OPENWEATHER_CITY_ID="your_city_id"  # Required
+    OPENWEATHER_UNITS="metric"          # Optional
+    
+Examples:
+    $(basename "$0")                    # Use config file settings
+    $(basename "$0") --city-id 5128581   # New York
+    $(basename "$0") --units imperial    # Fahrenheit
+    $(basename "$0") --setup             # Run setup wizard
+    
+Get your free API key at: https://openweathermap.org/api
+Find city IDs at: https://openweathermap.org/find
+    
+EOF
+}
+
+# Check dependencies
+check_dependencies() {
+    local missing_deps=()
+    
+    for cmd in jq curl; do
+        if ! command -v "$cmd" >/dev/null 2>&1; then
+            missing_deps+=("$cmd")
+        fi
+    done
+    
+    if [[ ${#missing_deps[@]} -gt 0 ]]; then
+        log_error "Missing required dependencies: ${missing_deps[*]}"
+        echo "Install with: sudo pacman -S ${missing_deps[*]}"
+        exit 1
     fi
-    ;;
-  'Rain')
-    WEATHER_ICON=""
-    ;;
-  'Drizzle')
-    if [ "$DAYTIME" == "d" ]; then
-        WEATHER_ICON="" 
-    else
-        WEATHER_ICON=""
+}
+
+# Load configuration
+load_config() {
+    # Set defaults (no default city ID)
+    OPENWEATHER_CITY_ID=""
+    OPENWEATHER_UNITS="$DEFAULT_UNITS"
+    
+    # Load from config file if it exists
+    if [[ -f "$CONFIG_FILE" ]]; then
+        source "$CONFIG_FILE"
     fi
-    ;;
-  'Thunderstorm')
-    WEATHER_ICON=""
-    ;;
-  'Snow')
-    WEATHER_ICON=""
-    ;;
-  'Clear')
-    if [ "$DAYTIME" == "d" ]; then
-        WEATHER_ICON=""
-    else
-        WEATHER_ICON=""
+    
+    # Override with environment variables if set
+    OPENWEATHER_API_KEY="${OPENWEATHER_API_KEY:-}"
+    OPENWEATHER_CITY_ID="${OPENWEATHER_CITY_ID:-}"
+    OPENWEATHER_UNITS="${OPENWEATHER_UNITS:-$DEFAULT_UNITS}"
+}
+
+# Validate API key
+validate_api_key() {
+    if [[ -z "$OPENWEATHER_API_KEY" ]]; then
+        log_error "No API key found!"
+        echo
+        echo "To fix this:"
+        echo "1. Get free API key: https://openweathermap.org/api"
+        echo "2. Run setup wizard: $0 --setup"
+        echo "3. Or set environment variable: export OPENWEATHER_API_KEY=your_key"
+        echo "4. Or create config file: $CONFIG_FILE"
+        exit 1
     fi
-    ;;
-  *)
-    WEATHER_ICON="🌫"
-    ;;
-esac
+    
+    # Basic validation (OpenWeatherMap keys are typically 32 chars)
+    if [[ ${#OPENWEATHER_API_KEY} -ne 32 ]]; then
+        log_warn "API key length seems incorrect (expected 32 characters, got ${#OPENWEATHER_API_KEY})"
+    fi
+}
 
-WEATHER_COLOR="#FFFFFF"
-if [ "$WEATHER_INT" -lt "-11" ]; then
-    WEATHER_COLOR="#0000FF"
-elif [ "$WEATHER_INT" -gt 35 ]; then
-    WEATHER_COLOR="#FF0000"
-else
-    WEATHER_INT=$(( WEATHER_INT + 11 )) 
-    WEATHER_COLOR="${temps[$WEATHER_INT]}"
-fi
+# Validate city ID
+validate_city_id() {
+    if [[ -z "$OPENWEATHER_CITY_ID" ]]; then
+        log_error "No city ID found!"
+        echo
+        echo "To fix this:"
+        echo "1. Run setup wizard: $0 --setup"
+        echo "2. Or set environment variable: export OPENWEATHER_CITY_ID=your_city_id"
+        echo "3. Or add OPENWEATHER_CITY_ID=\"your_city_id\" to: $CONFIG_FILE"
+        echo "4. Or provide city ID via command line: $0 --city-id your_city_id"
+        echo
+        echo "Find city IDs at: https://openweathermap.org/find"
+        exit 1
+    fi
+    
+    # Basic validation (city IDs are typically numeric)
+    if [[ ! "$OPENWEATHER_CITY_ID" =~ ^[0-9]+$ ]]; then
+        log_warn "City ID format seems incorrect (expected numeric, got: $OPENWEATHER_CITY_ID)"
+    fi
+}
 
-full_text="${WEATHER_ICON}  ${WEATHER_TEMP}°C: ${DESCRIPTION} "
-if [ "$WEATHER_ALERT" != "null" ]; then
-    WARN_START=$(echo "$WEATHER_RESPONSE" | jq '.alerts[0].start')
-    WARN_END=$(echo "$WEATHER_RESPONSE" | jq '.alerts[0].end')
-    WARN_START=$(date -d @"$WARN_START" +%a_%k:%M)
-    WARN_END=$(date -d @"$WARN_END" +%a_%k:%M)
-    full_text="${WEATHER_ICON}  ${WEATHER_TEMP}°C: ${DESCRIPTION}  ${WEATHER_ALERT} from ${WARN_START} to ${WARN_END}  "
-fi
+# Setup wizard
+run_setup() {
+    echo -e "${GREEN}=== OpenWeatherMap Setup Wizard ===${NC}"
+    echo
+    
+    # Create config directory
+    mkdir -p "$(dirname "$CONFIG_FILE")"
+    
+    # Get API key
+    echo "Get your free API key at: https://openweathermap.org/api"
+    echo
+    echo -n "Enter your OpenWeatherMap API key: "
+    read -r api_key
+    
+    if [[ -z "$api_key" ]]; then
+        log_error "API key cannot be empty"
+        exit 1
+    fi
+    
+    # Get city ID (required)
+    echo
+    echo "Find your city ID at: https://openweathermap.org/find"
+    echo -n "Enter city ID: "
+    read -r city_id
+    
+    if [[ -z "$city_id" ]]; then
+        log_error "City ID cannot be empty"
+        exit 1
+    fi
+    
+    # Get units (optional)
+    echo
+    echo "Available units: metric (°C), imperial (°F), kelvin (K)"
+    echo -n "Enter units [metric]: "
+    read -r units
+    units="${units:-metric}"
+    
+    # Write config file
+    cat > "$CONFIG_FILE" << EOF
+# OpenWeatherMap Configuration
+# Generated by $(basename "$0") setup wizard on $(date)
 
+# Your API key from https://openweathermap.org/api
+OPENWEATHER_API_KEY="$api_key"
 
-echo "${full_text}"
-echo "${WEATHER_TEMP}°C "
-echo "${WEATHER_COLOR}"
+# City ID from https://openweathermap.org/find
+OPENWEATHER_CITY_ID="$city_id"
+
+# Units: metric, imperial, kelvin
+OPENWEATHER_UNITS="$units"
+EOF
+
+    # Set secure permissions
+    chmod 600 "$CONFIG_FILE"
+    
+    echo
+    echo -e "${GREEN}✅ Configuration saved to: $CONFIG_FILE${NC}"
+    echo -e "${GREEN}✅ File permissions set to 600 (user read/write only)${NC}"
+    echo
+    echo "Testing configuration..."
+    
+    # Test the configuration
+    OPENWEATHER_API_KEY="$api_key"
+    OPENWEATHER_CITY_ID="$city_id"
+    OPENWEATHER_UNITS="$units"
+    
+    if fetch_weather_data; then
+        echo -e "${GREEN}✅ Configuration test successful!${NC}"
+    else
+        log_error "Configuration test failed. Please check your API key and city ID."
+        exit 1
+    fi
+}
+
+# Show current configuration
+show_config() {
+    echo "=== Current Configuration ==="
+    echo "Config file: $CONFIG_FILE"
+    echo "Cache file: $CACHE_FILE"
+    echo "Cache duration: ${CACHE_DURATION}s"
+    echo
+    
+    if [[ -f "$CONFIG_FILE" ]]; then
+        echo "Configuration:"
+        echo "  API Key: ${OPENWEATHER_API_KEY:0:8}... (${#OPENWEATHER_API_KEY} chars)"
+        echo "  City ID: $OPENWEATHER_CITY_ID"
+        echo "  Units: $OPENWEATHER_UNITS"
+    else
+        echo "❌ No configuration file found at: $CONFIG_FILE"
+        echo "Run: $0 --setup"
+    fi
+}
+
+# Check cache validity
+is_cache_valid() {
+    [[ -f "$CACHE_FILE" ]] && \
+    [[ $(($(date +%s) - $(stat -c %Y "$CACHE_FILE" 2>/dev/null || echo 0))) -lt $CACHE_DURATION ]]
+}
+
+# Fetch weather data from API
+fetch_weather_data() {
+    local url="https://api.openweathermap.org/data/2.5/weather?id=${OPENWEATHER_CITY_ID}&units=${OPENWEATHER_UNITS}&appid=${OPENWEATHER_API_KEY}"
+    
+    local response
+    if ! response=$(curl -sf "$url" 2>/dev/null); then
+        log_error "Failed to fetch weather data from API"
+        return 1
+    fi
+    
+    # Validate JSON response
+    if ! echo "$response" | jq . >/dev/null 2>&1; then
+        log_error "Invalid JSON response from API"
+        return 1
+    fi
+    
+    # Check for API error
+    local api_code
+    api_code=$(echo "$response" | jq -r '.cod // empty')
+    if [[ "$api_code" != "200" ]]; then
+        local api_message
+        api_message=$(echo "$response" | jq -r '.message // "Unknown API error"')
+        log_error "API Error ($api_code): $api_message"
+        return 1
+    fi
+    
+    # Cache the response
+    mkdir -p "$CACHE_DIR"
+    echo "$response" > "$CACHE_FILE"
+    
+    return 0
+}
+
+# Get weather data (from cache or API)
+get_weather_data() {
+    local force_refresh="${1:-false}"
+    
+    if [[ "$force_refresh" != "true" ]] && is_cache_valid; then
+        cat "$CACHE_FILE"
+    else
+        if fetch_weather_data; then
+            cat "$CACHE_FILE"
+        else
+            # Fallback to cache if available
+            if [[ -f "$CACHE_FILE" ]]; then
+                log_warn "Using stale cache data due to API failure"
+                cat "$CACHE_FILE"
+            else
+                return 1
+            fi
+        fi
+    fi
+}
+
+# Calculate wind direction
+get_wind_direction() {
+    local degrees="$1"
+    local directions=(N NNE NE ENE E ESE SE SSE S SSW SW WSW W WNW NW NNW)
+    local index
+    index=$(awk "BEGIN {print int(($degrees % 360) / 22.5)}")
+    echo "${directions[$index]}"
+}
+
+# Get weather icon
+get_weather_icon() {
+    local condition="$1"
+    case "$condition" in
+        'Clear')        echo "☀" ;;  # Clear sky
+        'Clouds')       echo "☁" ;;  # Cloudy
+        'Rain'|'Drizzle') echo "🌧" ;;  # Rain
+        'Snow')         echo "❄" ;;  # Snow
+        'Thunderstorm') echo "⛈" ;;  # Thunder
+        'Mist'|'Fog')   echo "🌫" ;;  # Fog
+        *)              echo "🌤" ;;  # Default
+    esac
+}
+
+# Safe number formatting (handles locale issues)
+safe_printf() {
+    local format="$1"
+    local number="$2"
+    
+    # Validate number is actually numeric
+    if [[ ! "$number" =~ ^-?[0-9]+(\.[0-9]+)?$ ]]; then
+        echo "0.0"
+        return 1
+    fi
+    
+    # Use awk for reliable formatting regardless of locale
+    awk "BEGIN {printf \"$format\", $number}"
+}
+
+# Format weather output
+format_weather() {
+    local weather_data="$1"
+    
+    # Parse weather data with error checking
+    local condition temp wind_speed_ms wind_deg
+    condition=$(echo "$weather_data" | jq -r '.weather[0].main // "Unknown"')
+    temp=$(echo "$weather_data" | jq -r '.main.temp // "0"')
+    wind_speed_ms=$(echo "$weather_data" | jq -r '.wind.speed // "0"')
+    wind_deg=$(echo "$weather_data" | jq -r '.wind.deg // "0"')
+    
+    # Validate parsed data
+    [[ "$condition" == "null" ]] && condition="Unknown"
+    [[ "$temp" == "null" ]] && temp="0"
+    [[ "$wind_speed_ms" == "null" ]] && wind_speed_ms="0"
+    [[ "$wind_deg" == "null" ]] && wind_deg="0"
+    
+    # Format temperature with safe formatting
+    local temp_formatted
+    temp_formatted=$(safe_printf "%.1f" "$temp")
+    
+    # Convert wind speed to km/h with safe formatting
+    local wind_speed_kmh
+    wind_speed_kmh=$(awk "BEGIN {printf \"%.1f\", ($wind_speed_ms + 0) * 3.6}")
+    
+    # Get wind direction
+    local wind_dir
+    wind_dir=$(get_wind_direction "$wind_deg")
+    
+    # Get weather icon
+    local icon
+    icon=$(get_weather_icon "$condition")
+    
+    # Format unit symbol
+    local unit_symbol
+    case "$OPENWEATHER_UNITS" in
+        "imperial") unit_symbol="°F" ;;
+        "kelvin")   unit_symbol="K" ;;
+        *)          unit_symbol="°C" ;;
+    esac
+    
+    # Output formatted weather
+    echo "${icon} ${temp_formatted}${unit_symbol}, ${wind_speed_kmh} km/h ${wind_dir}"
+}
+
+# Main function
+main() {
+    local city_id_override=""
+    local api_key_override=""
+    local units_override=""
+    local force_refresh="false"
+    
+    # Parse command line arguments
+    while [[ $# -gt 0 ]]; do
+        case $1 in
+            -h|--help)
+                show_help
+                exit 0
+                ;;
+            -c|--city-id)
+                city_id_override="$2"
+                shift 2
+                ;;
+            -k|--api-key)
+                api_key_override="$2"
+                shift 2
+                ;;
+            -u|--units)
+                units_override="$2"
+                shift 2
+                ;;
+            -f|--force-refresh)
+                force_refresh="true"
+                shift
+                ;;
+            --setup)
+                check_dependencies
+                run_setup
+                exit 0
+                ;;
+            --show-config)
+                load_config
+                show_config
+                exit 0
+                ;;
+            *)
+                log_error "Unknown option: $1"
+                show_help
+                exit 1
+                ;;
+        esac
+    done
+    
+    # Check dependencies
+    check_dependencies
+    
+    # Load configuration
+    load_config
+    
+    # Apply overrides
+    [[ -n "$city_id_override" ]] && OPENWEATHER_CITY_ID="$city_id_override"
+    [[ -n "$api_key_override" ]] && OPENWEATHER_API_KEY="$api_key_override"
+    [[ -n "$units_override" ]] && OPENWEATHER_UNITS="$units_override"
+    
+    # Validate configuration
+    validate_api_key
+    validate_city_id
+    
+    # Get and format weather data
+    local weather_data
+    if weather_data=$(get_weather_data "$force_refresh"); then
+        format_weather "$weather_data"
+    else
+        echo "⚠️ Weather data unavailable"
+        exit 1
+    fi
+}
+
+# Run main function
+main "$@"

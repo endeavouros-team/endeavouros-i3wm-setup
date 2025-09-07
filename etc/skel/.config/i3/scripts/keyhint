@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+# simple yad gui to show default keybindings
 
 Main() {
     source /usr/share/endeavouros/scripts/eos-script-lib-yad || return 1

@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 # original source: https://gitlab.com/Nmoleo/i3-volume-brightness-indicator
 # changed to use brightnessctl [xbacklight is non functional on modern hardware]
 # by joekamprad [Aug 2025]

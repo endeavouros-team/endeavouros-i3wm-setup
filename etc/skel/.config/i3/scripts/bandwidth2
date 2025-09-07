@@ -4,12 +4,14 @@
 # Licensed under the terms of the GNU GPL v2 only.
 #
 # i3blocks blocklet script to monitor bandwidth usage
+# detecting active device device
+# option to set used unit
 
 iface="${BLOCK_INSTANCE}"
 iface="${IFACE:-$iface}"
 dt="${DT:-3}"
 unit="${UNIT:-MB}"
-LABEL="${LABEL:-<span font='FontAwesome'> </span>}" # down arrow up arrow
+LABEL="${LABEL:-<span font='FontAwesome'>⇄ </span>}" # down arrow up arrow
 printf_command="${PRINTF_COMMAND:-"printf \"${LABEL}%1.0f/%1.0f %s/s\\n\", rx, wx, unit;"}"
 
 function default_interface {
@@ -101,4 +103,3 @@ BEGIN{old_received='"$init_received"';old_sent='"$init_sent"'}
         fflush(stdout);
     }
 }
-'

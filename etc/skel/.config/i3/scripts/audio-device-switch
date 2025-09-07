@@ -1,6 +1,18 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# adapted from this: https://gist.githubusercontent.com/kbravh/1117a974f89cc53664e55823a55ac320/raw/9d04a10ae925074536047ae8100c6b0dbfc303d6/audio-device-switch.sh
+# audio-device-switch - audio device switch with a keybind
+# Adapted from this: 
+# https://gist.githubusercontent.com/kbravh/1117a974f89cc53664e55823a55ac320/raw/9d04a10ae925074536047ae8100c6b0dbfc303d6/audio-device-switch.sh
+# Readme: https://gist.github.com/kbravh/1117a974f89cc53664e55823a55ac320
+# Creator: https://github.com/kbravh
+
+# Audio Output Switcher
+# This script will cycle to the next available audio output device. 
+# It can be tied to a hotkey to easily be triggered.
+# This is handy, for example, for swapping between speakers and headphones.
+# This script will work on systems running PulseAudio or Pipewire services.
+
+
 
 # Check which sound server is running
 if pgrep pulseaudio >/dev/null; then
@@ -86,4 +98,3 @@ for sink_index in "${!sink_descriptions[@]}"; do
     exit
   fi
 done
-

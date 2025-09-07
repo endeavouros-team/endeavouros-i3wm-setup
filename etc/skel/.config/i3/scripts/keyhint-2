@@ -1,3 +1,7 @@
+#!/bin/sh
+
+# keyhint rofi tool to search used keybindings in i3wm
+
 I3_CONFIG=$HOME/.config/i3/config
 mod_key=$(sed -nre 's/^set \$mod (.*)/\1/p' ${I3_CONFIG})
 grep "^bindsym" ${I3_CONFIG} \

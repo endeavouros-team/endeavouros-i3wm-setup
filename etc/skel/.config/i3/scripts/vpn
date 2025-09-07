@@ -1,25 +1,25 @@
-#!/usr/bin/env bash
-#
-# Copyright (C) 2021 Andreas Lindlbauer
-# Licensed under the terms of EUPLv1.2.
-#
-# i3blocks blocklet script to monitor the (nord)vpn connection
+#!/usr/bin/env sh
 
-vpnstatus="📢"
-nordvpn_output=$(nordvpn status | cat -v | head -1 | sed -e 's/\^M-^M  ^M//g' )
-if [ "${nordvpn_output}" = "Status: Connected" ]; then
-    vpnstatus="🥸"
-elif [ "${nordvpn_output}" = "A new version of NordVPN is available! Please update the application." ]; then
-    nordvpn_output=$(nordvpn status | cat -v | head -2 | tail -1 | sed -e 's/\^M-^M  ^M//g' )
-    if [ "${nordvpn_output}" = "Status: Connected" ]; then
-        vpnstatus="🥴"
-    elif [ "${nordvpn_output}" = "Status: Disconnected" ]; then
-        vpnstatus="📢"
-    fi
-elif [ "${nordvpn_output}" = "Status: Disconnected" ]; then
-    vpnstatus="📢"
-elif [[ "$nordvpn_output" == *\/* ]] || [[ "$nordvpn_output" == *\\* ]]; then
-    vpnstatus="Something's very wrong"
-fi
+# Parses output from nmcli to show the current connected VPN name/status for i3block
+# Source: https://github.com/vivien/i3blocks-contrib/tree/master/nm-vpn
+# uncomment in $HOME/.config/i3/i3blocks.conf if you want to use it
 
-echo "$vpnstatus"
+init_color=${init_color:-#FFFF00}
+on_color=${on_color:-#00FF00}
+export init_color on_color
+nmcli -t connection show --active | awk -F ':' '
+BEGIN {
+    init_color=ENVIRON["init_color"]
+    on_color=ENVIRON["on_color"]
+}
+$3=="vpn" {
+    name=$1
+    status="INIT"
+    color=init_color
+}
+$3=="tun" || ($4~/^tap/ || $3~/^tap/) {
+    if(!name) name=$1
+    status="ON"
+    color=on_color
+}
+END {if(status) printf("%s\n%s\n%s\n", name, status, color)}'

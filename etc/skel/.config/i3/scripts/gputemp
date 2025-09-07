@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# script to monitor temperatures in waybar/i3blocks e.t.c.
+# example only use `sensors` to find your sensor to replace `i915-pci-0600`
+# example output part from sensors:
+# i915-pci-0600
+# Adapter: PCI adapter
+# in0:         630.00 mV
+# fan1:           0 RPM
+# temp1:        +55.0°C
+# energy1:       1.26 MJ
+
+# examples using Nvidia tools:
+#echo "$(nvidia-smi --format=csv,noheader --query-gpu=temperature.gpu) °C"
+#echo "$(nvidia-settings -q gpucoretemp -t) °C"
+# example using sensor name:
+sensors 2>/dev/null | awk '/i915-pci-0600/{flag=1} flag && /temp1/ {gsub("\\+", "", $2); print $2, $3; exit}'
