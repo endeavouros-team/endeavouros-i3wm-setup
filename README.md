@@ -167,8 +167,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- "~/.config/i3/scripts/blu
 # Details/Options on the panel
 
 You will find examples scripts and blocks under:
-scripts: `$HOME/.config/i3/scripts/`
-blocks: `$HOME/.config/i3/i3blocks.conf`
+
+* scripts: `$HOME/.config/i3/scripts/`
+* blocks: `$HOME/.config/i3/i3blocks.conf`
 
 **open weather:**
 
