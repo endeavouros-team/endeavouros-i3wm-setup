@@ -94,7 +94,7 @@ fi
 # Find the index that matches our new active sink
 for sink_index in "${!sink_descriptions[@]}"; do
   if [[ "$sink_index" == "$next_sink_index" ]]; then
-    notify-send -i audio-volume-high "Sound output switched to ${sink_descriptions[$sink_index]}"
+    notify-send -i audio-volume-high "Sound output switched to:" "${sink_descriptions[$sink_index]}"
     exit
   fi
 done
