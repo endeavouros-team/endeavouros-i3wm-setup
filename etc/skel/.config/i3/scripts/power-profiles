@@ -10,6 +10,13 @@
 # $HOME/.config/rofi/powermenu.rasi
 
 ROFI_THEME="${HOME}/.config/rofi/power-profiles.rasi"
+declare -A TAGS
+TAGS=(
+  [cancel]="<span foreground='red'></span>  Cancel"
+  [performance]="<span foreground='yellow'></span>  Performance"
+  [balanced]="<span foreground='lightblue'></span>  Balanced"
+  [power-saver]="<span foreground='green'></span>  Power Saver"
+)
 
 # Dependency checks
 command -v powerprofilesctl >/dev/null 2>&1 || { echo "powerprofilesctl not found"; exit 1; }
@@ -19,24 +26,26 @@ if ! command -v notify-send >/dev/null 2>&1; then
 fi
 
 current_profile="$(powerprofilesctl get 2>/dev/null)"
-ROFI_ARGS=(-dmenu -i -theme "$ROFI_THEME" -p "Change Profile" -mesg "<b>Current used:</b> $current_profile" -markup-rows)
+ROFI_ARGS=(-dmenu -i -theme "$ROFI_THEME" -p "Change Profile" -mesg "<b>Current used:</b> &#x0a;${TAGS[$current_profile]}" -markup-rows)
+
+# if not invoked by click return current option
+if [[ ! $button ]]; then
+  echo "${TAGS[$current_profile]}"
+  exit 0
+fi
 
 # Menu entries
-cancel="  Cancel"
-perf="  Performance"
-balanced="  Balanced"
-powersave="  Power Saver"
-# sets chancel to be on top
-options="$cancel"
+# sets cancel to be on top
+options="${TAGS[cancel]}"
 
 if powerprofilesctl list | grep -q "performance"; then
-  options="$options\n$perf"
+  options="$options\n${TAGS[performance]}"
 fi
 if powerprofilesctl list | grep -q "balanced"; then
-  options="$options\n$balanced"
+  options="$options\n${TAGS[balanced]}"
 fi
 if powerprofilesctl list | grep -q "power-saver"; then
-  options="$options\n$powersave"
+  options="$options\n${TAGS[power-saver]}"
 fi
 
 # Show menu
@@ -44,21 +53,25 @@ chosen="$(echo -e "$options" | rofi "${ROFI_ARGS[@]}")"
 
 # Run selection
 case $chosen in
-    "$perf")
+    "${TAGS[performance]}")
         powerprofilesctl set performance
         ;;
-    "$balanced")
+    "${TAGS[balanced]}")
         powerprofilesctl set balanced
         ;;
-    "$powersave")
+    "${TAGS[power-saver]}")
         powerprofilesctl set power-saver
         ;;
-    "$cancel"|"")
+    "${TAGS[cancel]}"|"")
+        echo "${TAGS[$current_profile]}"
         exit 0
         ;;
 esac
 
-# Send notification if available
-if [[ "$chosen" != "$cancel" && -z "${notify_send_missing}" ]]; then
+
+# Send notification if available and update block
+if [[ "$chosen" != "${TAGS[cancel]}" && -z "${notify_send_missing}" ]]; then
   notify-send -i dialog-information "Power Profile Changed" "New profile: ${chosen}"
+  echo "$chosen"
 fi
+
