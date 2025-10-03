@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+
+# power-profiles-daemon implementation:
+# needs package power-profiles-daemon installed and the service running see here:
+# https://wiki.archlinux.org/title/CPU_frequency_scaling#power-profiles-daemon
+# used in i3-blocks: ~/.config/i3/i3blocks.conf together with: ~/.config/i3/scripts/power-profiles
+
+
+# assign tags or translations to each profile
+declare -A tags
+tags=(
+  [performance]="Performance"
+  [balanced]="Balanced"
+  [power-saver]="Power saver"
+)
+
+# Get current profile 
+current_profile=$(/usr/bin/powerprofilesctl get)
+
+# Get tag from the array
+profile_tag=${tags[$current_profile]}
+
+# Show tag on i3block
+echo "${profile_tag:-$current_profile}"
