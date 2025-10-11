@@ -13,7 +13,7 @@
 
 ROFI_THEME="${HOME}/.config/rofi/powermenu.rasi"
 # Define possible lock scripts/commands (edit this list as you like)
-LOCK_SCRIPTS=("~/.config/i3/scripts/blur-lock" "i3lock")
+LOCK_SCRIPTS=("${HOME}/.config/i3/scripts/blur-lock" "i3lock")
 
 # Find available lock script
 find_lock_script() {
