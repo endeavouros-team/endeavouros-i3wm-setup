@@ -89,17 +89,21 @@ init_sent=$(awk '{print $10}' <<< $init_line)
 (while true; do cat /proc/net/dev; sleep "$dt"; done) |\
     stdbuf -oL grep "^[ ]*$iface:" |\
     awk -v scalar="$scalar" -v unit="$unit" -v iface="$iface" '
-BEGIN{old_received='"$init_received"';old_sent='"$init_sent"'}
+BEGIN {
+    old_received='"$init_received"'
+    old_sent='"$init_sent"'
+}
 {
     received=$2
     sent=$10
-    rx=(received-old_received)/scalar;
-    wx=(sent-old_sent)/scalar;
-    tx=rx+wr;
-    old_received=received;
-    old_sent=sent;
-    if(rx >= 0 && wx >= 0){
-        '"$printf_command"';
-        fflush(stdout);
+    rx=(received-old_received)/scalar
+    wx=(sent-old_sent)/scalar
+    tx=rx+wx
+    old_received=received
+    old_sent=sent
+    if (rx >= 0 && wx >= 0) {
+        '"$printf_command"'
+        fflush(stdout)
     }
 }
+'
