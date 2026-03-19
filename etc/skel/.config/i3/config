@@ -303,8 +303,11 @@ bindsym $mod+w exec --no-startup-id /usr/bin/firefox
 bindsym $mod+n exec --no-startup-id /usr/bin/thunar
 
 # Screenshot
+# complete screen
 bindsym Print exec --no-startup-id scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
+# the currently focused window
 bindsym $mod+Print exec --no-startup-id scrot -u ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
+# select a window or rectangle with the mouse
 bindsym $mod+Shift+Print exec --no-startup-id scrot -s ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
 
 # Power Profiles menu switcher (rofi)
