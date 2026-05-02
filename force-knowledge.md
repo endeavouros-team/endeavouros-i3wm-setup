@@ -37,7 +37,7 @@ i3 is a dynamic tiling window manager inspired by wmii that is primarily targete
   
 In some cases you might need to use a different configuration to make picom work. Eg. While using NVIDIA's proprietary drivers.
 After installing and uncommeting the settings, logout and log back in for changes to take effect.
-Open `"${HOME}"/.config/picom/picom.conf`
+Open `"${HOME}"/.config/i3/config`
  Add/remove `#` at the start of the line to disable/enable picom auto start at login.
   
  Before (default setting, picom will not auto start at login)
