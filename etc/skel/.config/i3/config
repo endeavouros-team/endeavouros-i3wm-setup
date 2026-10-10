@@ -465,6 +465,8 @@ exec --no-startup-id xset s 480 dpms 600 600 600
 # may need to run dbus-launch explicitly:
 #exec --no-startup-id dbus-launch /usr/bin/dunst
 exec --no-startup-id /usr/bin/dunst
+# warn when battery is low:
+exec --no-startup-id ~/.config/i3/scripts/low_battery_warning.sh
 
 # alternative if you installed aside with XFCE4:
 # exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
